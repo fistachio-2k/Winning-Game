@@ -16,6 +16,6 @@ public class CameraCenter : MonoBehaviour
 
     public bool isInPlayersView(GameObject obj)
     {
-        return Vector3.Distance(obj.transform.position, cameraCenter.transform.position) < radius;
+        return Mathf.Abs(Vector3.Distance(obj.transform.position, cameraCenter.transform.position)) < radius;
     }
 }

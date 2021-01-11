@@ -13,6 +13,7 @@ public class InteractableObject : MonoBehaviour
 
     void Start()
     {
+        setMeshCollider();
         cameraCenter = GameObject.Find("CameraCenter").GetComponent<CameraCenter>();
         posOffset = transform.position;
     }
@@ -31,5 +32,12 @@ public class InteractableObject : MonoBehaviour
             transform.position = posOffset;
         }
         
+    }
+
+    void setMeshCollider()
+    {
+        MeshCollider sc = gameObject.AddComponent(typeof(MeshCollider)) as MeshCollider;
+        sc.convex = true;
+        sc.isTrigger = true;
     }
 }
