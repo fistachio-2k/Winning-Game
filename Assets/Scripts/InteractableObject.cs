@@ -6,11 +6,14 @@ public class InteractableObject : HouseObjectScript
 {
 
     CameraCenter cameraCenter;
+
     Vector3 posOffset = new Vector3();
     Vector3 tempPos = new Vector3();
     float amplitude = 0.2f;
     float frequency = 1f;
     float heightFactor = 0.2f;
+
+    
 
     void Start()
     {

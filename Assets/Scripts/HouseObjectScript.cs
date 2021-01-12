@@ -11,17 +11,18 @@ public class HouseObjectScript : MonoBehaviour
     }
 
 
-    void Update()
-    {
-        
-    }
-
     void setCompnents()
     {
         MeshCollider sc = gameObject.AddComponent(typeof(MeshCollider)) as MeshCollider;
         sc.convex = true;
-        sc.isTrigger = true;
+        //sc.isTrigger = true;
         rb = gameObject.AddComponent(typeof(Rigidbody)) as Rigidbody;
         rb.isKinematic = true;
+    }
+
+    float thrust = 1.0f;
+    void FixedUpdate()
+    {
+        rb.AddForce(transform.forward * thrust);
     }
 }
