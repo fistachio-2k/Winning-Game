@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: cc8ab1c4f9c5c30448f1c3d0599dd950
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Ieicester
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 08ffc31ac8d103a4784a7199ced94ccb, type: 3}
+  - {fileID: 12800000, guid: 37eb864a425c8234d8bb51e61851165b, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
