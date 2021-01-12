@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractableObject : MonoBehaviour
+public class InteractableObject : HouseObjectScript
 {
 
     CameraCenter cameraCenter;
@@ -10,10 +10,10 @@ public class InteractableObject : MonoBehaviour
     Vector3 tempPos = new Vector3();
     float amplitude = 0.2f;
     float frequency = 1f;
+    float heightFactor = 0.2f;
 
     void Start()
     {
-        setMeshCollider();
         cameraCenter = GameObject.Find("CameraCenter").GetComponent<CameraCenter>();
         posOffset = transform.position;
     }
@@ -24,7 +24,7 @@ public class InteractableObject : MonoBehaviour
         if (cameraCenter.isInPlayersView(gameObject))
         {
             tempPos = posOffset;
-            tempPos.y += Mathf.Sin(Time.fixedTime * Mathf.PI * frequency) * amplitude;
+            tempPos.y += Mathf.Sin(Time.fixedTime * Mathf.PI * frequency) * amplitude + heightFactor;
             transform.position = tempPos;
         }
         else
@@ -32,12 +32,5 @@ public class InteractableObject : MonoBehaviour
             transform.position = posOffset;
         }
         
-    }
-
-    void setMeshCollider()
-    {
-        MeshCollider sc = gameObject.AddComponent(typeof(MeshCollider)) as MeshCollider;
-        sc.convex = true;
-        sc.isTrigger = true;
     }
 }
