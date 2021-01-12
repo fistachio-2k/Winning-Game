@@ -8,6 +8,7 @@ public class TextReveal : MonoBehaviour
     private TextMeshPro _tmp;
     [SerializeField] private float _revealInterval = 3f;
     [SerializeField] private Transform _playerTransform;
+    [SerializeField] private float _triggerDistance = 3.5f;
     
     IEnumerator Start()
     {
@@ -23,11 +24,11 @@ public class TextReveal : MonoBehaviour
             _tmp.maxVisibleCharacters = visableCount;
 
             Debug.Log(Vector3.Distance(transform.position, _playerTransform.position));
-            if (Vector3.Distance(transform.position, _playerTransform.position) < 5.5f && visableCount < totalVisableChar)
+            if (Vector3.Distance(transform.position, _playerTransform.position) < _triggerDistance && visableCount < totalVisableChar)
             {
                 count += 1;
             }
-            else if (Vector3.Distance(transform.position, _playerTransform.position) >= 5.5f && count > 0)
+            else if (Vector3.Distance(transform.position, _playerTransform.position) >= _triggerDistance && count > 0)
             {
                 count -= 1;
             }
