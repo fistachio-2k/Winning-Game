@@ -5,24 +5,28 @@ using UnityEngine;
 public class HouseObjectScript : MonoBehaviour
 {
     protected Rigidbody rb;
+    GameObject[] houseObjects;
     void Start()
     {
         setCompnents();
+
+        houseObjects = GameObject.FindGameObjectsWithTag("HouseObj");
+        if (houseObjects == null)
+        {
+            Debug.Log("Here:(");
+        }
     }
 
 
     void setCompnents()
     {
-        MeshCollider sc = gameObject.AddComponent(typeof(MeshCollider)) as MeshCollider;
-        sc.convex = true;
-        //sc.isTrigger = true;
-        rb = gameObject.AddComponent(typeof(Rigidbody)) as Rigidbody;
-        rb.isKinematic = true;
-    }
-
-    float thrust = 1.0f;
-    void FixedUpdate()
-    {
-        rb.AddForce(transform.forward * thrust);
+        foreach(GameObject ho in houseObjects)
+        {
+            MeshCollider sc = ho.AddComponent(typeof(MeshCollider)) as MeshCollider;
+            sc.convex = true;
+            //sc.isTrigger = true;
+            rb = ho.AddComponent(typeof(Rigidbody)) as Rigidbody;
+            rb.isKinematic = true;
+        }
     }
 }
