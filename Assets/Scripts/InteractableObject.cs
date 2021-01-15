@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractableObject : HouseObjectScript
+public class InteractableObject : MonoBehaviour
 {
 
     CameraCenter cameraCenter;

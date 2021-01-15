@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StaticHouseObject : HouseObjectScript
+public class SelectionManager : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-        rb.constraints = RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotation;
+        
     }
 
     // Update is called once per frame
