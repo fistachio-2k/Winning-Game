@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Cinemachine;
 
 public class GameEventsManager : MonoBehaviour
 {
@@ -8,12 +9,20 @@ public class GameEventsManager : MonoBehaviour
     [SerializeField] private GameObject hazeret;
     [SerializeField] private Renderer pianoRenderrer;
     [SerializeField] private float maxDistanceForCorridorTrigger = 7f;
+    [SerializeField] private CinemachineVirtualCamera[] vcams;
+    private Vcam _currVcam;
     private int _hazertHash;
     public static GameEventsManager _instance;
     private Camera _camera;
     private HashSet<int> _collectedItems;
     private bool corridorRevealed = false;
-    //private Dictionary<UnityEvent, bool> eventsActivisionDict;
+
+    public enum Vcam
+    {
+        Player,
+        Sitting
+    }
+
     private void Awake()
     {
         if (_instance != null && _instance != this)
@@ -26,6 +35,7 @@ public class GameEventsManager : MonoBehaviour
         }
 
         _camera = Camera.main;
+        _currVcam = Vcam.Player;
         _collectedItems = new HashSet<int>();
         _hazertHash = hazeret.GetHashCode();
 
@@ -45,6 +55,13 @@ public class GameEventsManager : MonoBehaviour
     public void AddCollectedItem(int itemHashCode)
     {
         _collectedItems.Add(itemHashCode);
+    }
+
+    public void SwitchToVcam(GameEventsManager.Vcam vcam)
+    {
+        vcams[(int) vcam].Priority = 1;
+        vcams[(int) _currVcam].Priority = 0;
+        _currVcam = vcam;
     }
 
 
