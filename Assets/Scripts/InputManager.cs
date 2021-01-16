@@ -42,10 +42,7 @@ public class InputManager : MonoBehaviour
     {
         return playerControls.Player.Movement.ReadValue<Vector2>();
     }
-    public bool IsPlayerJump()
-    {
-        return playerControls.Player.Jump.triggered;
-    }
+
     public Vector2 GetMouseDelta()
     {
         return playerControls.Player.Look.ReadValue<Vector2>();
