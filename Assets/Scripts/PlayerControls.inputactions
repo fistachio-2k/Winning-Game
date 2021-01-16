@@ -14,14 +14,6 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Jump",
-                    "type": "Button",
-                    "id": "d2c0c919-71f7-405b-9ab6-61d073f6e9c5",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
                     "name": "Look",
                     "type": "PassThrough",
                     "id": "d94de651-3cc0-4705-aee1-9c9714f806e5",
@@ -101,17 +93,6 @@
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
-                },
-                {
-                    "name": "",
-                    "id": "02c19304-aa61-4990-a79e-e18c0bf59971",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
                 },
                 {
                     "name": "",
