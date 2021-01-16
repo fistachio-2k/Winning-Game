@@ -21,6 +21,7 @@ public class Fridge : MonoBehaviour
 
     public void OpenCloseFridge()
     {
+        //TODO: add sound!
         if (_isOpen)
         {
             _sB.Append(_fridgeDoor.DOLocalRotate(new Vector3(0f, 0f, 0f), _duration));
@@ -37,11 +38,11 @@ public class Fridge : MonoBehaviour
         }
     }
 
-    //private void Update()
-    //{
-    //    if (InputManager.Instance.GetTestButton())
-    //    {
-    //        OpenCloseFridge();
-    //    }
-    //}
+    private void Update()
+    {
+        if (InputManager.Instance.GetTestButton1())
+        {
+            OpenCloseFridge();
+        }
+    }
 }

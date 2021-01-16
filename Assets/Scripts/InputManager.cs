@@ -51,9 +51,14 @@ public class InputManager : MonoBehaviour
         return playerControls.Player.Look.ReadValue<Vector2>();
     }
 
-    public bool GetTestButton()
+    public bool GetTestButton1()
     {
-        return playerControls.Player.Testing.triggered;
+        return playerControls.Player.Testing1.triggered;
+    }
+
+    public bool GetTestButton2()
+    {
+        return playerControls.Player.Testing2.triggered;
     }
 
 }
