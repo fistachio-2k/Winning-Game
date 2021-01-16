@@ -41,6 +41,22 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Testing1"",
+                    ""type"": ""Button"",
+                    ""id"": ""b3330522-0e69-419c-a675-dd6a6ceace78"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Testing2"",
+                    ""type"": ""Button"",
+                    ""id"": ""bbe0460d-e7bc-43dc-92f2-03097da99d6d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -120,6 +136,28 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""Look"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""724495b1-502b-42e6-ae08-3214f2d60eb8"",
+                    ""path"": ""<Keyboard>/t"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Testing1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ccdef59c-9be9-4b89-8fda-c3b42d9f1b45"",
+                    ""path"": ""<Keyboard>/y"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Testing2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -131,6 +169,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
+        m_Player_Testing1 = m_Player.FindAction("Testing1", throwIfNotFound: true);
+        m_Player_Testing2 = m_Player.FindAction("Testing2", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -183,6 +223,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Movement;
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_Look;
+    private readonly InputAction m_Player_Testing1;
+    private readonly InputAction m_Player_Testing2;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -190,6 +232,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @Movement => m_Wrapper.m_Player_Movement;
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @Look => m_Wrapper.m_Player_Look;
+        public InputAction @Testing1 => m_Wrapper.m_Player_Testing1;
+        public InputAction @Testing2 => m_Wrapper.m_Player_Testing2;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -208,6 +252,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Look.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
                 @Look.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
                 @Look.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
+                @Testing1.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTesting1;
+                @Testing1.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTesting1;
+                @Testing1.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTesting1;
+                @Testing2.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTesting2;
+                @Testing2.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTesting2;
+                @Testing2.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTesting2;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -221,6 +271,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Look.started += instance.OnLook;
                 @Look.performed += instance.OnLook;
                 @Look.canceled += instance.OnLook;
+                @Testing1.started += instance.OnTesting1;
+                @Testing1.performed += instance.OnTesting1;
+                @Testing1.canceled += instance.OnTesting1;
+                @Testing2.started += instance.OnTesting2;
+                @Testing2.performed += instance.OnTesting2;
+                @Testing2.canceled += instance.OnTesting2;
             }
         }
     }
@@ -230,5 +286,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnMovement(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
+        void OnTesting1(InputAction.CallbackContext context);
+        void OnTesting2(InputAction.CallbackContext context);
     }
 }

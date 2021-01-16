@@ -11,7 +11,7 @@ public class TextReveal : MonoBehaviour
     [SerializeField] private float _triggerDistance = 3.5f;
     
     IEnumerator Start()
-    {
+    { 
         // Get referance to the TMP object
         _tmp = GetComponent<TextMeshPro>();
         _tmp.ForceMeshUpdate();
@@ -23,7 +23,6 @@ public class TextReveal : MonoBehaviour
             int visableCount = count % (totalVisableChar + 1);
             _tmp.maxVisibleCharacters = visableCount;
 
-            Debug.Log(Vector3.Distance(transform.position, _playerTransform.position));
             if (Vector3.Distance(transform.position, _playerTransform.position) < _triggerDistance && visableCount < totalVisableChar)
             {
                 count += 1;

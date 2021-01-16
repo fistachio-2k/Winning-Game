@@ -4,16 +4,16 @@ using UnityEngine.Events;
 public class GameEventsManager : MonoBehaviour
 {
     [SerializeField] private UnityEvent ravealCorridor;
-    public static GameEventsManager Instance;
+    public static GameEventsManager _instance;
     private void Awake()
     {
-        if (Instance != null)
+        if (_instance != null && _instance != this)
         {
             Destroy(gameObject);
         }
         else
         {
-            Instance = this;
+            _instance = this;
         }
     }
     void Start()
