@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class SelectionManager : MonoBehaviour
 {
-    [SerializeField] private string selectableTag = "fridge";
+    [SerializeField] private string selectableTag = "selectable";
 
     private IRayProvider _rayProvider;
     private ISelectionResponse _selectionResponse;
@@ -26,7 +26,7 @@ public class SelectionManager : MonoBehaviour
 
         var ray = _rayProvider.CreateRay();
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out hit, 10f))
         {
             var selection = hit.transform;
             if (selection.CompareTag(selectableTag))

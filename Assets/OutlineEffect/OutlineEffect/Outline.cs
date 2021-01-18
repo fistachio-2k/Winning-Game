@@ -48,12 +48,12 @@ namespace cakeslice
 			MeshFilter = GetComponent<MeshFilter>();
 		}
 
-		void OnEnable()
+		public void EnableOutline()
 		{
 			OutlineEffect.Instance?.AddOutline(this);
 		}
 
-		void OnDisable()
+		public void DisableOutline()
 		{
 			OutlineEffect.Instance?.RemoveOutline(this);
 		}
