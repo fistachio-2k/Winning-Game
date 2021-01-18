@@ -6,7 +6,7 @@ public class Piano : MonoBehaviour
     [SerializeField] private Transform positionToMove;
     [SerializeField] private float duration = 5f;
 
-    public void MovePiano()
+    public void onSelect()
     {
         StartCoroutine(PianoCoroutine());
     }

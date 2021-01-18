@@ -58,4 +58,9 @@ public class InputManager : MonoBehaviour
         return playerControls.Player.Testing2.triggered;
     }
 
+    public bool GetMouseClick()
+    {
+        return playerControls.Player.Interact.triggered;
+    }
+
 }

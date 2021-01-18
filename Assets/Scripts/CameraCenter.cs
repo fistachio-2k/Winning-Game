@@ -5,17 +5,21 @@ using UnityEngine;
 
 public class CameraCenter : MonoBehaviour
 {
-    public TextMesh cameraCenter;
+    private TextMesh _cameraCenter;
     float radius = 3;
 
+    private void Awake()
+    {
+        _cameraCenter = GetComponent<TextMesh>();
+    }
     void Update()
     {
-        cameraCenter.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 2, Screen.height / 2, Camera.main.nearClipPlane * 20));
-        cameraCenter.transform.rotation = Camera.main.transform.rotation;
+        _cameraCenter.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 2, Screen.height / 2, Camera.main.nearClipPlane * 20));
+        _cameraCenter.transform.rotation = Camera.main.transform.rotation;
     }
 
     public bool isInPlayersView(GameObject obj)
     {
-        return Mathf.Abs(Vector3.Distance(obj.transform.position, cameraCenter.transform.position)) < radius;
+        return Mathf.Abs(Vector3.Distance(obj.transform.position, _cameraCenter.transform.position)) < radius;
     }
 }
