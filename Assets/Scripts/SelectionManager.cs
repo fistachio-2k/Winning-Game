@@ -15,6 +15,7 @@ public class SelectionManager : MonoBehaviour
     private void Awake()
     {
         _selectionResponse = GetComponent<ISelectionResponse>();
+        _rayProvider = GetComponent<IRayProvider>();
     }
 
     void Update()

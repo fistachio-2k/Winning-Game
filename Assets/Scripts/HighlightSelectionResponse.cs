@@ -20,8 +20,11 @@ internal class HighlightSelectionResponse : MonoBehaviour, ISelectionResponse
         {
             selectionRenderer.material = highlightMaterial;
         }
-        cakeslice.Outline outline = selection.GetComponent<cakeslice.Outline>();
-        outline.EnableOutline();
+        if(InputManager.Instance.GetMouseClick())
+        {
+            cakeslice.Outline outline = selection.GetComponent<cakeslice.Outline>();
+            outline.EnableOutline();
+        }
     }
 
     public void OnDeselect(Transform selection)
