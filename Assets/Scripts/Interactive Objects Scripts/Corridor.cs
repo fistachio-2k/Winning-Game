@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using DG.Tweening;
+using System.Collections;
 
 public class Corridor : MonoBehaviour
 {
@@ -10,6 +11,12 @@ public class Corridor : MonoBehaviour
 
     public void RevealCoridor()
     {
+        StartCoroutine(CorridorCoRoutine());
+    }
+
+    IEnumerator CorridorCoRoutine()
+    {
+        yield return new WaitForSeconds(1f);
         Debug.Log("Reavel the MAGIC CORRIDOR !");
         foreach (GameObject obj in toDisapear)
         {
