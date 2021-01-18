@@ -7,6 +7,7 @@ TagManager:
   - CameraCenter
   - HouseObj
   - fridge
+  - Selectable
   layers:
   - Default
   - TransparentFX

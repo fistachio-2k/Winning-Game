@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using DG.Tweening;
 
-public class Fridge : MonoBehaviour
+
+public class Fridge : MonoBehaviour, IInteractable
 {
     [SerializeField] private Transform _fridgeDoor;
     [SerializeField] private float _openAngle = 80f;
@@ -38,11 +39,9 @@ public class Fridge : MonoBehaviour
         }
     }
 
-    private void Update()
+
+    public void Interact()
     {
-        if (InputManager.Instance.GetTestButton1())
-        {
-            OpenCloseFridge();
-        }
+        OpenCloseFridge();
     }
 }
