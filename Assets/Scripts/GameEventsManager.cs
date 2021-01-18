@@ -10,7 +10,7 @@ public class GameEventsManager : MonoBehaviour
     [SerializeField] private Renderer pianoRenderrer;
     [SerializeField] private float maxDistanceForCorridorTrigger = 7f;
     [SerializeField] private CinemachineVirtualCamera[] vcams;
-    private Vcam _currVcam;
+    public Vcam currVcam;
     private int _hazertHash;
     public static GameEventsManager _instance;
     private Camera _camera;
@@ -35,7 +35,7 @@ public class GameEventsManager : MonoBehaviour
         }
 
         _camera = Camera.main;
-        _currVcam = Vcam.Player;
+        currVcam = Vcam.Player;
         _collectedItems = new HashSet<int>();
         _hazertHash = hazeret.GetHashCode();
 
@@ -60,8 +60,8 @@ public class GameEventsManager : MonoBehaviour
     public void SwitchToVcam(GameEventsManager.Vcam vcam)
     {
         vcams[(int) vcam].Priority = 1;
-        vcams[(int) _currVcam].Priority = 0;
-        _currVcam = vcam;
+        vcams[(int) currVcam].Priority = 0;
+        currVcam = vcam;
     }
 
 
