@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
         {
             if (inputManager.GetMouseClick())
             {
-                return;
+                GameEventsManager._instance.GetMouseClickEvent().Invoke();
             }
         }
         else
