@@ -10,9 +10,12 @@ public class GameEventsManager : MonoBehaviour
     [SerializeField] private Renderer pianoRenderrer;
     [SerializeField] private float maxDistanceForCorridorTrigger = 7f;
     [SerializeField] private CinemachineVirtualCamera[] vcams;
-    public Vcam currVcam;
-    private int _hazertHash;
+    [SerializeField] private GameObject[] HouseModels;
+
     public static GameEventsManager _instance;
+    public Vcam currVcam;
+    private UnityEvent mouseClickEvent;
+    private int _hazertHash;
     private Camera _camera;
     private HashSet<int> _collectedItems;
     private bool corridorRevealed = false;
@@ -21,6 +24,14 @@ public class GameEventsManager : MonoBehaviour
     {
         Player,
         Sitting
+    }
+
+    public enum Scene
+    {
+        Opening,
+        Breakfast,
+        Lunch,
+        DinnerS
     }
 
     private void Awake()
@@ -64,6 +75,10 @@ public class GameEventsManager : MonoBehaviour
         currVcam = vcam;
     }
 
+    public UnityEvent GetMouseClickEvent()
+    {
+        return mouseClickEvent;
+    }
 
 
 }

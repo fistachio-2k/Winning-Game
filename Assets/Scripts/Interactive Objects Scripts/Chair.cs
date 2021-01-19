@@ -24,6 +24,7 @@ public class Chair : MonoBehaviour, IInteractable
 
     IEnumerator StandUp()
     {
+        //TODO: add sound!
         GetComponent<MeshCollider>().enabled = false;
         Vector3 basePos = transform.position;
         transform.DOMove(positionToMove.position, duration);
@@ -32,8 +33,14 @@ public class Chair : MonoBehaviour, IInteractable
         transform.DOMove(basePos, duration);
     }
 
+    public void StandUpWrapper()
+    {
+        GameEventsManager._instance.GetMouseClickEvent().RemoveListener(StandUpWrapper);
+        StartCoroutine(StandUp());
+    }
     public void Interact()
     {
         StartCoroutine(SitDown());
+        GameEventsManager._instance.GetMouseClickEvent().AddListener(StandUpWrapper);
     }
 }
