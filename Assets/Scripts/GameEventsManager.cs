@@ -89,6 +89,7 @@ public class GameEventsManager : MonoBehaviour
     public void MenuToGame()
     {
         audioManager.Play("MainMusic");
+        audioManager.Play("click");
         SwitchToVcam(GameEventsManager.Vcam.Player);
         Cursor.visible = false;
         menuLight.enabled = false;
