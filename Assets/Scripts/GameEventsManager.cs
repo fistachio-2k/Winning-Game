@@ -14,7 +14,7 @@ public class GameEventsManager : MonoBehaviour
 
     public static GameEventsManager _instance;
     public Vcam currVcam;
-    private UnityEvent mouseClickEvent;
+    private UnityEvent _mouseClickEvent;
     private int _hazertHash;
     private Camera _camera;
     private HashSet<int> _collectedItems;
@@ -47,6 +47,7 @@ public class GameEventsManager : MonoBehaviour
 
         _camera = Camera.main;
         currVcam = Vcam.Player;
+        _mouseClickEvent = new UnityEvent();
         _collectedItems = new HashSet<int>();
         _hazertHash = hazeret.GetHashCode();
 
@@ -77,7 +78,7 @@ public class GameEventsManager : MonoBehaviour
 
     public UnityEvent GetMouseClickEvent()
     {
-        return mouseClickEvent;
+        return _mouseClickEvent;
     }
 
 
