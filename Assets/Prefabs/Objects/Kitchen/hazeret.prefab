@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7452204823744681353}
   - component: {fileID: 4652072747681308995}
   - component: {fileID: 4432381182199401001}
+  - component: {fileID: 7694034552371690743}
   m_Layer: 0
   m_Name: hazeret
   m_TagString: Untagged
@@ -96,3 +97,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _duration: 2
   _distanceFromCamera: -1
+--- !u!64 &7694034552371690743
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6597641461640872086}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5775710771270634653, guid: e1205908e96bc3842afc46b19a187ec5, type: 3}

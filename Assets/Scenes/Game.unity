@@ -302,7 +302,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1315382216238440386, guid: 893e9140a080a034ba1aea4e9d54cae3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.6694002
+      value: 3.16
       objectReference: {fileID: 0}
     - target: {fileID: 1315382216238440386, guid: 893e9140a080a034ba1aea4e9d54cae3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -335,6 +335,10 @@ PrefabInstance:
     - target: {fileID: 1315382216238440386, guid: 893e9140a080a034ba1aea4e9d54cae3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1315382216238440389, guid: 893e9140a080a034ba1aea4e9d54cae3, type: 3}
+      propertyPath: field of view
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1315382216238440391, guid: 893e9140a080a034ba1aea4e9d54cae3, type: 3}
       propertyPath: m_Name
@@ -655,7 +659,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4489588590841253520, guid: 6a151b6b5547e1f429768ff7f09d002c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.773
+      value: 0.49
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 355297797266567357, guid: 6a151b6b5547e1f429768ff7f09d002c, type: 3}
@@ -928,7 +932,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2952549562186820043, guid: 1010a39dcc693634887ae5756a93b796, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.6694002
+      value: 3.16
       objectReference: {fileID: 0}
     - target: {fileID: 2952549562186820043, guid: 1010a39dcc693634887ae5756a93b796, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1663,25 +1667,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.698424, y: 0.02, z: 15.063796}
   m_Center: {x: -0.00000047683716, y: 0, z: 0.00000047683716}
---- !u!1 &1642242042 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6291646001447413611, guid: c01bf047776965c4faa086cb01ed9930, type: 3}
-  m_PrefabInstance: {fileID: 537674832}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &1642242043
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1642242042}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &1743759174 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2298961868422277496, guid: 50da661ee4615484f9f51865d1832590, type: 3}
@@ -3757,6 +3742,10 @@ PrefabInstance:
       propertyPath: revealCorridor.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1953805393}
+    - target: {fileID: 3500626139473217051, guid: 38453da68fdecf144b2b3b0f9d98cfdf, type: 3}
+      propertyPath: revealCorridor.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MovePiano
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38453da68fdecf144b2b3b0f9d98cfdf, type: 3}
 --- !u!1 &3517365890129892608 stripped

@@ -2,7 +2,8 @@
 using System.Collections;
 using DG.Tweening;
 
-public class Collect : MonoBehaviour
+[RequireComponent(typeof(MeshCollider))]
+public class Collect : MonoBehaviour, IInteractable
 {
     [SerializeField] private float _duration = 3f;
     [SerializeField] private float _distanceFromCamera = -1f;
@@ -19,17 +20,6 @@ public class Collect : MonoBehaviour
         _s = DOTween.Sequence();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (InputManager.Instance.GetTestButton2() && !_collected)
-        {
-            _collected = true;
-            GameEventsManager._instance.AddCollectedItem(gameObject.GetHashCode());
-            StartCoroutine(CollectMe());
-        }
-    }
-
     IEnumerator CollectMe()
     {
         //TODO: add sound!
@@ -42,5 +32,15 @@ public class Collect : MonoBehaviour
         }
         _renderer.enabled = false;
         Destroy(gameObject, _duration);
+    }
+
+    public void Interact()
+    {
+        if (!_collected)
+        {
+            _collected = true;
+            GameEventsManager._instance.AddCollectedItem(gameObject.GetHashCode());
+            StartCoroutine(CollectMe());
+        }
     }
 }
