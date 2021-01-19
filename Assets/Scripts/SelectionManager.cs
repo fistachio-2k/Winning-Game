@@ -9,36 +9,29 @@ public class SelectionManager : MonoBehaviour
 
     private ISelectionResponse _selectionResponse;
     private Transform _selection;
-    private IRayProvider _rayProvider;
 
     private void Awake()
     {
         _selectionResponse = GetComponent<ISelectionResponse>();
-        _rayProvider = GetComponent<IRayProvider>();
     }
 
     void Update()
     {
         if (_selection != null)
         {
-            _selectionResponse.OnDeselect(_selection);
+            //_selectionResponse.OnDeselect(_selection);
         }
 
-        var ray = _rayProvider.CreateRay();
+        var ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, Camera.main.nearClipPlane * 20));
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 10f))
         {
             var selection = hit.transform;
-            Debug.Log(selection.name);
-            if (selection.CompareTag(selectableTag))
-            {
-                _selection = selection;
-            }
             IInteractable interactable = selection.GetComponent<IInteractable>();
             if (interactable != null)
             {
                 _selection = selection;
-                if (InputManager.Instance.GetMouseClick())
+                if (InputManager.Instance.GetMouseClick() && hit.distance <= 5f)
                 {
                     interactable.Interact();
                 }
@@ -47,7 +40,7 @@ public class SelectionManager : MonoBehaviour
 
         if(_selection != null)
         {
-            _selectionResponse.OnSelect(_selection);
+            //_selectionResponse.OnSelect(_selection);
         }            
     }
 

@@ -7,19 +7,22 @@ public class ToggleOutline : MonoBehaviour
     public CameraCenter cameraCenter;
     void Start()
     {
-        
+        cameraCenter = cameraCenter.GetComponent<CameraCenter>();
     }
 
 
     void Update()
     {
-        if(cameraCenter.GetComponent<CameraCenter>().isInPlayersView(gameObject))
+        if (cameraCenter != null)
         {
-            transform.GetComponent<cakeslice.Outline>().EnableOutline();
-        }
-        else
-        {
-            transform.GetComponent<cakeslice.Outline>().DisableOutline();
+            if (cameraCenter.isInPlayersView(gameObject))
+            {
+                transform.GetComponent<cakeslice.Outline>().EnableOutline();
+            }
+            else
+            {
+                transform.GetComponent<cakeslice.Outline>().DisableOutline();
+            }
         }
     }
 }
