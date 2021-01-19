@@ -11,7 +11,7 @@ public class GameEventsManager : MonoBehaviour
     [SerializeField] private float maxDistanceForCorridorTrigger = 7f;
     [SerializeField] private CinemachineVirtualCamera[] vcams;
     [SerializeField] private GameObject[] HouseModels;
-
+    [SerializeField] private Light menuLight;
     public static GameEventsManager _instance;
     public Vcam currVcam;
     private UnityEvent _mouseClickEvent;
@@ -23,7 +23,8 @@ public class GameEventsManager : MonoBehaviour
     public enum Vcam
     {
         Player,
-        Sitting
+        Sitting,
+        Menu,
     }
 
     public enum Scene
@@ -46,7 +47,7 @@ public class GameEventsManager : MonoBehaviour
         }
 
         _camera = Camera.main;
-        currVcam = Vcam.Player;
+        currVcam = Vcam.Menu;
         _mouseClickEvent = new UnityEvent();
         _collectedItems = new HashSet<int>();
         _hazertHash = hazeret.GetHashCode();
@@ -81,5 +82,17 @@ public class GameEventsManager : MonoBehaviour
         return _mouseClickEvent;
     }
 
+    public void MenuToGame()
+    {
+        SwitchToVcam(GameEventsManager.Vcam.Player);
+        Cursor.visible = false;
+        menuLight.enabled = false;
+    }
 
+    public void GameToMenu()
+    {
+        SwitchToVcam(GameEventsManager.Vcam.Menu);
+        Cursor.visible = true;
+        menuLight.enabled = true;
+    }
 }
