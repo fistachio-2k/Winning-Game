@@ -13,6 +13,7 @@ public class GameEventsManager : MonoBehaviour
     [SerializeField] private GameObject[] HouseModels;
     [SerializeField] private Light menuLight;
     [SerializeField] private MeshRenderer cameraCenter;
+    [SerializeField] private AudioManager audioManager;
 
     public static GameEventsManager _instance;
     public Vcam currVcam;
@@ -87,6 +88,7 @@ public class GameEventsManager : MonoBehaviour
 
     public void MenuToGame()
     {
+        audioManager.Play("MainMusic");
         SwitchToVcam(GameEventsManager.Vcam.Player);
         Cursor.visible = false;
         menuLight.enabled = false;
@@ -95,6 +97,8 @@ public class GameEventsManager : MonoBehaviour
 
     public void GameToMenu()
     {
+        audioManager.Pause("MainMusic1");
+        audioManager.Pause("MainMusic1");
         SwitchToVcam(GameEventsManager.Vcam.Menu);
         Cursor.visible = true;
         menuLight.enabled = true;

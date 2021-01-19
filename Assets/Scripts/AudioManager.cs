@@ -20,7 +20,7 @@ public class AudioManager : MonoBehaviour
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
         }
-        Play("MainMusic");
+        //Play("MainMusic");
     }
 
 
@@ -47,6 +47,17 @@ public class AudioManager : MonoBehaviour
         s.source.Stop();
     }
 
+    public void Pause(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Sound: " + name + " not found!");
+            return;
+        }
+        s.source.Pause();
+    }
+
     public void ToggleMainMusic()
     {
         Sound s1 = Array.Find(sounds, sound => sound.name == "MainMusic");
@@ -58,12 +69,12 @@ public class AudioManager : MonoBehaviour
         }
         if (s1.source.isPlaying)
         {
-            Stop("MainMusic");
+            Pause("MainMusic");
             Play("MainMusic1");
         }
         else if(s2.source.isPlaying)
         {
-            Stop("MainMusic1");
+            Pause("MainMusic1");
             Play("MainMusic");
         }
     }
