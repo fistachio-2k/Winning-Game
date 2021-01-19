@@ -183,4 +183,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _revealInterval: 3
-  _triggerDistance: 2
+  _triggerDistance: 5
