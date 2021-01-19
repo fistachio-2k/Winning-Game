@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class SelectionManager : MonoBehaviour
 {
-    //private string selectableTag = "Selectable";
+    private string selectableTag = "Selectable";
 
     private ISelectionResponse _selectionResponse;
     private Transform _selection;

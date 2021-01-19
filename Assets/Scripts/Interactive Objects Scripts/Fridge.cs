@@ -23,8 +23,6 @@ public class Fridge : MonoBehaviour, IInteractable
         //TODO: add sound!
         if (_isOpen)
         {
-            StartCoroutine(FindObjectOfType<SubtitleManager>().ShowMe(2));
-            FindObjectOfType<AudioManager>().Play("Open");
             _sB.Append(transform.DOLocalRotate(new Vector3(0f, 90f, 0f), _duration));
             _sB.Join(transform.DOLocalMoveZ(1.7f, _duration));
             _sB.Play();
@@ -32,8 +30,6 @@ public class Fridge : MonoBehaviour, IInteractable
         }
         else
         {
-            StartCoroutine(FindObjectOfType<SubtitleManager>().ShowMe(0));
-            FindObjectOfType<AudioManager>().Play("Open");
             _sF.Append(transform.DOLocalRotate(new Vector3(3f, 0f, 0f), _duration));
             _sF.Join(transform.DOLocalMoveZ(1.64f, _duration));
             _sF.Play();

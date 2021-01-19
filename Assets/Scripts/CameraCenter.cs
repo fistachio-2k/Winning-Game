@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CameraCenter : MonoBehaviour
 {
-    public TextMesh _cameraCenter;
+    private TextMesh _cameraCenter;
     float radius = 3;
 
     private void Awake()
