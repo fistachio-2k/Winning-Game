@@ -6,11 +6,8 @@ TagManager:
   tags:
   - CameraCenter
   - HouseObj
-<<<<<<< Updated upstream
   - fridge
   - Selectable
-=======
->>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
