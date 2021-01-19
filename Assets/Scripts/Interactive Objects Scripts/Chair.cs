@@ -40,7 +40,7 @@ public class Chair : MonoBehaviour, IInteractable
     }
     public void Interact()
     {
-        StartCoroutine(SitDown());
         GameEventsManager._instance.GetMouseClickEvent().AddListener(StandUpWrapper);
+        StartCoroutine(SitDown());
     }
 }
