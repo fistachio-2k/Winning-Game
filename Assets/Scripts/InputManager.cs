@@ -25,7 +25,7 @@ public class InputManager : MonoBehaviour
             _instance = this;
         }
         playerControls = new PlayerControls();
-        Cursor.visible = false;
+        
     }
 
     private void OnEnable()
@@ -48,14 +48,9 @@ public class InputManager : MonoBehaviour
         return playerControls.Player.Look.ReadValue<Vector2>();
     }
 
-    public bool GetTestButton1()
+    public bool GetEscButton()
     {
-        return playerControls.Player.Testing1.triggered;
-    }
-
-    public bool GetTestButton2()
-    {
-        return playerControls.Player.Testing2.triggered;
+        return playerControls.Player.Esc.triggered;
     }
 
     public bool GetMouseClick()
