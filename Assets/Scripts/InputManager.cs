@@ -62,5 +62,4 @@ public class InputManager : MonoBehaviour
     {
         return playerControls.Player.Interact.triggered;
     }
-
 }
