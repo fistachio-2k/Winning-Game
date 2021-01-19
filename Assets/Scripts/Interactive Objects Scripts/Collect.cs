@@ -21,7 +21,7 @@ public class Collect : MonoBehaviour, IInteractable
 
     IEnumerator CollectMe()
     {
-        //TODO: add sound!
+        FindObjectOfType<AudioManager>().Play("Collect");
         gameObject.GetComponent<MeshCollider>().enabled = false;
         _s.Append(transform.DOMove(_camera.transform.position + _camera.transform.forward * _distanceFromCamera, _duration));
         _s.Join(transform.DORotate(Vector3.up * 360f, _duration, RotateMode.WorldAxisAdd).SetEase(Ease.Linear).SetLoops(1));
