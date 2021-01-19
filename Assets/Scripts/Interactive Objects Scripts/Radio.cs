@@ -19,17 +19,8 @@ public class Radio : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        Sound[] sounds = FindObjectOfType<AudioManager>().sounds;
-        Sound s = Array.Find(sounds, sound => sound.name == "MainMusic");
-        if (s == null)
-        {
-            Debug.LogWarning("Sound: " + "MainMusic" + " not found!");
-            return;
-        }
-        s.source.volume -= 0.05f;
-        //if (s.source.volume = 0f)
-        //{
-        //    s.source.volume = 0.2;
-        //}
+        AudioManager audioManager = FindObjectOfType<AudioManager>();
+        audioManager.Play("Radio");
+        audioManager.ToggleMainMusic();
     }
 }
