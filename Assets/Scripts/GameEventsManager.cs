@@ -12,6 +12,8 @@ public class GameEventsManager : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera[] vcams;
     [SerializeField] private GameObject[] HouseModels;
     [SerializeField] private Light menuLight;
+    [SerializeField] private MeshRenderer cameraCenter;
+
     public static GameEventsManager _instance;
     public Vcam currVcam;
     private UnityEvent _mouseClickEvent;
@@ -51,6 +53,7 @@ public class GameEventsManager : MonoBehaviour
         _mouseClickEvent = new UnityEvent();
         _collectedItems = new HashSet<int>();
         _hazertHash = hazeret.GetHashCode();
+        cameraCenter.enabled = false;
 
     }
 
@@ -87,6 +90,7 @@ public class GameEventsManager : MonoBehaviour
         SwitchToVcam(GameEventsManager.Vcam.Player);
         Cursor.visible = false;
         menuLight.enabled = false;
+        cameraCenter.enabled = true;
     }
 
     public void GameToMenu()
@@ -94,5 +98,6 @@ public class GameEventsManager : MonoBehaviour
         SwitchToVcam(GameEventsManager.Vcam.Menu);
         Cursor.visible = true;
         menuLight.enabled = true;
+        cameraCenter.enabled = false;
     }
 }
