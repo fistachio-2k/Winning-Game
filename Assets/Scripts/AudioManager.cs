@@ -46,4 +46,20 @@ public class AudioManager : MonoBehaviour
         }
         s.source.Stop();
     }
+
+    public void ToggleMainMusic()
+    {
+        Sound s1 = Array.Find(sounds, sound => sound.name == "MainMusic");
+        Sound s2 = Array.Find(sounds, sound => sound.name == "MainMusic1");
+        if(s1.source.isPlaying)
+        {
+            Stop("MainMusic");
+            Play("MainMusic1");
+        }
+        else
+        {
+            Stop("MainMusic1");
+            Play("MainMusic");
+        }
+    }
 }

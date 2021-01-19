@@ -11,6 +11,7 @@ public class Collect : MonoBehaviour, IInteractable
     private Sequence _s;
     private bool _collected = false;
     private Renderer _renderer;
+    // Start is called before the first frame update
     
     void Start()
     {
@@ -22,7 +23,8 @@ public class Collect : MonoBehaviour, IInteractable
     IEnumerator CollectMe()
     {
         //TODO: add sound!
-        gameObject.GetComponent<MeshCollider>().enabled = false;
+        StartCoroutine(FindObjectOfType<SubtitleManager>().ShowMe(1));
+        FindObjectOfType<AudioManager>().Play("Collect");
         _s.Append(transform.DOMove(_camera.transform.position + _camera.transform.forward * _distanceFromCamera, _duration));
         _s.Join(transform.DORotate(Vector3.up * 360f, _duration, RotateMode.WorldAxisAdd).SetEase(Ease.Linear).SetLoops(1));
         _s.Play();
