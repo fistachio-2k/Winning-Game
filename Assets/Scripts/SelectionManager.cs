@@ -9,6 +9,7 @@ public class SelectionManager : MonoBehaviour
 
     private ISelectionResponse _selectionResponse;
     private Transform _selection;
+    private IRayProvider _rayProvider;
 
     private void Awake()
     {
@@ -23,12 +24,16 @@ public class SelectionManager : MonoBehaviour
             _selectionResponse.OnDeselect(_selection);
         }
 
-        var ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, Camera.main.nearClipPlane * 20));
+        var ray = _rayProvider.CreateRay();
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 10f))
         {
             var selection = hit.transform;
             Debug.Log(selection.name);
+            if (selection.CompareTag(selectableTag))
+            {
+                _selection = selection;
+            }
             IInteractable interactable = selection.GetComponent<IInteractable>();
             if (interactable != null)
             {
