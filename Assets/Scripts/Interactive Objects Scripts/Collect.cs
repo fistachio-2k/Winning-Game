@@ -23,6 +23,8 @@ public class Collect : MonoBehaviour, IInteractable
     IEnumerator CollectMe()
     {
         //TODO: add sound!
+        StartCoroutine(FindObjectOfType<SubtitleManager>().ShowMe(1));
+        FindObjectOfType<AudioManager>().Play("Collect");
         _s.Append(transform.DOMove(_camera.transform.position + _camera.transform.forward * _distanceFromCamera, _duration));
         _s.Join(transform.DORotate(Vector3.up * 360f, _duration, RotateMode.WorldAxisAdd).SetEase(Ease.Linear).SetLoops(1));
         _s.Play();

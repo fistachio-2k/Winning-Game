@@ -7,7 +7,8 @@ public class ToggleOutline : MonoBehaviour
     public CameraCenter cameraCenter;
     void Start()
     {
-        cameraCenter = cameraCenter.GetComponent<CameraCenter>();
+        //cameraCenter = cameraCenter.GetComponent<CameraCenter>();
+        cameraCenter = FindObjectOfType<CameraCenter>().GetComponent<CameraCenter>();
     }
 
 
