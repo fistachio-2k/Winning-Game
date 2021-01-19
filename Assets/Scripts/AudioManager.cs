@@ -51,7 +51,12 @@ public class AudioManager : MonoBehaviour
     {
         Sound s1 = Array.Find(sounds, sound => sound.name == "MainMusic");
         Sound s2 = Array.Find(sounds, sound => sound.name == "MainMusic1");
-        if(s1.source.isPlaying)
+        if (s1 == null || s2 == null )
+        {
+            Debug.LogWarning("Sound: " + "MainMusic" + " not found!");
+            return;
+        }
+        if (s1.source.isPlaying)
         {
             Stop("MainMusic");
             Play("MainMusic1");
