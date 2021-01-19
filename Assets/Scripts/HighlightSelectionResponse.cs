@@ -18,21 +18,18 @@ internal class HighlightSelectionResponse : MonoBehaviour, ISelectionResponse
         var selectionRenderer = selection.GetComponent<Renderer>();
         if (selectionRenderer != null)
         {
-            if (InputManager.Instance.GetMouseClick())
-            {
-                selection.GetComponent<cakeslice.Outline>().EnableOutline();
-            }
-            //selectionRenderer.material = highlightMaterial;
+            selectionRenderer.material = highlightMaterial;
         }
-
+        cakeslice.Outline outline = selection.GetComponent<cakeslice.Outline>();
+        outline.EnableOutline();
     }
 
     public void OnDeselect(Transform selection)
-    {       
+    {
         var selectionRenderer = selection.GetComponent<Renderer>();
         if (selectionRenderer != null)
         {
-            //selectionRenderer.material = defaultMaterial;
+            selectionRenderer.material = defaultMaterial;
         }
     }
 }
