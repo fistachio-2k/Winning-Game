@@ -12,7 +12,7 @@ public class GameEventsManager : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera[] vcams;
     [SerializeField] private GameObject[] HouseModels;
     [SerializeField] private Light menuLight;
-    [SerializeField] private MeshRenderer cameraCenter;
+    [SerializeField] private Canvas cameraCenter;
     [SerializeField] private AudioManager audioManager;
 
     public static GameEventsManager _instance;
