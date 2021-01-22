@@ -25,6 +25,7 @@ public class GameEventsManager : MonoBehaviour
     private Camera _camera;
     private HashSet<int> _collectedItems;
     private bool corridorRevealed = false;
+    private bool inSettings = false;
 
     public enum Vcam
     {
@@ -92,6 +93,10 @@ public class GameEventsManager : MonoBehaviour
 
     public void MenuToGame()
     {
+        if (inSettings)
+        {
+            return;
+        }
         if(!Array.Find(audioManager.sounds, sound => sound.name == "MainMusic").source.isPlaying)
         {
             audioManager.Play("MainMusic");
@@ -105,8 +110,6 @@ public class GameEventsManager : MonoBehaviour
 
     public void GameToMenu()
     {
-        //audioManager.Pause("MainMusic1");
-        //audioManager.Pause("MainMusic1");
         SwitchToVcam(GameEventsManager.Vcam.Menu);
         Cursor.visible = true;
         menuLight.enabled = true;
@@ -116,8 +119,8 @@ public class GameEventsManager : MonoBehaviour
     public void MenuToSettings()
     {
         audioManager.Play("click");
-        Cursor.visible = false;
         volumeSliderCanvas.enabled = !volumeSliderCanvas.enabled;
+        inSettings = !inSettings;
     }
 
     public void QuitGame()
