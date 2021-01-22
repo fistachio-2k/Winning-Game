@@ -174,7 +174,7 @@ GameObject:
   - component: {fileID: 1059934356538245998}
   - component: {fileID: 3689540880333952720}
   m_Layer: 0
-  m_Name: fridge_door_1
+  m_Name: fridge_handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -187,11 +187,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1830872908388096122}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5136692, y: 0.1816442, z: 0.10963193}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.50830597, y: 0.3632884, z: 0.07231055}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 5142329559182984254}
+  m_Father: {fileID: 163158898269944946}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1059934356538245998
@@ -431,10 +431,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 5541453346082795090}
-  - {fileID: 2101044399511665511}
-  - {fileID: 163158898269944946}
+  m_Children: []
   m_Father: {fileID: 5089617491527684348}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -634,7 +631,7 @@ Transform:
   - {fileID: 1000044786583511086}
   - {fileID: 5578117070934330404}
   m_Father: {fileID: 4455496703488840783}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4894566135956796069
 GameObject:
@@ -746,7 +743,7 @@ Transform:
   m_Children:
   - {fileID: 5142329559182984254}
   m_Father: {fileID: 4455496703488840783}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5899192428656873964
 GameObject:
@@ -778,7 +775,7 @@ Transform:
   - {fileID: 3476221571388995082}
   - {fileID: 8616970620269319106}
   m_Father: {fileID: 4455496703488840783}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6291646001447413611
 GameObject:
@@ -789,7 +786,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4455496703488840783}
-  - component: {fileID: 6291646001447413608}
   m_Layer: 0
   m_Name: fridge
   m_TagString: Untagged
@@ -808,6 +804,7 @@ Transform:
   m_LocalPosition: {x: 0.29653776, y: 0.018467367, z: -1.4131805}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 163158898269944946}
   - {fileID: 5089617491527684348}
   - {fileID: 8930610679592389599}
   - {fileID: 7391454411572114212}
@@ -816,21 +813,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6291646001447413608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6291646001447413611}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7312fce1a482b34c977a253c274cf7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _fridgeDoor: {fileID: 5089617491527684348}
-  _openAngle: 80
-  _duration: 3
 --- !u!1 &7113070823605527606
 GameObject:
   m_ObjectHideFlags: 0
@@ -923,8 +905,11 @@ GameObject:
   - component: {fileID: 163158898269944946}
   - component: {fileID: 8846164738265792146}
   - component: {fileID: 2882876181491130814}
+  - component: {fileID: 7785765221028128569}
+  - component: {fileID: 5581686919870436467}
+  - component: {fileID: 9216117773886430380}
   m_Layer: 0
-  m_Name: fridge_door_2
+  m_Name: fridge_door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -937,12 +922,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7855395612916673639}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.005363317, y: -0.1816442, z: 0.037321527}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -1.7966784, y: 0.2543558, z: 1.7096368}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 5142329559182984254}
-  m_RootOrder: 2
+  m_Children:
+  - {fileID: 5541453346082795090}
+  - {fileID: 2101044399511665511}
+  m_Father: {fileID: 4455496703488840783}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8846164738265792146
 MeshFilter:
@@ -993,6 +980,49 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7785765221028128569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7855395612916673639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbf3575480402db40813e763382412fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: 0
+  eraseRenderer: 0
+--- !u!64 &5581686919870436467
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7855395612916673639}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2739117757297609042, guid: 6bbcfb251f2115e4ca27c9cfcd374519, type: 3}
+--- !u!114 &9216117773886430380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7855395612916673639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7312fce1a482b34c977a253c274cf7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fridgeDoor: {fileID: 163158898269944946}
+  _openAngle: 80
+  _duration: 3
 --- !u!1 &8600833381693217356
 GameObject:
   m_ObjectHideFlags: 0
@@ -1005,7 +1035,7 @@ GameObject:
   - component: {fileID: 5128214349879739302}
   - component: {fileID: 7034940370865757660}
   m_Layer: 0
-  m_Name: fridge_2
+  m_Name: fridge_logo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1019,10 +1049,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8600833381693217356}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.48225027, y: 0.66493225, z: 0.10203749}
+  m_LocalPosition: {x: 0.4768872, y: 0.84657633, z: 0.06471597}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 5142329559182984254}
+  m_Father: {fileID: 163158898269944946}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5128214349879739302
@@ -1145,7 +1175,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5819872656199916076, guid: 4d2eabddaeab9284b9918f1f2cb29727, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5819872656199916076, guid: 4d2eabddaeab9284b9918f1f2cb29727, type: 3}
       propertyPath: m_LocalPosition.x

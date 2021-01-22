@@ -8,6 +8,10 @@ public class Corridor : MonoBehaviour
     private GameObject[] toDisapear;
     [SerializeField]
     private GameObject[] toBeApear;
+    [SerializeField]
+    private GameObject backWall;
+    [SerializeField]
+    private Light corridorLight;
 
     public void RevealCoridor()
     {
@@ -17,7 +21,6 @@ public class Corridor : MonoBehaviour
     IEnumerator CorridorCoRoutine()
     {
         yield return new WaitForSeconds(1f);
-        Debug.Log("Reavel the MAGIC CORRIDOR !");
         foreach (GameObject obj in toDisapear)
         {
             obj.SetActive(false);
@@ -27,6 +30,9 @@ public class Corridor : MonoBehaviour
         {
             obj.SetActive(true);
         }
-        transform.DOScaleZ(2f, 30f);
+        transform.DOScaleZ(1f, 10f);
+        yield return new WaitForSeconds(10f);
+        corridorLight.enabled = true;
+        backWall.SetActive(false);
     }
 }

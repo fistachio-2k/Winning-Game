@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
 using DG.Tweening;
 
-public class Fridge : MonoBehaviour
+[RequireComponent(typeof(MeshCollider))]
+public class Fridge : MonoBehaviour, IInteractable
 {
-    [SerializeField] private Transform _fridgeDoor;
-    [SerializeField] private float _openAngle = 80f;
     [SerializeField] private float _duration = 3f;
     private Sequence _sF;
     private Sequence _sB;
@@ -24,25 +23,25 @@ public class Fridge : MonoBehaviour
         //TODO: add sound!
         if (_isOpen)
         {
-            _sB.Append(_fridgeDoor.DOLocalRotate(new Vector3(0f, 0f, 0f), _duration));
-            _sB.Join(_fridgeDoor.DOLocalMoveZ(1.69f, _duration));
+            FindObjectOfType<AudioManager>().Play("Open");
+            _sB.Append(transform.DOLocalRotate(new Vector3(0f, 90f, 0f), _duration));
+            _sB.Join(transform.DOLocalMoveZ(1.7f, _duration));
             _sB.Play();
             _isOpen = false;
         }
         else
         {
-            _sF.Append(_fridgeDoor.DOLocalRotate(new Vector3(0f, -_openAngle, 0f), _duration));
-            _sF.Join(_fridgeDoor.DOLocalMoveZ(1.6f, _duration));
+            FindObjectOfType<AudioManager>().Play("Open");
+            _sF.Append(transform.DOLocalRotate(new Vector3(3f, 0f, 0f), _duration));
+            _sF.Join(transform.DOLocalMoveZ(1.64f, _duration));
             _sF.Play();
             _isOpen = true;
         }
     }
 
-    private void Update()
+
+    public void Interact()
     {
-        if (InputManager.Instance.GetTestButton1())
-        {
-            OpenCloseFridge();
-        }
+        OpenCloseFridge();
     }
 }

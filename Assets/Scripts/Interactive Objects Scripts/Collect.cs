@@ -2,7 +2,8 @@
 using System.Collections;
 using DG.Tweening;
 
-public class Collect : MonoBehaviour
+[RequireComponent(typeof(MeshCollider))]
+public class Collect : MonoBehaviour, IInteractable
 {
     [SerializeField] private float _duration = 3f;
     [SerializeField] private float _distanceFromCamera = -1f;
@@ -10,7 +11,6 @@ public class Collect : MonoBehaviour
     private Sequence _s;
     private bool _collected = false;
     private Renderer _renderer;
-    // Start is called before the first frame update
     
     void Start()
     {
@@ -19,20 +19,10 @@ public class Collect : MonoBehaviour
         _s = DOTween.Sequence();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (InputManager.Instance.GetTestButton2() && !_collected)
-        {
-            _collected = true;
-            GameEventsManager._instance.AddCollectedItem(gameObject.GetHashCode());
-            StartCoroutine(CollectMe());
-        }
-    }
-
     IEnumerator CollectMe()
     {
-        //TODO: add sound!
+        FindObjectOfType<AudioManager>().Play("Collect");
+        gameObject.GetComponent<MeshCollider>().enabled = false;
         _s.Append(transform.DOMove(_camera.transform.position + _camera.transform.forward * _distanceFromCamera, _duration));
         _s.Join(transform.DORotate(Vector3.up * 360f, _duration, RotateMode.WorldAxisAdd).SetEase(Ease.Linear).SetLoops(1));
         _s.Play();
@@ -42,5 +32,15 @@ public class Collect : MonoBehaviour
         }
         _renderer.enabled = false;
         Destroy(gameObject, _duration);
+    }
+
+    public void Interact()
+    {
+        if (!_collected)
+        {
+            _collected = true;
+            GameEventsManager._instance.AddCollectedItem(gameObject.GetHashCode());
+            StartCoroutine(CollectMe());
+        }
     }
 }

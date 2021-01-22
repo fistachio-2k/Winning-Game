@@ -23,19 +23,34 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        groundedPlayer = controller.isGrounded;
-        if (groundedPlayer && playerVelocity.y < 0)
+        if (inputManager.GetEscButton())
         {
-            playerVelocity.y = 0f;
+            GameEventsManager._instance.GameToMenu();
         }
+        else if (GameEventsManager._instance.currVcam == GameEventsManager.Vcam.Sitting)
+        {
+            if (inputManager.GetMouseClick())
+            {
+                GameEventsManager._instance.GetMouseClickEvent().Invoke();
+            }
+        }
+        else
+        {
+            groundedPlayer = controller.isGrounded;
+            if (groundedPlayer && playerVelocity.y < 0)
+            {
+                playerVelocity.y = 0f;
+            }
 
-        Vector2 movement = inputManager.GetPlayerMovment();
-        Vector3 move = new Vector3(movement.x, 0f, movement.y);
-        move = cameraTransform.forward * move.z + cameraTransform.right * move.x;
-        move.y = 0;
-        controller.Move(move * Time.deltaTime * playerSpeed);
+            Vector2 movement = inputManager.GetPlayerMovment();
+            Vector3 move = new Vector3(movement.x, 0f, movement.y);
+            move = cameraTransform.forward * move.z + cameraTransform.right * move.x;
+            move.y = 0;
+            controller.Move(move * Time.deltaTime * playerSpeed);
 
-        playerVelocity.y += gravityValue * Time.deltaTime;
-        controller.Move(playerVelocity * Time.deltaTime);
+            playerVelocity.y += gravityValue * Time.deltaTime;
+            controller.Move(playerVelocity * Time.deltaTime);
+
+        }
     }
 }

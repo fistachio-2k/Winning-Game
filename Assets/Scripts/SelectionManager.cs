@@ -5,11 +5,7 @@ using UnityEngine.InputSystem;
 
 public class SelectionManager : MonoBehaviour
 {
-    [SerializeField] private string selectableTag = "selectable";
-
-    private IRayProvider _rayProvider;
     private ISelectionResponse _selectionResponse;
-
     private Transform _selection;
 
     private void Awake()
@@ -21,23 +17,28 @@ public class SelectionManager : MonoBehaviour
     {
         if (_selection != null)
         {
-            _selectionResponse.OnDeselect(_selection);
+            //_selectionResponse.OnDeselect(_selection);
         }
 
-        var ray = _rayProvider.CreateRay();
+        var ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, Camera.main.nearClipPlane * 20));
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 10f))
         {
             var selection = hit.transform;
-            if (selection.CompareTag(selectableTag))
+            IInteractable interactable = selection.GetComponent<IInteractable>();
+            if (interactable != null)
             {
                 _selection = selection;
+                if (InputManager.Instance.GetMouseClick() && hit.distance <= 5f)
+                {
+                    interactable.Interact();
+                }
             }
         }
 
         if(_selection != null)
         {
-            _selectionResponse.OnSelect(_selection);
+            //_selectionResponse.OnSelect(_selection);
         }            
     }
 

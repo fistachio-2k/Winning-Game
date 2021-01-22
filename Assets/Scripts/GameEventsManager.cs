@@ -2,6 +2,8 @@
 using UnityEngine;
 using UnityEngine.Events;
 using Cinemachine;
+using System;
+using UnityEngine.UI;
 
 public class GameEventsManager : MonoBehaviour
 {
@@ -10,17 +12,34 @@ public class GameEventsManager : MonoBehaviour
     [SerializeField] private Renderer pianoRenderrer;
     [SerializeField] private float maxDistanceForCorridorTrigger = 7f;
     [SerializeField] private CinemachineVirtualCamera[] vcams;
-    private Vcam _currVcam;
-    private int _hazertHash;
+    [SerializeField] private GameObject[] HouseModels;
+    [SerializeField] private Light menuLight;
+    [SerializeField] private Canvas cameraCenter;
+    [SerializeField] private AudioManager audioManager;
+    [SerializeField] private Canvas volumeSliderCanvas;
+
     public static GameEventsManager _instance;
+    public Vcam currVcam;
+    private UnityEvent _mouseClickEvent;
+    private int _hazertHash;
     private Camera _camera;
     private HashSet<int> _collectedItems;
     private bool corridorRevealed = false;
+    private bool inSettings = false;
 
     public enum Vcam
     {
         Player,
-        Sitting
+        Sitting,
+        Menu,
+    }
+
+    public enum Scene
+    {
+        Opening,
+        Breakfast,
+        Lunch,
+        DinnerS
     }
 
     private void Awake()
@@ -35,9 +54,12 @@ public class GameEventsManager : MonoBehaviour
         }
 
         _camera = Camera.main;
-        _currVcam = Vcam.Player;
+        currVcam = Vcam.Menu;
+        _mouseClickEvent = new UnityEvent();
         _collectedItems = new HashSet<int>();
         _hazertHash = hazeret.GetHashCode();
+        cameraCenter.enabled = false;
+        volumeSliderCanvas.enabled = false;
 
     }
 
@@ -60,10 +82,50 @@ public class GameEventsManager : MonoBehaviour
     public void SwitchToVcam(GameEventsManager.Vcam vcam)
     {
         vcams[(int) vcam].Priority = 1;
-        vcams[(int) _currVcam].Priority = 0;
-        _currVcam = vcam;
+        vcams[(int) currVcam].Priority = 0;
+        currVcam = vcam;
     }
 
+    public UnityEvent GetMouseClickEvent()
+    {
+        return _mouseClickEvent;
+    }
 
+    public void MenuToGame()
+    {
+        if (inSettings)
+        {
+            return;
+        }
+        if(!Array.Find(audioManager.sounds, sound => sound.name == "MainMusic").source.isPlaying)
+        {
+            audioManager.Play("MainMusic");
+        }
+        audioManager.Play("click");
+        SwitchToVcam(GameEventsManager.Vcam.Player);
+        Cursor.visible = false;
+        menuLight.enabled = false;
+        cameraCenter.enabled = true;
+    }
 
+    public void GameToMenu()
+    {
+        SwitchToVcam(GameEventsManager.Vcam.Menu);
+        Cursor.visible = true;
+        menuLight.enabled = true;
+        cameraCenter.enabled = false;
+    }
+
+    public void MenuToSettings()
+    {
+        audioManager.Play("click");
+        volumeSliderCanvas.enabled = !volumeSliderCanvas.enabled;
+        inSettings = !inSettings;
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+        Debug.Log("Quit!");
+    }
 }
