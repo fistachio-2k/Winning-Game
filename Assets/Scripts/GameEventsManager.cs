@@ -2,6 +2,8 @@
 using UnityEngine;
 using UnityEngine.Events;
 using Cinemachine;
+using System;
+using UnityEngine.UI;
 
 public class GameEventsManager : MonoBehaviour
 {
@@ -14,6 +16,7 @@ public class GameEventsManager : MonoBehaviour
     [SerializeField] private Light menuLight;
     [SerializeField] private Canvas cameraCenter;
     [SerializeField] private AudioManager audioManager;
+    [SerializeField] private Canvas volumeSliderCanvas;
 
     public static GameEventsManager _instance;
     public Vcam currVcam;
@@ -55,6 +58,7 @@ public class GameEventsManager : MonoBehaviour
         _collectedItems = new HashSet<int>();
         _hazertHash = hazeret.GetHashCode();
         cameraCenter.enabled = false;
+        volumeSliderCanvas.enabled = false;
 
     }
 
@@ -88,7 +92,10 @@ public class GameEventsManager : MonoBehaviour
 
     public void MenuToGame()
     {
-        audioManager.Play("MainMusic");
+        if(!Array.Find(audioManager.sounds, sound => sound.name == "MainMusic").source.isPlaying)
+        {
+            audioManager.Play("MainMusic");
+        }
         audioManager.Play("click");
         SwitchToVcam(GameEventsManager.Vcam.Player);
         Cursor.visible = false;
@@ -98,11 +105,24 @@ public class GameEventsManager : MonoBehaviour
 
     public void GameToMenu()
     {
-        audioManager.Pause("MainMusic1");
-        audioManager.Pause("MainMusic1");
+        //audioManager.Pause("MainMusic1");
+        //audioManager.Pause("MainMusic1");
         SwitchToVcam(GameEventsManager.Vcam.Menu);
         Cursor.visible = true;
         menuLight.enabled = true;
         cameraCenter.enabled = false;
+    }
+
+    public void MenuToSettings()
+    {
+        audioManager.Play("click");
+        Cursor.visible = false;
+        volumeSliderCanvas.enabled = !volumeSliderCanvas.enabled;
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+        Debug.Log("Quit!");
     }
 }
