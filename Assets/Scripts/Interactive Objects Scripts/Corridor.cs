@@ -30,8 +30,8 @@ public class Corridor : MonoBehaviour
         {
             obj.SetActive(true);
         }
-        transform.DOScaleZ(1f, 10f);
-        yield return new WaitForSeconds(10f);
+        transform.DOScaleZ(1f, 15f);
+        yield return new WaitForSeconds(15f);
         corridorLight.enabled = true;
         backWall.SetActive(false);
     }
