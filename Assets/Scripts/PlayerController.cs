@@ -23,18 +23,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (inputManager.GetEscButton())
-        {
-            GameEventsManager._instance.GameToMenu();
-        }
-        else if (GameEventsManager._instance.currVcam == GameEventsManager.Vcam.Sitting)
-        {
-            if (inputManager.GetMouseClick())
-            {
-                GameEventsManager._instance.GetMouseClickEvent().Invoke();
-            }
-        }
-        else
+        if (GameEventsManager._instance.currVcam == GameEventsManager.Vcam.Player)
         {
             groundedPlayer = controller.isGrounded;
             if (groundedPlayer && playerVelocity.y < 0)

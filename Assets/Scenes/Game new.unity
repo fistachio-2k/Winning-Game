@@ -1082,15 +1082,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1315382216238440386, guid: 893e9140a080a034ba1aea4e9d54cae3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.093
+      value: -1.214
       objectReference: {fileID: 0}
     - target: {fileID: 1315382216238440386, guid: 893e9140a080a034ba1aea4e9d54cae3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.676
+      value: 3.272
       objectReference: {fileID: 0}
     - target: {fileID: 1315382216238440386, guid: 893e9140a080a034ba1aea4e9d54cae3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.697
+      value: -0.695
       objectReference: {fileID: 0}
     - target: {fileID: 1315382216238440386, guid: 893e9140a080a034ba1aea4e9d54cae3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3492,46 +3492,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2952549560230374395, guid: 1010a39dcc693634887ae5756a93b796, type: 3}
-      propertyPath: m_VerticalAxis.Value
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2952549560230374395, guid: 1010a39dcc693634887ae5756a93b796, type: 3}
-      propertyPath: m_HorizontalAxis.Value
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 2952549560230374395, guid: 1010a39dcc693634887ae5756a93b796, type: 3}
-      propertyPath: m_VerticalAxis.m_MaxSpeed
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 2952549560230374395, guid: 1010a39dcc693634887ae5756a93b796, type: 3}
-      propertyPath: m_VerticalAxis.m_AccelTime
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2952549560230374395, guid: 1010a39dcc693634887ae5756a93b796, type: 3}
-      propertyPath: m_VerticalAxis.m_DecelTime
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2952549560230374395, guid: 1010a39dcc693634887ae5756a93b796, type: 3}
-      propertyPath: m_VerticalAxis.m_SpeedMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2952549560230374395, guid: 1010a39dcc693634887ae5756a93b796, type: 3}
-      propertyPath: m_HorizontalAxis.m_MaxSpeed
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 2952549560230374395, guid: 1010a39dcc693634887ae5756a93b796, type: 3}
-      propertyPath: m_HorizontalAxis.m_AccelTime
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2952549560230374395, guid: 1010a39dcc693634887ae5756a93b796, type: 3}
-      propertyPath: m_HorizontalAxis.m_DecelTime
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2952549560230374395, guid: 1010a39dcc693634887ae5756a93b796, type: 3}
-      propertyPath: m_HorizontalAxis.m_SpeedMode
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2952549562186820043, guid: 1010a39dcc693634887ae5756a93b796, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -3579,7 +3539,7 @@ PrefabInstance:
     - target: {fileID: 2952549562186820052, guid: 1010a39dcc693634887ae5756a93b796, type: 3}
       propertyPath: m_Follow
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1427195469}
     - target: {fileID: 2952549562186820053, guid: 1010a39dcc693634887ae5756a93b796, type: 3}
       propertyPath: m_Name
       value: CM PlayerCam
@@ -6050,6 +6010,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8373116603735383235, guid: 413f242cbe1675f4d8f9ba4f39f1b707, type: 3}
   m_PrefabInstance: {fileID: 1421455089}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1427195469 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4489588590841253520, guid: 6a151b6b5547e1f429768ff7f09d002c, type: 3}
+  m_PrefabInstance: {fileID: 25973412}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1433223152
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8358,15 +8323,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3685091885071281086, guid: b939ad476e866b54597c5cbcea38a307, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.093
+      value: -1.214
       objectReference: {fileID: 0}
     - target: {fileID: 3685091885071281086, guid: b939ad476e866b54597c5cbcea38a307, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.676
+      value: 3.272
       objectReference: {fileID: 0}
     - target: {fileID: 3685091885071281086, guid: b939ad476e866b54597c5cbcea38a307, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.697
+      value: -0.695
       objectReference: {fileID: 0}
     - target: {fileID: 3685091885071281086, guid: b939ad476e866b54597c5cbcea38a307, type: 3}
       propertyPath: m_LocalRotation.w
@@ -10862,22 +10827,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2926958566597897291, guid: fb22670b143449f4bb282606d07b104e, type: 3}
-      propertyPath: m_VerticalAxis.m_MaxSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2926958566597897291, guid: fb22670b143449f4bb282606d07b104e, type: 3}
-      propertyPath: m_VerticalAxis.m_SpeedMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2926958566597897291, guid: fb22670b143449f4bb282606d07b104e, type: 3}
-      propertyPath: m_HorizontalAxis.m_MaxSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2926958566597897291, guid: fb22670b143449f4bb282606d07b104e, type: 3}
-      propertyPath: m_HorizontalAxis.m_SpeedMode
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2926958566660300833, guid: fb22670b143449f4bb282606d07b104e, type: 3}
       propertyPath: m_RootOrder
       value: 8

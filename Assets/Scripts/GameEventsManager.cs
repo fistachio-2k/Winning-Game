@@ -19,6 +19,7 @@ public class GameEventsManager : MonoBehaviour
     [SerializeField] private Canvas volumeSliderCanvas;
 
     public static GameEventsManager _instance;
+    private InputManager _inputManager;
     public Vcam currVcam;
     private UnityEvent _mouseClickEvent;
     private int _hazertHash;
@@ -52,19 +53,37 @@ public class GameEventsManager : MonoBehaviour
         {
             _instance = this;
         }
+    }
 
+    private void Start()
+    {
+        _inputManager = InputManager.Instance;
         _camera = Camera.main;
-        currVcam = Vcam.Menu;
         _mouseClickEvent = new UnityEvent();
         _collectedItems = new HashSet<int>();
         _hazertHash = hazeret.GetHashCode();
+        currVcam = Vcam.Menu;
         cameraCenter.enabled = false;
         volumeSliderCanvas.enabled = false;
-
     }
 
     void Update()
     {
+        // Esc clicked
+        if (_inputManager.GetEscButton())
+        {
+            _instance.GameToMenu();
+        }
+        // Sitting scenario
+        else if (_instance.currVcam == Vcam.Sitting)
+        {
+            if (_inputManager.GetMouseClick())
+            {
+                _instance.GetMouseClickEvent().Invoke();
+            }
+        }
+        
+        // Corridor Reavel Logic
         if (!corridorRevealed && _collectedItems.Contains(_hazertHash) && pianoRenderrer.isVisible &&
             Vector3.Distance(_camera.transform.position, pianoRenderrer.transform.position) < maxDistanceForCorridorTrigger)
         {
