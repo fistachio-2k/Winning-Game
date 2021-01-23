@@ -70,9 +70,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  hazeret: {fileID: 6597641461640872086, guid: 4d2eabddaeab9284b9918f1f2cb29727, type: 3}
+  hazeret: {fileID: 0}
   pianoRenderrer: {fileID: 0}
   maxDistanceForCorridorTrigger: 8
   vcams:
-  - {fileID: 2952549562186820052, guid: 1010a39dcc693634887ae5756a93b796, type: 3}
-  - {fileID: 2926958566660300832, guid: fb22670b143449f4bb282606d07b104e, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  HouseModels:
+  - {fileID: 0}
+  - {fileID: 0}
+  menuLight: {fileID: 0}
+  cameraCenter: {fileID: 0}
+  audioManager: {fileID: 0}
+  volumeSliderCanvas: {fileID: 0}
+  currVcam: 2

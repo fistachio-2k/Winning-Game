@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using Cinemachine;
@@ -10,7 +11,6 @@ public class GameEventsManager : MonoBehaviour
     [SerializeField] private UnityEvent revealCorridor;
     [SerializeField] private GameObject hazeret;
     [SerializeField] private Renderer pianoRenderrer;
-    [SerializeField] private float maxDistanceForCorridorTrigger = 7f;
     [SerializeField] private CinemachineVirtualCamera[] vcams;
     [SerializeField] private GameObject[] HouseModels;
     [SerializeField] private Light menuLight;
@@ -28,11 +28,13 @@ public class GameEventsManager : MonoBehaviour
     private bool corridorRevealed = false;
     private bool inSettings = false;
 
+    // Vcam aligned with editor cameras order
     public enum Vcam
     {
         Player,
         Sitting,
         Menu,
+        Corridor
     }
 
     public enum Scene
@@ -65,6 +67,7 @@ public class GameEventsManager : MonoBehaviour
         currVcam = Vcam.Menu;
         cameraCenter.enabled = false;
         volumeSliderCanvas.enabled = false;
+
     }
 
     void Update()
@@ -84,11 +87,9 @@ public class GameEventsManager : MonoBehaviour
         }
         
         // Corridor Reavel Logic
-        if (!corridorRevealed && _collectedItems.Contains(_hazertHash) && pianoRenderrer.isVisible &&
-            Vector3.Distance(_camera.transform.position, pianoRenderrer.transform.position) < maxDistanceForCorridorTrigger)
+        if (!corridorRevealed && _collectedItems.Contains(_hazertHash))
         {
-            corridorRevealed = true;
-            revealCorridor.Invoke();
+            StartCoroutine(reavelCorridor1());
         }
 
     }
@@ -98,6 +99,16 @@ public class GameEventsManager : MonoBehaviour
         _collectedItems.Add(itemHashCode);
     }
 
+    IEnumerator reavelCorridor1()
+    {
+        corridorRevealed = true;
+        yield return new WaitForSeconds(1f);
+        SwitchToVcam(Vcam.Corridor);
+        yield return new WaitForSeconds(2f);
+        revealCorridor.Invoke();
+        yield return new WaitForSeconds(3f);
+        SwitchToVcam(Vcam.Player);
+    }
     public void SwitchToVcam(GameEventsManager.Vcam vcam)
     {
         vcams[(int) vcam].Priority = 1;
