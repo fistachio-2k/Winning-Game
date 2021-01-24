@@ -4,22 +4,21 @@ using UnityEngine;
 
 public class SubtitleManager : MonoBehaviour
 {
-    string[] myStrings = { "Esther dear, come help me with breakfast. Did you wash your hands?", "Sure, Mom!", "Great job, honey! Can you please bring me the gefilte fish recipe from the basement?", "Sure, Mom!", "Want to come help us, Mira?", "No, I don’t want your gross gefilte", "Thank you honey. And now we can put the onions to the frying pan and stir until it’s getting golden" };
-
+    string[] mamaStrings = { "Esther dear, come help me with breakfast. Did you wash your hands?",  "Great job, honey! Can you please bring me the gefilte fish recipe from the basement?",  "Want to come help us, Mira?" };
+    string[] estherStrings = { "Sure, Mom!", "Sure, Mom!"};
+    string[] miraStrings = { "No, I don’t want your gross gefilte"};
+    string[] myStrings;
 
     int curStringIdx = 0;
 
     bool displaying = false;
 
-    GUIStyle myStyle;
+    public GUIStyle mamaStyle;
 
-    private void Start()
+    public IEnumerator ShowMe(int stringIdx, string character)
     {
-        //StartCoroutine(ShowMe());
-    }
-
-    public IEnumerator ShowMe(int stringIdx)
-    {
+        getCharacterArrayt(character);
+        
         curStringIdx = stringIdx;
 
         displaying = true;
@@ -31,12 +30,30 @@ public class SubtitleManager : MonoBehaviour
         Debug.Log("Finished Coroutine at timestamp : " + Time.time);
     }
 
+    private void getCharacterArrayt(string character)
+    {
+        if (character == "mama")
+        {
+            myStrings = mamaStrings;
+        }
+        else if (character == "esther")
+        {
+            myStrings = estherStrings;
+        }
+        else if (character == "mira")
+        {
+            myStrings = miraStrings;
+        }
+    }
+
     void OnGUI()
     {
         if (displaying)
         {
-            GUI.Label(new Rect(20, Screen.height - 80, Screen.width - 40, 60), myStrings[curStringIdx]);
+            if (curStringIdx % 2 == 0)
+            {
+                GUI.Label(new Rect(20, Screen.height - 80, Screen.width - 40, 60), myStrings[curStringIdx], mamaStyle);
+            }
         }
-        //GUI.Button(new Rect(10, 10, 100, 25), "Pause");
     }
 }
