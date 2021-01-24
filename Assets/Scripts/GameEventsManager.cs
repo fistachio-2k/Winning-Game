@@ -75,6 +75,7 @@ public class GameEventsManager : MonoBehaviour
         // Esc clicked
         if (_inputManager.GetEscButton())
         {
+            // TODO: Fix second escape bug
             if(inSettings)
             {
                 MenuToSettings();
