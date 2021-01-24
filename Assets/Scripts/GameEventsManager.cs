@@ -76,6 +76,11 @@ public class GameEventsManager : MonoBehaviour
         if (_inputManager.GetEscButton())
         {
             _instance.GameToMenu();
+            if(inSettings)
+            {
+                MenuToSettings();
+                cameraCenter.enabled = true;
+            }
         }
         // Sitting scenario
         else if (_instance.currVcam == Vcam.Sitting)
