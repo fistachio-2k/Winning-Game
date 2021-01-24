@@ -75,12 +75,11 @@ public class GameEventsManager : MonoBehaviour
         // Esc clicked
         if (_inputManager.GetEscButton())
         {
-            _instance.GameToMenu();
             if(inSettings)
             {
                 MenuToSettings();
-                cameraCenter.enabled = true;
             }
+            _instance.GameToMenu();
         }
         // Sitting scenario
         else if (_instance.currVcam == Vcam.Sitting)
@@ -132,7 +131,7 @@ public class GameEventsManager : MonoBehaviour
         {
             return;
         }
-        if(!Array.Find(audioManager.sounds, sound => sound.name == "MainMusic").source.isPlaying)
+        if(!Array.Find(audioManager.sounds, sound => sound.name == "MainMusic").source.isPlaying || !Array.Find(audioManager.sounds, sound => sound.name == "MainMusic1").source.isPlaying)
         {
             audioManager.Play("MainMusic");
         }
