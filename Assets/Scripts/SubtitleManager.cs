@@ -6,7 +6,7 @@ public class SubtitleManager : MonoBehaviour
 {
     string[] mamaEstherDialogStrings = { "Esther dear, come help me with breakfast. Did you wash your hands?\nSure, Mama!\nGreat job, honey! Can you please bring me the gefilte fish recipe from the basement?\nSure, Mama!"};
     string[] mamaMiraDialogStrings = { "Want to come help us, Mira?\nNo, I don’t want your gross gefilte"};
-    string[] AfterRecipyDialog = { "Thank you honey. And now we can put the onions to the frying pan and stir until it’s getting golden" };
+    string[] AfterRecipyDialog = { "Thank you honey. And now we can put the onions on the frying pan and stir until are they become golden" };
     string[] myStrings;
 
     int curStringIdx = 0;
