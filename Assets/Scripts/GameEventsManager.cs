@@ -10,6 +10,7 @@ public class GameEventsManager : MonoBehaviour
 {
     [SerializeField] private UnityEvent revealCorridor;
     [SerializeField] private GameObject hazeret;
+    [SerializeField] private GameObject recipe;
     [SerializeField] private Renderer pianoRenderrer;
     [SerializeField] private CinemachineVirtualCamera[] vcams;
     [SerializeField] private GameObject[] HouseModels;
@@ -23,6 +24,7 @@ public class GameEventsManager : MonoBehaviour
     public Vcam currVcam;
     private UnityEvent _mouseClickEvent;
     private int _hazertHash;
+    private int _recipeHash;
     private Camera _camera;
     private HashSet<int> _collectedItems;
     private bool corridorRevealed = false;
@@ -64,6 +66,7 @@ public class GameEventsManager : MonoBehaviour
         _mouseClickEvent = new UnityEvent();
         _collectedItems = new HashSet<int>();
         _hazertHash = hazeret.GetHashCode();
+        _recipeHash = recipe.GetHashCode();
         currVcam = Vcam.Menu;
         cameraCenter.enabled = false;
         volumeSliderCanvas.enabled = false;
@@ -76,10 +79,6 @@ public class GameEventsManager : MonoBehaviour
         if (_inputManager.GetEscButton())
         {
             // TODO: Fix second escape bug
-            if(inSettings)
-            {
-                MenuToSettings();
-            }
             _instance.GameToMenu();
         }
         // Sitting scenario
@@ -102,6 +101,14 @@ public class GameEventsManager : MonoBehaviour
     public void AddCollectedItem(int itemHashCode)
     {
         _collectedItems.Add(itemHashCode);
+    }
+
+    public bool isRecipeCollected()
+    {
+        Debug.Log(_recipeHash);
+        Debug.Log(_collectedItems);
+        Debug.Log(_collectedItems.Contains(_recipeHash));
+        return _collectedItems.Contains(_recipeHash);
     }
 
     IEnumerator reavelCorridor1()
@@ -132,7 +139,7 @@ public class GameEventsManager : MonoBehaviour
         {
             return;
         }
-        if(!Array.Find(audioManager.sounds, sound => sound.name == "MainMusic").source.isPlaying || !Array.Find(audioManager.sounds, sound => sound.name == "MainMusic1").source.isPlaying)
+        if(!Array.Find(audioManager.sounds, sound => sound.name == "MainMusic").source.isPlaying && !Array.Find(audioManager.sounds, sound => sound.name == "MainMusic1").source.isPlaying)
         {
             audioManager.Play("MainMusic");
         }
@@ -149,6 +156,10 @@ public class GameEventsManager : MonoBehaviour
         Cursor.visible = true;
         menuLight.enabled = true;
         cameraCenter.enabled = false;
+        if (inSettings)
+        {
+            MenuToSettings();
+        }
     }
 
     public void MenuToSettings()

@@ -7,7 +7,7 @@ public class StartButton : MonoBehaviour, IPointerClickHandler
 {
     public Color startColor;
     public Color mouseOverColor;
-    bool mouseOver = false;
+    //bool mouseOver = false;
     public void OnPointerClick(PointerEventData eventData)
     {
         GameEventsManager._instance.MenuToGame();
@@ -15,13 +15,13 @@ public class StartButton : MonoBehaviour, IPointerClickHandler
 
     private void OnMouseEnter()
     {
-        mouseOver = true;
+        //mouseOver = true;
         GetComponent<Renderer>().material.SetColor("_Color", mouseOverColor);
     }
 
     private void OnMouseExit()
     {
-        mouseOver = false;
+        //mouseOver = false;
         GetComponent<Renderer>().material.SetColor("_Color", startColor);
     }
 }

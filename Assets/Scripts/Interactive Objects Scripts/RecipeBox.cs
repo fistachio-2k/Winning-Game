@@ -1,15 +1,14 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class Door : MonoBehaviour, IInteractable
+public class RecipeBox : MonoBehaviour, IInteractable
 {
     private bool _isOpen = false;
-    private bool _inOpenScene = true;
-    [SerializeField] private bool _isLocked = false;
     private Vector3 _baseRotation;
+    [SerializeField] private bool _isLocked = false;
     [SerializeField] float duration = 2f;
-    [SerializeField] private TextReveal text = null;
     private AudioManager audioManager;
 
     void Start()
@@ -21,21 +20,13 @@ public class Door : MonoBehaviour, IInteractable
     public void Interact()
     {
         StartCoroutine(OpenClose());
-        if (_inOpenScene)
-        {
-            if(text != null)
-            {
-                StartCoroutine(text.RevealText());
-            }
-        }
     }
 
     IEnumerator OpenClose()
-    {   
+    {
         if (!_isLocked)
         {
             _isOpen = !_isOpen;
-            audioManager.Play("OpenDoor");
             if (_isOpen)
             {
                 transform.DORotate(_baseRotation, duration);
