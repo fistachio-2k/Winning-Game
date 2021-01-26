@@ -213,7 +213,7 @@ public class GameEventsManager : MonoBehaviour
 
     public void PlayMamaEstherScene()
     {
-        if (isRecipeCollected())
+        if (!isRecipeCollected())
         {
             subtitleManager.startMamaEstherDialog();
             mama.GetComponent<AudioSource>().Play();
