@@ -64,3 +64,379 @@ Assets/Scenes/Mira.unity
 Assets/Scenes/Mira.unity.meta
 Assets/Scenes/Noa's Game.unity.meta
 Assets/Scenes/Noa's Game.unity
+Assets/Audio/Drag.mp3
+Assets/Audio/Drag.mp3.meta
+Assets/Audio/LockedDoor.mp3
+Assets/Audio/LockedDoor.mp3.meta
+Assets/Audio/LunchScene.meta
+Assets/Audio/LunchScene/AnsweringMachine.mp3
+Assets/Audio/LunchScene/AnsweringMachine.mp3.meta
+Assets/Audio/mainMusic2.mp3
+Assets/Audio/mainMusic2.mp3.meta
+Assets/Audio/MainSecond.mp3
+Assets/Audio/MainSecond.mp3.meta
+Assets/Audio/MamaScene.meta
+Assets/Audio/MamaScene/AfterRecipe.mp3
+Assets/Audio/MamaScene/AfterRecipe.mp3.meta
+Assets/Audio/MamaScene/Frying.mp3
+Assets/Audio/MamaScene/Frying.mp3.meta
+Assets/Audio/MamaScene/Mama3.mp3
+Assets/Audio/MamaScene/Mama3.mp3.meta
+Assets/Audio/MamaScene/MamaEstherDialog.mp3
+Assets/Audio/MamaScene/MamaEstherDialog.mp3.meta
+Assets/Audio/MamaScene/MamaMiraDialog.mp3
+Assets/Audio/MamaScene/MamaMiraDialog.mp3.meta
+Assets/Audio/MamaScene/mira.mp3
+Assets/Audio/MamaScene/mira.mp3.meta
+Assets/Audio/OpenDoor.mp3
+Assets/Audio/OpenDoor.mp3.meta
+Assets/Fonts/leicester/Leicester_text SDF.asset
+Assets/Materials/Batter.mat
+Assets/Materials/Batter.mat.meta
+Assets/Materials/Bowl.mat
+Assets/Materials/Bowl.mat.meta
+Assets/Materials/calendar 1950.mat
+Assets/Materials/calendar 1950.mat.meta
+Assets/Materials/Cards 1.mat
+Assets/Materials/Cards 1.mat.meta
+Assets/Materials/Cards.mat
+Assets/Materials/Cards.mat.meta
+Assets/Materials/Frame.mat
+Assets/Materials/Frame.mat.meta
+Assets/Materials/Fridge.mat
+Assets/Materials/Fridge.mat.meta
+Assets/Materials/Gefilte.mat
+Assets/Materials/Gefilte.mat.meta
+Assets/Materials/Gezer 1.mat
+Assets/Materials/Gezer 1.mat.meta
+Assets/Materials/Gezer.mat
+Assets/Materials/Gezer.mat.meta
+Assets/Materials/Hazeret.mat
+Assets/Materials/Hazeret.mat.meta
+Assets/Materials/Michelin 1.mat
+Assets/Materials/Michelin 1.mat.meta
+Assets/Materials/Michelin.mat
+Assets/Materials/Michelin.mat.meta
+Assets/Materials/Pan.mat
+Assets/Materials/Pan.mat.meta
+Assets/Materials/pic.mat
+Assets/Materials/pic.mat.meta
+Assets/Materials/RecipeBox.mat
+Assets/Materials/RecipeBox.mat.meta
+Assets/Models/characters/mom_apron@Standing Idle.fbx
+Assets/Models/characters/mom_apron@Standing Idle.fbx.meta
+Assets/Models/mom_apron@Standing Idle.fbx.meta
+Assets/Prefabs/CM CorridorCam .prefab
+Assets/Prefabs/CM CorridorCam .prefab.meta
+Assets/Prefabs/CM PlayerCam.prefab
+Assets/Prefabs/CM SittingCam.prefab
+Assets/Prefabs/GameEventsManager.prefab
+Assets/Prefabs/Objects/Basement/cupboard.prefab
+Assets/Prefabs/Objects/Dining Room/book.prefab
+Assets/Prefabs/Objects/Dining Room/book.prefab.meta
+Assets/Prefabs/Objects/Dining Room/CHAIR_1_2.prefab
+Assets/Prefabs/Objects/Dining Room/note.fbx
+Assets/Prefabs/Objects/Dining Room/note.fbx.meta
+Assets/Prefabs/Objects/Dining Room/phone.prefab
+Assets/Prefabs/Objects/Dining Room/phone.prefab.meta
+Assets/Prefabs/Objects/House/Corridor.prefab
+Assets/Prefabs/Objects/House/Corridor.prefab.meta
+Assets/Prefabs/Objects/House/door_base.prefab
+Assets/Prefabs/Objects/House/door_base.prefab.meta
+Assets/Prefabs/Objects/House/House_Skeleton.prefab
+Assets/Prefabs/Objects/Kitchen/fridge.prefab
+Assets/Prefabs/Objects/Kitchen/hazeret.prefab
+Assets/Prefabs/Objects/Kitchen/pot (1).prefab
+Assets/Prefabs/Objects/Kitchen/pot (1).prefab.meta
+Assets/Prefabs/Objects/Living Room/GameEventsManager.prefab
+Assets/Prefabs/Objects/Living Room/GameEventsManager.prefab.meta
+Assets/Prefabs/Objects/Living Room/girl new.prefab
+Assets/Prefabs/Objects/Living Room/girl new.prefab.meta
+Assets/Prefabs/Objects/Living Room/letter and envelope.prefab
+Assets/Prefabs/Objects/Living Room/letter and envelope.prefab.meta
+Assets/Prefabs/Objects/Living Room/note.prefab
+Assets/Prefabs/Objects/Living Room/note.prefab.meta
+Assets/Prefabs/Objects/Living Room/photo frames.prefab
+Assets/Prefabs/Objects/Living Room/photo frames.prefab.meta
+Assets/Prefabs/Objects/Living Room/piano.prefab
+Assets/Prefabs/Objects/Unsorted/calendar.prefab
+Assets/Prefabs/Objects/Unsorted/mother.prefab
+Assets/Prefabs/Objects/Unsorted/mother.prefab.meta
+Assets/Prefabs/Objects/Unsorted/pot.prefab
+Assets/Prefabs/Objects/Unsorted/pot.prefab.meta
+Assets/SandBox/book.fbx
+Assets/SandBox/book.fbx.meta
+Assets/SandBox/girl new.fbx
+Assets/SandBox/girl new.fbx.meta
+Assets/SandBox/key.fbx
+Assets/SandBox/key.fbx.meta
+Assets/SandBox/letter and envelope.fbx
+Assets/SandBox/letter and envelope.fbx.meta
+Assets/SandBox/mother.fbx
+Assets/SandBox/mother.fbx.meta
+Assets/SandBox/note.fbx
+Assets/SandBox/note.fbx.meta
+Assets/SandBox/phone.fbx
+Assets/SandBox/phone.fbx.meta
+Assets/SandBox/pot.fbx
+Assets/SandBox/pot.fbx.meta
+Assets/SandBox/Title UI.fbx
+Assets/SandBox/Title UI.fbx.meta
+Assets/Scenes/Game new.unity
+Assets/Scripts/GameEventsManager.cs
+Assets/Scripts/Interactive Objects Scripts/AnsweringMachine.cs
+Assets/Scripts/Interactive Objects Scripts/AnsweringMachine.cs.meta
+Assets/Scripts/Interactive Objects Scripts/CookBook.cs
+Assets/Scripts/Interactive Objects Scripts/CookBook.cs.meta
+Assets/Scripts/Interactive Objects Scripts/Corridor.cs
+Assets/Scripts/Interactive Objects Scripts/Door.cs
+Assets/Scripts/Interactive Objects Scripts/Door.cs.meta
+Assets/Scripts/Interactive Objects Scripts/Dresser.cs
+Assets/Scripts/Interactive Objects Scripts/Dresser.cs.meta
+Assets/Scripts/Interactive Objects Scripts/MamaPhoto.cs
+Assets/Scripts/Interactive Objects Scripts/MamaPhoto.cs.meta
+Assets/Scripts/Interactive Objects Scripts/RecipeBox.cs
+Assets/Scripts/Interactive Objects Scripts/RecipeBox.cs.meta
+Assets/Scripts/Interactive Objects Scripts/Spatula.cs
+Assets/Scripts/Interactive Objects Scripts/Spatula.cs.meta
+Assets/Scripts/MenuScripts.meta
+Assets/Scripts/MenuScripts/ExitButton.cs
+Assets/Scripts/MenuScripts/ExitButton.cs.meta
+Assets/Scripts/MenuScripts/SettingsButton.cs
+Assets/Scripts/MenuScripts/SettingsButton.cs.meta
+Assets/Scripts/MenuScripts/StartButton.cs
+Assets/Scripts/MenuScripts/StartButton.cs.meta
+Assets/Scripts/PlayerController.cs
+Assets/Scripts/SecondHomeScripts.meta
+Assets/Scripts/SecondHomeScripts/MamaSceneScript.cs
+Assets/Scripts/SecondHomeScripts/MamaSceneScript.cs.meta
+Assets/Scripts/SecondHomeScripts/MiraScript.cs
+Assets/Scripts/SecondHomeScripts/MiraScript.cs.meta
+Assets/Scripts/SecondHomeScripts/SecondHouseEnter.cs
+Assets/Scripts/SecondHomeScripts/SecondHouseEnter.cs.meta
+Assets/Scripts/SubtitleManager.cs
+Assets/Scripts/SubtitleManager.cs.meta
+Assets/Scripts/ThirdHouseEnter.cs
+Assets/Scripts/ThirdHouseEnter.cs.meta
+Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset
+Assets/Textures/batter.png
+Assets/Textures/batter.png.meta
+Assets/Textures/bowl.png
+Assets/Textures/bowl.png.meta
+Assets/Textures/calendar 1950.jpg
+Assets/Textures/calendar 1950.jpg.meta
+Assets/Textures/Cards.png
+Assets/Textures/Cards.png.meta
+Assets/Textures/Frame.png
+Assets/Textures/Frame.png.meta
+Assets/Textures/fridge_UV_map.png
+Assets/Textures/fridge_UV_map.png.meta
+Assets/Textures/frying_pans.png
+Assets/Textures/frying_pans.png.meta
+Assets/Textures/gefilte_UV.png
+Assets/Textures/gefilte_UV.png.meta
+Assets/Textures/gezer_UV.png
+Assets/Textures/gezer_UV.png.meta
+Assets/Textures/hazeret.png
+Assets/Textures/hazeret.png.meta
+Assets/Textures/Michelin.png
+Assets/Textures/Michelin.png.meta
+Assets/Textures/Michelin1.png
+Assets/Textures/Michelin1.png.meta
+Assets/Textures/NEWSPAPER.png
+Assets/Textures/NEWSPAPER.png.meta
+Assets/Textures/recipe_box.png
+Assets/Textures/recipe_box.png.meta
+Assets/Textures/Spatula_UV.png
+Assets/Textures/Spatula_UV.png.meta
+Packages/manifest.json
+Packages/packages-lock.json
+UserSettings/EditorUserSettings.asset
+Assets/Audio/Drag.mp3
+Assets/Audio/Drag.mp3.meta
+Assets/Audio/LockedDoor.mp3
+Assets/Audio/LockedDoor.mp3.meta
+Assets/Audio/LunchScene.meta
+Assets/Audio/LunchScene/AnsweringMachine.mp3
+Assets/Audio/LunchScene/AnsweringMachine.mp3.meta
+Assets/Audio/mainMusic2.mp3
+Assets/Audio/mainMusic2.mp3.meta
+Assets/Audio/MainSecond.mp3
+Assets/Audio/MainSecond.mp3.meta
+Assets/Audio/MamaScene.meta
+Assets/Audio/MamaScene/AfterRecipe.mp3
+Assets/Audio/MamaScene/AfterRecipe.mp3.meta
+Assets/Audio/MamaScene/Frying.mp3
+Assets/Audio/MamaScene/Frying.mp3.meta
+Assets/Audio/MamaScene/Mama3.mp3
+Assets/Audio/MamaScene/Mama3.mp3.meta
+Assets/Audio/MamaScene/MamaEstherDialog.mp3
+Assets/Audio/MamaScene/MamaEstherDialog.mp3.meta
+Assets/Audio/MamaScene/MamaMiraDialog.mp3
+Assets/Audio/MamaScene/MamaMiraDialog.mp3.meta
+Assets/Audio/MamaScene/mira.mp3
+Assets/Audio/MamaScene/mira.mp3.meta
+Assets/Audio/OpenDoor.mp3
+Assets/Audio/OpenDoor.mp3.meta
+Assets/Fonts/leicester/Leicester_text SDF.asset
+Assets/Materials/Batter.mat
+Assets/Materials/Batter.mat.meta
+Assets/Materials/Bowl.mat
+Assets/Materials/Bowl.mat.meta
+Assets/Materials/calendar 1950.mat
+Assets/Materials/calendar 1950.mat.meta
+Assets/Materials/Cards 1.mat
+Assets/Materials/Cards 1.mat.meta
+Assets/Materials/Cards.mat
+Assets/Materials/Cards.mat.meta
+Assets/Materials/Frame.mat
+Assets/Materials/Frame.mat.meta
+Assets/Materials/Fridge.mat
+Assets/Materials/Fridge.mat.meta
+Assets/Materials/Gefilte.mat
+Assets/Materials/Gefilte.mat.meta
+Assets/Materials/Gezer 1.mat
+Assets/Materials/Gezer 1.mat.meta
+Assets/Materials/Gezer.mat
+Assets/Materials/Gezer.mat.meta
+Assets/Materials/Hazeret.mat
+Assets/Materials/Hazeret.mat.meta
+Assets/Materials/Michelin 1.mat
+Assets/Materials/Michelin 1.mat.meta
+Assets/Materials/Michelin.mat
+Assets/Materials/Michelin.mat.meta
+Assets/Materials/Pan.mat
+Assets/Materials/Pan.mat.meta
+Assets/Materials/pic.mat
+Assets/Materials/pic.mat.meta
+Assets/Materials/RecipeBox.mat
+Assets/Materials/RecipeBox.mat.meta
+Assets/Models/characters/mom_apron@Standing Idle.fbx
+Assets/Models/characters/mom_apron@Standing Idle.fbx.meta
+Assets/Models/mom_apron@Standing Idle.fbx.meta
+Assets/Prefabs/CM CorridorCam .prefab
+Assets/Prefabs/CM CorridorCam .prefab.meta
+Assets/Prefabs/CM PlayerCam.prefab
+Assets/Prefabs/CM SittingCam.prefab
+Assets/Prefabs/GameEventsManager.prefab
+Assets/Prefabs/Objects/Basement/cupboard.prefab
+Assets/Prefabs/Objects/Dining Room/book.prefab
+Assets/Prefabs/Objects/Dining Room/book.prefab.meta
+Assets/Prefabs/Objects/Dining Room/CHAIR_1_2.prefab
+Assets/Prefabs/Objects/Dining Room/note.fbx
+Assets/Prefabs/Objects/Dining Room/note.fbx.meta
+Assets/Prefabs/Objects/Dining Room/phone.prefab
+Assets/Prefabs/Objects/Dining Room/phone.prefab.meta
+Assets/Prefabs/Objects/House/Corridor.prefab
+Assets/Prefabs/Objects/House/Corridor.prefab.meta
+Assets/Prefabs/Objects/House/door_base.prefab
+Assets/Prefabs/Objects/House/door_base.prefab.meta
+Assets/Prefabs/Objects/House/House_Skeleton.prefab
+Assets/Prefabs/Objects/Kitchen/fridge.prefab
+Assets/Prefabs/Objects/Kitchen/hazeret.prefab
+Assets/Prefabs/Objects/Kitchen/pot (1).prefab
+Assets/Prefabs/Objects/Kitchen/pot (1).prefab.meta
+Assets/Prefabs/Objects/Living Room/GameEventsManager.prefab
+Assets/Prefabs/Objects/Living Room/GameEventsManager.prefab.meta
+Assets/Prefabs/Objects/Living Room/girl new.prefab
+Assets/Prefabs/Objects/Living Room/girl new.prefab.meta
+Assets/Prefabs/Objects/Living Room/letter and envelope.prefab
+Assets/Prefabs/Objects/Living Room/letter and envelope.prefab.meta
+Assets/Prefabs/Objects/Living Room/note.prefab
+Assets/Prefabs/Objects/Living Room/note.prefab.meta
+Assets/Prefabs/Objects/Living Room/photo frames.prefab
+Assets/Prefabs/Objects/Living Room/photo frames.prefab.meta
+Assets/Prefabs/Objects/Living Room/piano.prefab
+Assets/Prefabs/Objects/Unsorted/calendar.prefab
+Assets/Prefabs/Objects/Unsorted/mother.prefab
+Assets/Prefabs/Objects/Unsorted/mother.prefab.meta
+Assets/Prefabs/Objects/Unsorted/pot.prefab
+Assets/Prefabs/Objects/Unsorted/pot.prefab.meta
+Assets/SandBox/book.fbx
+Assets/SandBox/book.fbx.meta
+Assets/SandBox/girl new.fbx
+Assets/SandBox/girl new.fbx.meta
+Assets/SandBox/key.fbx
+Assets/SandBox/key.fbx.meta
+Assets/SandBox/letter and envelope.fbx
+Assets/SandBox/letter and envelope.fbx.meta
+Assets/SandBox/mother.fbx
+Assets/SandBox/mother.fbx.meta
+Assets/SandBox/note.fbx
+Assets/SandBox/note.fbx.meta
+Assets/SandBox/phone.fbx
+Assets/SandBox/phone.fbx.meta
+Assets/SandBox/pot.fbx
+Assets/SandBox/pot.fbx.meta
+Assets/SandBox/Title UI.fbx
+Assets/SandBox/Title UI.fbx.meta
+Assets/Scenes/Game new.unity
+Assets/Scripts/GameEventsManager.cs
+Assets/Scripts/Interactive Objects Scripts/AnsweringMachine.cs
+Assets/Scripts/Interactive Objects Scripts/AnsweringMachine.cs.meta
+Assets/Scripts/Interactive Objects Scripts/CookBook.cs
+Assets/Scripts/Interactive Objects Scripts/CookBook.cs.meta
+Assets/Scripts/Interactive Objects Scripts/Corridor.cs
+Assets/Scripts/Interactive Objects Scripts/Door.cs
+Assets/Scripts/Interactive Objects Scripts/Door.cs.meta
+Assets/Scripts/Interactive Objects Scripts/Dresser.cs
+Assets/Scripts/Interactive Objects Scripts/Dresser.cs.meta
+Assets/Scripts/Interactive Objects Scripts/MamaPhoto.cs
+Assets/Scripts/Interactive Objects Scripts/MamaPhoto.cs.meta
+Assets/Scripts/Interactive Objects Scripts/RecipeBox.cs
+Assets/Scripts/Interactive Objects Scripts/RecipeBox.cs.meta
+Assets/Scripts/Interactive Objects Scripts/Spatula.cs
+Assets/Scripts/Interactive Objects Scripts/Spatula.cs.meta
+Assets/Scripts/MenuScripts.meta
+Assets/Scripts/MenuScripts/ExitButton.cs
+Assets/Scripts/MenuScripts/ExitButton.cs.meta
+Assets/Scripts/MenuScripts/SettingsButton.cs
+Assets/Scripts/MenuScripts/SettingsButton.cs.meta
+Assets/Scripts/MenuScripts/StartButton.cs
+Assets/Scripts/MenuScripts/StartButton.cs.meta
+Assets/Scripts/PlayerController.cs
+Assets/Scripts/SecondHomeScripts.meta
+Assets/Scripts/SecondHomeScripts/MamaSceneScript.cs
+Assets/Scripts/SecondHomeScripts/MamaSceneScript.cs.meta
+Assets/Scripts/SecondHomeScripts/MiraScript.cs
+Assets/Scripts/SecondHomeScripts/MiraScript.cs.meta
+Assets/Scripts/SecondHomeScripts/SecondHouseEnter.cs
+Assets/Scripts/SecondHomeScripts/SecondHouseEnter.cs.meta
+Assets/Scripts/SubtitleManager.cs
+Assets/Scripts/SubtitleManager.cs.meta
+Assets/Scripts/ThirdHouseEnter.cs
+Assets/Scripts/ThirdHouseEnter.cs.meta
+Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset
+Assets/Textures/batter.png
+Assets/Textures/batter.png.meta
+Assets/Textures/bowl.png
+Assets/Textures/bowl.png.meta
+Assets/Textures/calendar 1950.jpg
+Assets/Textures/calendar 1950.jpg.meta
+Assets/Textures/Cards.png
+Assets/Textures/Cards.png.meta
+Assets/Textures/Frame.png
+Assets/Textures/Frame.png.meta
+Assets/Textures/fridge_UV_map.png
+Assets/Textures/fridge_UV_map.png.meta
+Assets/Textures/frying_pans.png
+Assets/Textures/frying_pans.png.meta
+Assets/Textures/gefilte_UV.png
+Assets/Textures/gefilte_UV.png.meta
+Assets/Textures/gezer_UV.png
+Assets/Textures/gezer_UV.png.meta
+Assets/Textures/hazeret.png
+Assets/Textures/hazeret.png.meta
+Assets/Textures/Michelin.png
+Assets/Textures/Michelin.png.meta
+Assets/Textures/Michelin1.png
+Assets/Textures/Michelin1.png.meta
+Assets/Textures/NEWSPAPER.png
+Assets/Textures/NEWSPAPER.png.meta
+Assets/Textures/recipe_box.png
+Assets/Textures/recipe_box.png.meta
+Assets/Textures/Spatula_UV.png
+Assets/Textures/Spatula_UV.png.meta
+Packages/manifest.json
+Packages/packages-lock.json
+UserSettings/EditorUserSettings.asset
