@@ -23,6 +23,7 @@ public class GameEventsManager : MonoBehaviour
     [SerializeField] private Light menuLight;
     [SerializeField] private Canvas cameraCenter;
     [SerializeField] private Canvas volumeSliderCanvas;
+    [SerializeField] private TextReveal corridor2Text;
     [SerializeField] private AudioManager audioManager;
     [SerializeField] private SubtitleManager subtitleManager;
     
@@ -46,7 +47,8 @@ public class GameEventsManager : MonoBehaviour
         Player,
         Sitting,
         Menu,
-        Corridor
+        Corridor,
+        Corridor2
     }
 
     public enum Scene
@@ -137,12 +139,14 @@ public class GameEventsManager : MonoBehaviour
 
     IEnumerator reavelCorridor2()
     {
+
         corridorRevealed2 = true;
         yield return new WaitForSeconds(1f);
-        SwitchToVcam(Vcam.Corridor);
+        SwitchToVcam(Vcam.Corridor2);
         yield return new WaitForSeconds(2f);
         revealCorridor2.Invoke();
         audioManager.Play("Drag");
+        StartCoroutine(corridor2Text.RevealText());
         yield return new WaitForSeconds(3f);
         SwitchToVcam(Vcam.Player);
     }
@@ -209,7 +213,7 @@ public class GameEventsManager : MonoBehaviour
 
     public void PlayMamaEstherScene()
     {
-        if (!isRecipeCollected())
+        if (isRecipeCollected())
         {
             subtitleManager.startMamaEstherDialog();
             mama.GetComponent<AudioSource>().Play();
@@ -220,5 +224,11 @@ public class GameEventsManager : MonoBehaviour
             audioManager.Play("AfterRecipe");
             _spatula.GetComponent<Spatula>().timeToFry = true;
         }
+    }
+
+    public void PlayAnsweringMachine()
+    {
+        subtitleManager.startAnsweringMachine();
+        audioManager.Play("AnsweringMachine");
     }
 }

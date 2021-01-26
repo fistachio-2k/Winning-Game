@@ -6,7 +6,8 @@ public class SubtitleManager : MonoBehaviour
 {
     string[] mamaEstherDialogStrings = { "Esther dear, come help me with breakfast. Did you wash your hands?\nSure, Mama!\nGreat job, honey! Can you please bring me the gefilte fish recipe from the basement?\nSure, Mama!"};
     string[] mamaMiraDialogStrings = { "Want to come help us, Mira?\nNo, I don’t want your gross gefilte"};
-    string[] AfterRecipyDialog = { "Thank you honey. And now we can put the onions on the frying pan and stir until are they become golden" };
+    string[] afterRecipyDialog = { "Thank you honey. And now we can put the onions on the frying pan and stir until are they become golden" };
+    string[] answeringMachine = { "Don't call me until you agree to give me the recipe. This has been going for far too long" };
     string[] myStrings;
 
     int curStringIdx = 0;
@@ -15,9 +16,9 @@ public class SubtitleManager : MonoBehaviour
 
     public GUIStyle mamaStyle;
 
-    public IEnumerator ShowMe(int stringIdx, string character)
+    public IEnumerator ShowMe(int stringIdx, string arrayName)
     {
-        getCharacterArrayt(character);
+        getCharacterArrayt(arrayName);
         
         curStringIdx = stringIdx;
 
@@ -30,19 +31,23 @@ public class SubtitleManager : MonoBehaviour
         Debug.Log("Finished Coroutine at timestamp : " + Time.time);
     }
 
-    private void getCharacterArrayt(string character)
+    private void getCharacterArrayt(string arrayName)
     {
-        if (character == "mama")
+        if (arrayName == "mama")
         {
             myStrings = mamaEstherDialogStrings;
         }
-        else if (character == "mira")
+        else if (arrayName == "mira")
         {
             myStrings = mamaMiraDialogStrings;
         }
-        else if(character == "after")
+        else if(arrayName == "after")
         {
-            myStrings = AfterRecipyDialog;
+            myStrings = afterRecipyDialog;
+        }
+        else if(arrayName == "answeringMachine")
+        {
+            myStrings = answeringMachine;
         }
     }
 
@@ -59,6 +64,11 @@ public class SubtitleManager : MonoBehaviour
     public void startAfterRecipyDialog()
     {
         StartCoroutine(ShowMe(0, "after"));
+    }
+
+    public void startAnsweringMachine()
+    {
+        StartCoroutine(ShowMe(0, "answeringMachine"));
     }
 
     void OnGUI()

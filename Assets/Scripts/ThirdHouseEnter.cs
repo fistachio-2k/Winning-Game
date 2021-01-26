@@ -9,6 +9,6 @@ public class ThirdHouseEnter : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         audioManager.Stop("MainSecond");
-        audioManager.Stop("MainMusic2");
+        audioManager.Play("MainMusic2");
     }
 }
