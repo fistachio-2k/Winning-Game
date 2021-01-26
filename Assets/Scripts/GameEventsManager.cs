@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using Cinemachine;
@@ -8,30 +9,46 @@ using UnityEngine.UI;
 public class GameEventsManager : MonoBehaviour
 {
     [SerializeField] private UnityEvent revealCorridor;
+    [SerializeField] private UnityEvent revealCorridor2;
     [SerializeField] private GameObject hazeret;
-    [SerializeField] private Renderer pianoRenderrer;
-    [SerializeField] private float maxDistanceForCorridorTrigger = 7f;
-    [SerializeField] private CinemachineVirtualCamera[] vcams;
+    [SerializeField] private GameObject recipe;
+    [SerializeField] private GameObject mama;
+    [SerializeField] private GameObject mira;
+    [SerializeField] private GameObject _spatula;
     [SerializeField] private GameObject[] HouseModels;
+
+    [SerializeField] private Renderer pianoRenderrer;
+    [SerializeField] private CinemachineVirtualCamera[] vcams;
+
     [SerializeField] private Light menuLight;
     [SerializeField] private Canvas cameraCenter;
-    [SerializeField] private AudioManager audioManager;
     [SerializeField] private Canvas volumeSliderCanvas;
+    [SerializeField] private TextReveal corridor2Text;
+    [SerializeField] private AudioManager audioManager;
+    [SerializeField] private SubtitleManager subtitleManager;
+    
 
     public static GameEventsManager _instance;
+    private InputManager _inputManager;
     public Vcam currVcam;
     private UnityEvent _mouseClickEvent;
     private int _hazertHash;
+    private int _recipeHash;
     private Camera _camera;
     private HashSet<int> _collectedItems;
-    private bool corridorRevealed = false;
+    private bool corridorRevealed1 = false;
+    private bool corridorRevealed2 = false;
     private bool inSettings = false;
+    public bool isFrying = false;
 
+    // Vcam aligned with editor cameras order
     public enum Vcam
     {
         Player,
         Sitting,
         Menu,
+        Corridor,
+        Corridor2
     }
 
     public enum Scene
@@ -52,24 +69,48 @@ public class GameEventsManager : MonoBehaviour
         {
             _instance = this;
         }
+    }
 
+    private void Start()
+    {
+        _inputManager = InputManager.Instance;
         _camera = Camera.main;
-        currVcam = Vcam.Menu;
         _mouseClickEvent = new UnityEvent();
         _collectedItems = new HashSet<int>();
         _hazertHash = hazeret.GetHashCode();
+        _recipeHash = recipe.GetHashCode();
+        currVcam = Vcam.Menu;
         cameraCenter.enabled = false;
         volumeSliderCanvas.enabled = false;
-
     }
 
     void Update()
     {
-        if (!corridorRevealed && _collectedItems.Contains(_hazertHash) && pianoRenderrer.isVisible &&
-            Vector3.Distance(_camera.transform.position, pianoRenderrer.transform.position) < maxDistanceForCorridorTrigger)
+        // Esc clicked
+        if (_inputManager.GetEscButton())
         {
-            corridorRevealed = true;
-            revealCorridor.Invoke();
+            // TODO: Fix second escape bug
+            _instance.GameToMenu();
+        }
+        // Sitting scenario
+        else if (_instance.currVcam == Vcam.Sitting)
+        {
+            if (_inputManager.GetMouseClick())
+            {
+                _instance.GetMouseClickEvent().Invoke();
+            }
+        }
+        
+        // Corridor1 Reavel Logic
+        if (!corridorRevealed1 && _collectedItems.Contains(_hazertHash))
+        {
+            StartCoroutine(reavelCorridor1());
+        }
+
+        // Corridor2 Reavel Logic
+        if (!corridorRevealed2 && isFrying)
+        {
+            StartCoroutine(reavelCorridor2());
         }
 
     }
@@ -77,6 +118,37 @@ public class GameEventsManager : MonoBehaviour
     public void AddCollectedItem(int itemHashCode)
     {
         _collectedItems.Add(itemHashCode);
+    }
+
+    public bool isRecipeCollected()
+    {
+        return _collectedItems.Contains(_recipeHash);
+    }
+
+    IEnumerator reavelCorridor1()
+    {
+        corridorRevealed1 = true;
+        yield return new WaitForSeconds(1f);
+        SwitchToVcam(Vcam.Corridor);
+        yield return new WaitForSeconds(2f);
+        revealCorridor.Invoke();
+        audioManager.Play("Drag");
+        yield return new WaitForSeconds(3f);
+        SwitchToVcam(Vcam.Player);
+    }
+
+    IEnumerator reavelCorridor2()
+    {
+
+        corridorRevealed2 = true;
+        yield return new WaitForSeconds(1f);
+        SwitchToVcam(Vcam.Corridor2);
+        yield return new WaitForSeconds(2f);
+        revealCorridor2.Invoke();
+        audioManager.Play("Drag");
+        StartCoroutine(corridor2Text.RevealText());
+        yield return new WaitForSeconds(3f);
+        SwitchToVcam(Vcam.Player);
     }
 
     public void SwitchToVcam(GameEventsManager.Vcam vcam)
@@ -97,7 +169,7 @@ public class GameEventsManager : MonoBehaviour
         {
             return;
         }
-        if(!Array.Find(audioManager.sounds, sound => sound.name == "MainMusic").source.isPlaying)
+        if(!Array.Find(audioManager.sounds, sound => sound.name == "MainMusic").source.isPlaying && !Array.Find(audioManager.sounds, sound => sound.name == "MainMusic1").source.isPlaying)
         {
             audioManager.Play("MainMusic");
         }
@@ -114,6 +186,10 @@ public class GameEventsManager : MonoBehaviour
         Cursor.visible = true;
         menuLight.enabled = true;
         cameraCenter.enabled = false;
+        if (inSettings)
+        {
+            MenuToSettings();
+        }
     }
 
     public void MenuToSettings()
@@ -127,5 +203,32 @@ public class GameEventsManager : MonoBehaviour
     {
         Application.Quit();
         Debug.Log("Quit!");
+    }
+
+    public void PlayMamaMiraScene()
+    {
+        subtitleManager.startMamaMiraDialog();
+        mira.GetComponent<AudioSource>().Play();
+    }
+
+    public void PlayMamaEstherScene()
+    {
+        if (isRecipeCollected())
+        {
+            subtitleManager.startMamaEstherDialog();
+            mama.GetComponent<AudioSource>().Play();
+        }
+        else
+        {
+            subtitleManager.startAfterRecipyDialog();
+            audioManager.Play("AfterRecipe");
+            _spatula.GetComponent<Spatula>().timeToFry = true;
+        }
+    }
+
+    public void PlayAnsweringMachine()
+    {
+        subtitleManager.startAnsweringMachine();
+        audioManager.Play("AnsweringMachine");
     }
 }

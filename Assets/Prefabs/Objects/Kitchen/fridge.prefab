@@ -405,6 +405,33 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1795607908255359470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4038368995646236011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbf3575480402db40813e763382412fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: 0
+  eraseRenderer: 0
+--- !u!114 &5285253592235795172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4038368995646236011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 710e1099a7bc08c4580848b9714f0098, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraCenter: {fileID: 0}
 --- !u!1 &4489345313173335077
 GameObject:
   m_ObjectHideFlags: 0
@@ -1020,8 +1047,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7312fce1a482b34c977a253c274cf7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fridgeDoor: {fileID: 163158898269944946}
-  _openAngle: 80
   _duration: 3
 --- !u!1 &8600833381693217356
 GameObject:
@@ -1221,8 +1246,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: hazeret
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9037410611043902017, guid: 4d2eabddaeab9284b9918f1f2cb29727, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4d2eabddaeab9284b9918f1f2cb29727, type: 3}
+--- !u!1 &4038368995646236011 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6597641461640872086, guid: 4d2eabddaeab9284b9918f1f2cb29727, type: 3}
+  m_PrefabInstance: {fileID: 7171046449680983549}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3693228324894654417 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5819872656199916076, guid: 4d2eabddaeab9284b9918f1f2cb29727, type: 3}
