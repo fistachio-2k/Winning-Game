@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 2952549562186820043}
   - component: {fileID: 2952549562186820052}
   - component: {fileID: 6806872827758046046}
+  - component: {fileID: 8225972441782835417}
   m_Layer: 0
   m_Name: CM PlayerCam
   m_TagString: Untagged
@@ -203,3 +204,20 @@ MonoBehaviour:
   PlayerIndex: -1
   XYAxis: {fileID: -2864520690158163391, guid: 36f28e8df8245db459e90a9f76b86f7e, type: 3}
   ZAxis: {fileID: 0}
+--- !u!114 &8225972441782835417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2952549562186820053}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 729aad4491e915a41bda2b8325cf757a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FocusTracksTarget: 0
+  m_FocusTracking: 0
+  m_FocusTarget: {fileID: 0}
+  m_FocusOffset: 0
+  m_Profile: {fileID: 11400000, guid: 970a92860a116b146bb3c161ad1ae1c0, type: 2}
