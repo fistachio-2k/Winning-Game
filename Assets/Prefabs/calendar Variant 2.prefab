@@ -7,9 +7,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3969085690582400837, guid: c7c1581c51b653649ac5b7df63866144, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a07cf454a7a1ac949ac3572d375dddb0, type: 2}
     - target: {fileID: 4631363895388752526, guid: c7c1581c51b653649ac5b7df63866144, type: 3}
       propertyPath: m_Name
-      value: calendar
+      value: calendar Variant 2
       objectReference: {fileID: 0}
     - target: {fileID: 5408322051532853300, guid: c7c1581c51b653649ac5b7df63866144, type: 3}
       propertyPath: m_RootOrder
@@ -66,6 +70,18 @@ PrefabInstance:
     - target: {fileID: 5408322051532853300, guid: c7c1581c51b653649ac5b7df63866144, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5419413023224991457, guid: c7c1581c51b653649ac5b7df63866144, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 411be4a32cf6a0d4192044f3ac77de41, type: 2}
+    - target: {fileID: 7364829202076998715, guid: c7c1581c51b653649ac5b7df63866144, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.3067
+      objectReference: {fileID: 0}
+    - target: {fileID: 8354297629978881810, guid: c7c1581c51b653649ac5b7df63866144, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.3105
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7c1581c51b653649ac5b7df63866144, type: 3}
