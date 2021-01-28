@@ -78,24 +78,21 @@ public class AudioManager : MonoBehaviour
         s.source.Pause();
     }
 
-    public void ToggleMainMusic()
+    public void ToggleMusic(string name)
     {
-        Sound s1 = Array.Find(sounds, sound => sound.name == "MainMusic");
-        Sound s2 = Array.Find(sounds, sound => sound.name == "MainMusic1");
-        if (s1 == null || s2 == null )
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null )
         {
-            Debug.LogWarning("Sound: " + "MainMusic" + " not found!");
+            Debug.LogWarning("Sound: " + name + " not found!");
             return;
         }
-        if (s1.source.isPlaying)
+        if (s.source.isPlaying)
         {
-            Pause("MainMusic");
-            Play("MainMusic1");
+            Pause(name);
         }
-        else if(s2.source.isPlaying)
+        else
         {
-            Pause("MainMusic1");
-            Play("MainMusic");
+            Play(name);
         }
     }
 

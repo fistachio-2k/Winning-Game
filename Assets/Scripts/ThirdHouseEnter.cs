@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class ThirdHouseEnter : MonoBehaviour
 {
-    [SerializeField] private AudioManager audioManager;
+    [SerializeField] private GameObject radio2;
+    [SerializeField] private GameObject radio3;
+    [SerializeField] private GameObject door;
 
     private void OnTriggerEnter(Collider other)
     {
-        audioManager.Stop("MainSecond");
-        audioManager.Play("MainMusic2");
+        radio2.GetComponent<AudioSource>().Stop();
+        radio3.GetComponent<AudioSource>().Play();
+        StartCoroutine(door.GetComponent<Door>().OpenClose());
+        door.GetComponent<Door>()._isLocked = true;
     }
 }

@@ -15,13 +15,11 @@ public class StartButton : MonoBehaviour, IPointerClickHandler
 
     private void OnMouseEnter()
     {
-        //mouseOver = true;
         GetComponent<Renderer>().material.SetColor("_Color", mouseOverColor);
     }
 
     private void OnMouseExit()
     {
-        //mouseOver = false;
         GetComponent<Renderer>().material.SetColor("_Color", startColor);
     }
 }

@@ -15,6 +15,7 @@ public class GameEventsManager : MonoBehaviour
     [SerializeField] private GameObject mama;
     [SerializeField] private GameObject mira;
     [SerializeField] private GameObject _spatula;
+    [SerializeField] private GameObject radio1;
     [SerializeField] private GameObject[] HouseModels;
 
     [SerializeField] private Renderer pianoRenderrer;
@@ -169,9 +170,9 @@ public class GameEventsManager : MonoBehaviour
         {
             return;
         }
-        if(!Array.Find(audioManager.sounds, sound => sound.name == "MainMusic").source.isPlaying && !Array.Find(audioManager.sounds, sound => sound.name == "MainMusic1").source.isPlaying)
+        if(!radio1.GetComponent<AudioSource>().isPlaying)
         {
-            audioManager.Play("MainMusic");
+            radio1.GetComponent<AudioSource>().Play();
         }
         audioManager.Play("click");
         SwitchToVcam(GameEventsManager.Vcam.Player);
