@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4631363895388752526, guid: c7c1581c51b653649ac5b7df63866144, type: 3}
       propertyPath: m_Name
-      value: calendar
+      value: calendar Variant 1
       objectReference: {fileID: 0}
     - target: {fileID: 5408322051532853300, guid: c7c1581c51b653649ac5b7df63866144, type: 3}
       propertyPath: m_RootOrder
@@ -67,5 +67,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5419413023224991457, guid: c7c1581c51b653649ac5b7df63866144, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6eb7d62f23bf90b44b96db7f7bbd3bb4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7c1581c51b653649ac5b7df63866144, type: 3}
