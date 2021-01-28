@@ -24,7 +24,7 @@ public class Chair : MonoBehaviour, IInteractable
 
     IEnumerator StandUp()
     {
-        //TODO: add sound!
+        //TODO Mira: add sound!
         GetComponent<MeshCollider>().enabled = false;
         Vector3 basePos = transform.position;
         transform.DOMove(positionToMove.position, duration);

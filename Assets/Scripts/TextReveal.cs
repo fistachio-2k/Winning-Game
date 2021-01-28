@@ -52,6 +52,6 @@ public class TextReveal : MonoBehaviour
             yield return new WaitForSeconds(_revealInterval / totalVisableChar);
         }
 
-        //TODO: add hide text!!!!!!
+        //TODO Dor: add hide text!!!!!! 
     }
 }

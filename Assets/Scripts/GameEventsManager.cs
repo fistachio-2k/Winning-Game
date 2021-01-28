@@ -89,8 +89,20 @@ public class GameEventsManager : MonoBehaviour
         // Esc clicked
         if (_inputManager.GetEscButton())
         {
-            // TODO: Fix second escape bug
-            _instance.GameToMenu();
+            // TODO: Change to a specific menu according to location.
+            if (currVcam !=  Vcam.Menu)
+            {
+                GameToMenu();
+            }
+            else if (inSettings)
+            {
+                ToggleMenuSettings();
+            }
+            else
+            {
+                MenuToGame();
+            }
+
         }
         // Sitting scenario
         else if (_instance.currVcam == Vcam.Sitting)
@@ -186,13 +198,9 @@ public class GameEventsManager : MonoBehaviour
         Cursor.visible = true;
         menuLight.enabled = true;
         cameraCenter.enabled = false;
-        if (inSettings)
-        {
-            MenuToSettings();
-        }
     }
 
-    public void MenuToSettings()
+    public void ToggleMenuSettings()
     {
         audioManager.Play("click");
         volumeSliderCanvas.enabled = !volumeSliderCanvas.enabled;

@@ -7,6 +7,6 @@ public class SettingsButton : MonoBehaviour, IPointerClickHandler
 {
     public void OnPointerClick(PointerEventData eventData)
     {
-        GameEventsManager._instance.MenuToSettings();
+        GameEventsManager._instance.ToggleMenuSettings();
     }
 }
