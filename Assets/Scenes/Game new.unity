@@ -1964,7 +1964,7 @@ GameObject:
   - component: {fileID: 175614543}
   - component: {fileID: 175614542}
   - component: {fileID: 175614541}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Box Volume Lunch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2356,6 +2356,10 @@ PrefabInstance:
     - target: {fileID: 1315382216238440391, guid: 893e9140a080a034ba1aea4e9d54cae3, type: 3}
       propertyPath: m_Name
       value: Main Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935984140087253828, guid: 893e9140a080a034ba1aea4e9d54cae3, type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 893e9140a080a034ba1aea4e9d54cae3, type: 3}
@@ -3617,7 +3621,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &374224269
 PrefabInstance:
@@ -7679,28 +7683,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 68.561, y: 102.394, z: 111.764}
---- !u!1 &708932176 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2952549562186820053, guid: 1010a39dcc693634887ae5756a93b796, type: 3}
-  m_PrefabInstance: {fileID: 871467841}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &708932180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 708932176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: 970a92860a116b146bb3c161ad1ae1c0, type: 2}
-  isGlobal: 0
-  blendDistance: 0
-  weight: 1
-  priority: 0
 --- !u!1 &711484554
 GameObject:
   m_ObjectHideFlags: 0
@@ -9556,7 +9538,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2952549562186820043, guid: 1010a39dcc693634887ae5756a93b796, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2952549562186820043, guid: 1010a39dcc693634887ae5756a93b796, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20382,7 +20364,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2952549562186820052, guid: 1010a39dcc693634887ae5756a93b796, type: 3}
   m_PrefabInstance: {fileID: 871467841}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 708932176}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
@@ -22971,7 +22953,7 @@ GameObject:
   - component: {fileID: 2063499014}
   - component: {fileID: 2063499013}
   - component: {fileID: 2063499012}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Box Volume Dinner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24318,13 +24300,13 @@ GameObject:
   - component: {fileID: 2144414426}
   - component: {fileID: 2144414425}
   - component: {fileID: 2144414424}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Box Volume Breakfast
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2144414424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24362,13 +24344,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2144414423}
-  m_LocalRotation: {x: -0, y: -0.34637523, z: -0, w: 0.9380961}
-  m_LocalPosition: {x: -4.5, y: -0.8, z: 4.1}
-  m_LocalScale: {x: 22, y: 15, z: 23}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.99, y: -0.8, z: 1.82}
+  m_LocalScale: {x: 8.565322, y: 5.8399925, z: 8.954655}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 50
-  m_LocalEulerAnglesHint: {x: 0, y: -40.532, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &11412387395008622
 PrefabInstance:
   m_ObjectHideFlags: 0
