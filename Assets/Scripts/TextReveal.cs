@@ -10,6 +10,7 @@ public class TextReveal : MonoBehaviour
     //[SerializeField] private Transform _playerTransform;
     [SerializeField] private float _triggerDistance = 3.5f;
     private Camera _cam;
+    private bool _isRunning = false;
 
     void Awake()
     {
@@ -19,39 +20,43 @@ public class TextReveal : MonoBehaviour
     }
     
     public IEnumerator RevealText()
-    { 
-        _tmp.ForceMeshUpdate();
-        int totalVisableChar = _tmp.textInfo.characterCount; // Get the count of all visable characters 
-        int count = 0;
-        bool reveald = false;
-        bool covered = false;
-
-        // A loop which reveal and cover the text once per routine
-        while (!reveald || !covered)
+    {
+        if (!_isRunning)
         {
-            int visableCount = count % (totalVisableChar + 1);
-            _tmp.maxVisibleCharacters = visableCount;
+            _isRunning = true;
+            _tmp.ForceMeshUpdate();
+            int totalVisableChar = _tmp.textInfo.characterCount; // Get the count of all visable characters 
+            int count = 0;
+            bool reveald = false;
+            bool covered = false;
 
-            if (Vector3.Distance(transform.position, _cam.transform.position) < _triggerDistance && visableCount < totalVisableChar)
+            // A loop which reveal and cover the text once per routine
+            while (!reveald || !covered)
             {
-                count += 1;
-            }
-            else if (Vector3.Distance(transform.position, _cam.transform.position) >= _triggerDistance && count > 0)
-            {
-                count -= 1;
-            }
+                int visableCount = count % (totalVisableChar + 1);
+                _tmp.maxVisibleCharacters = visableCount;
 
-            if (visableCount == totalVisableChar)
-            {
-                reveald = true;
+                if (Vector3.Distance(transform.position, _cam.transform.position) < _triggerDistance && visableCount < totalVisableChar)
+                {
+                    count += 1;
+                }
+                else if (Vector3.Distance(transform.position, _cam.transform.position) >= _triggerDistance && count > 0)
+                {
+                    count -= 1;
+                }
+
+                if (visableCount == totalVisableChar)
+                {
+                    reveald = true;
+                }
+                else if (reveald && visableCount == 0)
+                {
+                    covered = true;
+                }
+                yield return new WaitForSeconds(_revealInterval / totalVisableChar);
             }
-            else if (reveald && visableCount == 0)
-            {
-                covered = true;
-            }
-            yield return new WaitForSeconds(_revealInterval / totalVisableChar);
+            _isRunning = false;
         }
-
         //TODO Dor: add hide text!!!!!! 
     }
 }
