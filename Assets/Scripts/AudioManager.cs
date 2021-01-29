@@ -13,8 +13,9 @@ public class AudioManager : MonoBehaviour
     private static readonly string FirstPlay = "FirstPlay";
     private static readonly string volumePref = "volumePref";
     private int firstPlayInt;
-    public Slider volumeSlider;
     private float volumeFloat;
+    [SerializeField] private Slider volumeSlider;
+    [SerializeField] private AudioSource[] soundEffects;
 
     void Awake()
     {
@@ -101,6 +102,10 @@ public class AudioManager : MonoBehaviour
         foreach (Sound s in sounds)
         {
             s.source.volume = volumeSlider.value;
+        }
+        for (int i = 0; i < soundEffects.Length; i++)
+        {
+            soundEffects[i].volume = volumeSlider.value;
         }
     }
 

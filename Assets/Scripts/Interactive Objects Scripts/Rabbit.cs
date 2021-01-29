@@ -33,7 +33,7 @@ public class Rabbit : MonoBehaviour, IInteractable
             }
             else
             {
-                transform.DORotate(_baseRotation + (Vector3.up * 90f) + (Vector3.forward * 3f) + (Vector3.right * -3f), duration);
+                transform.DORotate(_baseRotation + (Vector3.up * -90f) + (Vector3.forward * 3f) + (Vector3.right * -3f), duration);
             }
         }
         yield return null;
