@@ -6,6 +6,6 @@ public class AnsweringMachine : MonoBehaviour, IInteractable
 {
     public void Interact()
     {
-        GameEventsManager._instance.PlayAnsweringMachine();
+        GameEventsManager._instance.PlayAnsweringMachine(gameObject);
     }
 }

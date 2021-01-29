@@ -6,6 +6,7 @@ using UnityEngine;
 public class Radio : MonoBehaviour, IInteractable
 {
     [SerializeField] private TextReveal text;
+
     public void Interact()
     {
         AudioManager audioManager = FindObjectOfType<AudioManager>();
