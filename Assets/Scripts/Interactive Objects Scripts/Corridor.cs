@@ -12,6 +12,8 @@ public class Corridor : MonoBehaviour
     private GameObject backWall;
     [SerializeField]
     private Light corridorLight;
+    [SerializeField]
+    private AudioManager audioManager;
 
     public void RevealCoridor()
     {
@@ -31,7 +33,10 @@ public class Corridor : MonoBehaviour
             obj.SetActive(true);
         }
         transform.DOScaleZ(1f, 15f);
-        yield return new WaitForSeconds(15f);
+        audioManager.Play("CorridorStrech");
+        yield return new WaitForSeconds(14f);
+        //audioManager.Stop("CorridorStrech"); TODO: stop only this sound when scale is finnished.
+        yield return new WaitForSeconds(1f);
         corridorLight.enabled = true;
         backWall.SetActive(false);
     }

@@ -15,7 +15,7 @@ public class SecondHouseEnter : MonoBehaviour
     [SerializeField] private GameObject pointOfView;
     [SerializeField] private GameObject player;
     [SerializeField] float cameraAnimationDuration = 1f;
-    [SerializeField] float down = -0.8f;
+    [SerializeField] float down = -0.5f;
     bool basementFlag = true;
     
 
@@ -38,14 +38,19 @@ public class SecondHouseEnter : MonoBehaviour
         breakfastBasment.SetActive(!basementFlag);
         wallsBreakfastBasment.SetActive(!basementFlag);
 
-        //Close the door after character enter
-        StartCoroutine(door.GetComponent<Door>().OpenClose());
-        door.GetComponent<Door>()._isLocked = true;
+    }
 
+    private void OnTriggerExit(Collider other)
+    {
         //Lower the camera and faster the character steps
-        pointOfView.transform.DOMove(pointOfView.transform.position +  (Vector3.up * down), cameraAnimationDuration);
+        pointOfView.transform.DOLocalMoveY(pointOfView.transform.localPosition.y + down, cameraAnimationDuration);
         PlayerController playerController = player.GetComponent<PlayerController>();
         playerController.playerSpeed += 1.0f;
         playerController.gravityValue += 1.0f;
+
+        //Close the door after character enter
+        StartCoroutine(door.GetComponent<Door>().OpenClose());
+        door.GetComponent<Door>()._isLocked = true;
+        gameObject.GetComponent<Collider>().enabled = false;
     }
 }

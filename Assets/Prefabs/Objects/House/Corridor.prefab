@@ -451,6 +451,7 @@ MonoBehaviour:
   - {fileID: 0}
   backWall: {fileID: 6924188474059893980}
   corridorLight: {fileID: 6924188473626792821}
+  audioManager: {fileID: 0}
 --- !u!1 &6924188474059893980
 GameObject:
   m_ObjectHideFlags: 0
