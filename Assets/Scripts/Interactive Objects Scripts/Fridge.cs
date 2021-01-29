@@ -20,7 +20,7 @@ public class Fridge : MonoBehaviour, IInteractable
 
     public void OpenCloseFridge()
     {
-        //TODO: add sound!
+        //TODO Mira: add sound!
         if (_isOpen)
         {
             FindObjectOfType<AudioManager>().Play("Open");
