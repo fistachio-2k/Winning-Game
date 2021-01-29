@@ -19,13 +19,13 @@ public class Chair : MonoBehaviour, IInteractable
         yield return new WaitForSeconds(duration / 2);
         StartCoroutine(text.RevealText());
         transform.DOMove(basePos, duration);
-        GetComponent<MeshCollider>().enabled = true;
+        GetComponent<MeshCollider>().enabled = false;
     }
 
     IEnumerator StandUp()
     {
         //TODO Mira: add sound!
-        GetComponent<MeshCollider>().enabled = false;
+        GetComponent<MeshCollider>().enabled = true;
         Vector3 basePos = transform.position;
         transform.DOMove(positionToMove.position, duration);
         GameEventsManager._instance.SwitchToVcam(GameEventsManager.Vcam.Player);
