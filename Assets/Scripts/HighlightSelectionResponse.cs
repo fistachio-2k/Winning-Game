@@ -10,26 +10,22 @@ internal interface ISelectionResponse
 
 internal class HighlightSelectionResponse : MonoBehaviour, ISelectionResponse
 {
-    [SerializeField] public Material highlightMaterial;
-    [SerializeField] public Material defaultMaterial;
 
     public void OnSelect(Transform selection)
     {
-        var selectionRenderer = selection.GetComponent<Renderer>();
-        if (selectionRenderer != null)
+        Outline outline = selection.GetComponent<Outline>();
+        if (outline != null)
         {
-            selectionRenderer.material = highlightMaterial;
+            outline.enabled = true;
         }
-        cakeslice.Outline outline = selection.GetComponent<cakeslice.Outline>();
-        outline.EnableOutline();
     }
 
     public void OnDeselect(Transform selection)
     {
-        var selectionRenderer = selection.GetComponent<Renderer>();
-        if (selectionRenderer != null)
+        Outline outline = selection.GetComponent<Outline>();
+        if (outline != null)
         {
-            selectionRenderer.material = defaultMaterial;
+            outline.enabled = false;
         }
     }
 }

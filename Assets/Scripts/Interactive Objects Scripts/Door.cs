@@ -4,9 +4,9 @@ using DG.Tweening;
 
 public class Door : MonoBehaviour, IInteractable
 {
-    private bool _isOpen = false;
+    private bool _isOpen = true;
     private bool _inOpenScene = true;
-    [SerializeField] private bool _isLocked = false;
+    [SerializeField] public bool _isLocked = false;
     private Vector3 _baseRotation;
     [SerializeField] float duration = 2f;
     [SerializeField] private TextReveal text = null;
@@ -30,7 +30,7 @@ public class Door : MonoBehaviour, IInteractable
         }
     }
 
-    IEnumerator OpenClose()
+    public IEnumerator OpenClose()
     {   
         if (!_isLocked)
         {

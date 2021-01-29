@@ -5,17 +5,24 @@ using UnityEngine.Events;
 using Cinemachine;
 using System;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class GameEventsManager : MonoBehaviour
 {
     [SerializeField] private UnityEvent revealCorridor;
     [SerializeField] private UnityEvent revealCorridor2;
+
+    // ============ Trigger objects ============ //
     [SerializeField] private GameObject hazeret;
     [SerializeField] private GameObject recipe;
+    [SerializeField] private GameObject key;
+    // ======================================== //
     [SerializeField] private GameObject mama;
     [SerializeField] private GameObject mira;
-    [SerializeField] private GameObject _spatula;
+    [SerializeField] private GameObject spatula;
+    [SerializeField] private GameObject radio1;
     [SerializeField] private GameObject[] HouseModels;
+    [SerializeField] private GameObject player;
 
     [SerializeField] private Renderer pianoRenderrer;
     [SerializeField] private CinemachineVirtualCamera[] vcams;
@@ -34,10 +41,12 @@ public class GameEventsManager : MonoBehaviour
     private UnityEvent _mouseClickEvent;
     private int _hazertHash;
     private int _recipeHash;
+    private int _keyHash;
     private Camera _camera;
     private HashSet<int> _collectedItems;
     private bool corridorRevealed1 = false;
     private bool corridorRevealed2 = false;
+    private bool backToFirstScene = false;
     private bool inSettings = false;
     public bool isFrying = false;
 
@@ -79,6 +88,7 @@ public class GameEventsManager : MonoBehaviour
         _collectedItems = new HashSet<int>();
         _hazertHash = hazeret.GetHashCode();
         _recipeHash = recipe.GetHashCode();
+        _keyHash = key.GetHashCode();
         currVcam = Vcam.Menu;
         cameraCenter.enabled = false;
         volumeSliderCanvas.enabled = false;
@@ -125,6 +135,11 @@ public class GameEventsManager : MonoBehaviour
             StartCoroutine(reavelCorridor2());
         }
 
+        // Back to first scene
+        if (!backToFirstScene &&_collectedItems.Contains(_keyHash))
+        {
+            StartCoroutine(BackToEndScene());
+        }
     }
 
     public void AddCollectedItem(int itemHashCode)
@@ -144,6 +159,7 @@ public class GameEventsManager : MonoBehaviour
         SwitchToVcam(Vcam.Corridor);
         yield return new WaitForSeconds(2f);
         revealCorridor.Invoke();
+        yield return new WaitForSeconds(1f);
         audioManager.Play("Drag");
         yield return new WaitForSeconds(3f);
         SwitchToVcam(Vcam.Player);
@@ -151,16 +167,24 @@ public class GameEventsManager : MonoBehaviour
 
     IEnumerator reavelCorridor2()
     {
-
         corridorRevealed2 = true;
         yield return new WaitForSeconds(1f);
         SwitchToVcam(Vcam.Corridor2);
         yield return new WaitForSeconds(2f);
         revealCorridor2.Invoke();
-        audioManager.Play("Drag");
         StartCoroutine(corridor2Text.RevealText());
+        yield return new WaitForSeconds(1f);
+        audioManager.Play("Drag");
         yield return new WaitForSeconds(3f);
         SwitchToVcam(Vcam.Player);
+    }
+
+    IEnumerator BackToEndScene()
+    {
+        backToFirstScene = true;
+        yield return new WaitForSeconds(1f);
+        player.transform.DOMove((Vector3.right * -1.39f) + (Vector3.up * 2.69f) + (Vector3.forward * -0.8f), 3f);
+        yield return new WaitForSeconds(2f);
     }
 
     public void SwitchToVcam(GameEventsManager.Vcam vcam)
@@ -181,9 +205,9 @@ public class GameEventsManager : MonoBehaviour
         {
             return;
         }
-        if(!Array.Find(audioManager.sounds, sound => sound.name == "MainMusic").source.isPlaying && !Array.Find(audioManager.sounds, sound => sound.name == "MainMusic1").source.isPlaying)
+        if(!radio1.GetComponent<AudioSource>().isPlaying)
         {
-            audioManager.Play("MainMusic");
+            radio1.GetComponent<AudioSource>().Play();
         }
         audioManager.Play("click");
         SwitchToVcam(GameEventsManager.Vcam.Player);
@@ -230,13 +254,13 @@ public class GameEventsManager : MonoBehaviour
         {
             subtitleManager.startAfterRecipyDialog();
             audioManager.Play("AfterRecipe");
-            _spatula.GetComponent<Spatula>().timeToFry = true;
+            spatula.GetComponent<Spatula>().timeToFry = true;
         }
     }
 
-    public void PlayAnsweringMachine()
+    public void PlayAnsweringMachine(GameObject AnsweringMachine)
     {
         subtitleManager.startAnsweringMachine();
-        audioManager.Play("AnsweringMachine");
+        AnsweringMachine.GetComponent<AudioSource>().Play();
     }
 }

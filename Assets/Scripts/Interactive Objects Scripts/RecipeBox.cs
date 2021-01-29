@@ -5,7 +5,7 @@ using DG.Tweening;
 
 public class RecipeBox : MonoBehaviour, IInteractable
 {
-    private bool _isOpen = false;
+    private bool _isOpen = true;
     private Vector3 _baseRotation;
     [SerializeField] private bool _isLocked = false;
     [SerializeField] float duration = 2f;

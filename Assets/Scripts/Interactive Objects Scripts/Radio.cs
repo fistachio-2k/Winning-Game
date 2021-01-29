@@ -11,7 +11,19 @@ public class Radio : MonoBehaviour, IInteractable
     {
         AudioManager audioManager = FindObjectOfType<AudioManager>();
         audioManager.Play("Radio");
-        audioManager.ToggleMainMusic();
-        StartCoroutine(text.RevealText());
+        AudioSource s = gameObject.GetComponent<AudioSource>();
+        if (s.isPlaying)
+        {
+            s.Pause();
+        }
+        else
+        {
+            s.Play();
+        }
+        if (text != null)
+        {
+            StartCoroutine(text.RevealText());
+        }
+        
     }
 }

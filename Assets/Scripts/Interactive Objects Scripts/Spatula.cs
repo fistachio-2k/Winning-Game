@@ -33,7 +33,7 @@ public class Spatula : MonoBehaviour, IInteractable
         audioManager.Play("Frying");
         transform.DORotate(_baseRotation + (Vector3.up * 180f) + (Vector3.forward * 4f) + (Vector3.right * -4f), duration);
         transform.DOMove(_basePlacement + (Vector3.right * 0.9f) + (Vector3.up * 0.2f) + (Vector3.forward), duration);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         audioManager.Stop("Frying");
         yield return null;
     }
