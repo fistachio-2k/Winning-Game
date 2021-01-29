@@ -4,7 +4,7 @@ using DG.Tweening;
 
 public class Door : MonoBehaviour, IInteractable
 {
-    private bool _isOpen = false;
+    private bool _isOpen = true;
     private bool _inOpenScene = true;
     [SerializeField] public bool _isLocked = false;
     private Vector3 _baseRotation;

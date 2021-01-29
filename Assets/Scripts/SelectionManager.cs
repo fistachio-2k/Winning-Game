@@ -17,12 +17,13 @@ public class SelectionManager : MonoBehaviour
     {
         if (_selection != null)
         {
-            //_selectionResponse.OnDeselect(_selection);
+            _selectionResponse.OnDeselect(_selection);
         }
 
         var ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, Camera.main.nearClipPlane * 20));
+        _selection = null;
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, 10f))
+        if (Physics.Raycast(ray, out hit, 6f))
         {
             var selection = hit.transform;
             IInteractable interactable = selection.GetComponent<IInteractable>();
@@ -38,7 +39,7 @@ public class SelectionManager : MonoBehaviour
 
         if(_selection != null)
         {
-            //_selectionResponse.OnSelect(_selection);
+           _selectionResponse.OnSelect(_selection);
         }            
     }
 
