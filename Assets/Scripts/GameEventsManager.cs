@@ -24,6 +24,8 @@ public class GameEventsManager : MonoBehaviour
     [SerializeField] private GameObject[] HouseModels;
     [SerializeField] private GameObject player;
 
+    [SerializeField] private GameObject openBasement;
+    [SerializeField] private GameObject wallsOpenBasement;
     [SerializeField] private Renderer pianoRenderrer;
     [SerializeField] private CinemachineVirtualCamera[] vcams;
 
@@ -171,8 +173,13 @@ public class GameEventsManager : MonoBehaviour
     {
         backToFirstScene = true;
         yield return new WaitForSeconds(1f);
-        player.transform.DOMove((Vector3.right * -1.39f) + (Vector3.up * 2.69f) + (Vector3.forward * -0.8f), 3f);
+        player.transform.DOMove((Vector3.right * -0.416f) + (Vector3.up * 1.9f) + (Vector3.forward * 3.363f), 3f);
         yield return new WaitForSeconds(2f);
+
+        //return first scene basment
+        openBasement.SetActive(true);
+        wallsOpenBasement.SetActive(true);
+
     }
 
     public void SwitchToVcam(GameEventsManager.Vcam vcam)

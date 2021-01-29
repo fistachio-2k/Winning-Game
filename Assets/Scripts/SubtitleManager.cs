@@ -18,7 +18,7 @@ public class SubtitleManager : MonoBehaviour
 
     public IEnumerator ShowMe(int stringIdx, string arrayName)
     {
-        getCharacterArrayt(arrayName);
+        getCharacterArray(arrayName);
         
         curStringIdx = stringIdx;
 
@@ -31,7 +31,7 @@ public class SubtitleManager : MonoBehaviour
         Debug.Log("Finished Coroutine at timestamp : " + Time.time);
     }
 
-    private void getCharacterArrayt(string arrayName)
+    private void getCharacterArray(string arrayName)
     {
         if (arrayName == "mama")
         {
