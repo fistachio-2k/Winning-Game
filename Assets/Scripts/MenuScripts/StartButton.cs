@@ -10,7 +10,7 @@ public class StartButton : MonoBehaviour, IPointerClickHandler
     //bool mouseOver = false;
     public void OnPointerClick(PointerEventData eventData)
     {
-        GameEventsManager._instance.MenuToGame();
+        GameEventsManager._instance.StartToGame();
     }
 
     private void OnMouseEnter()

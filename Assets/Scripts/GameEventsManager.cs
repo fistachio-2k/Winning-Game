@@ -27,15 +27,16 @@ public class GameEventsManager : MonoBehaviour
     [SerializeField] private GameObject openBasement;
     [SerializeField] private GameObject wallsOpenBasement;
     [SerializeField] private Renderer pianoRenderrer;
-    [SerializeField] private CinemachineVirtualCamera[] vcams;
 
     [SerializeField] private Light menuLight;
     [SerializeField] private Canvas cameraCenter;
-    [SerializeField] private Canvas volumeSliderCanvas;
+    [SerializeField] private Canvas settingsCanvas;
     [SerializeField] private TextReveal corridor2Text;
     [SerializeField] private AudioManager audioManager;
     [SerializeField] private SubtitleManager subtitleManager;
-    
+
+    [SerializeField] private CinemachineVirtualCamera[] vcams;
+
 
     public static GameEventsManager _instance;
     private InputManager _inputManager;
@@ -50,6 +51,7 @@ public class GameEventsManager : MonoBehaviour
     private bool corridorRevealed2 = false;
     private bool backToFirstScene = false;
     private bool inSettings = false;
+    private bool inStart = true;
     public bool isFrying = false;
 
     // Vcam aligned with editor cameras order
@@ -93,7 +95,7 @@ public class GameEventsManager : MonoBehaviour
         _keyHash = key.GetHashCode();
         currVcam = Vcam.Menu;
         cameraCenter.enabled = false;
-        volumeSliderCanvas.enabled = false;
+        settingsCanvas.enabled = false;
     }
 
     void Update()
@@ -101,20 +103,16 @@ public class GameEventsManager : MonoBehaviour
         // Esc clicked
         if (_inputManager.GetEscButton())
         {
+            audioManager.Play("click");
             // TODO: Change to a specific menu according to location.
             if (currVcam !=  Vcam.Menu)
             {
-                GameToMenu();
+                ToggleGameSettings();
             }
             else if (inSettings)
             {
-                ToggleMenuSettings();
+                ToggleStartSettings();
             }
-            else
-            {
-                MenuToGame();
-            }
-
         }
         // Sitting scenario
         else if (_instance.currVcam == Vcam.Sitting)
@@ -206,12 +204,13 @@ public class GameEventsManager : MonoBehaviour
         return _mouseClickEvent;
     }
 
-    public void MenuToGame()
+    public bool GetMouseClick()
     {
-        if (inSettings)
-        {
-            return;
-        }
+        return _inputManager.GetMouseClick();
+    }
+
+    public void StartToGame()
+    {
         if(!radio1.GetComponent<AudioSource>().isPlaying)
         {
             radio1.GetComponent<AudioSource>().Play();
@@ -221,20 +220,29 @@ public class GameEventsManager : MonoBehaviour
         Cursor.visible = false;
         menuLight.enabled = false;
         cameraCenter.enabled = true;
+        inStart = false;
     }
 
-    public void GameToMenu()
+    public void ToggleGameSettings()
     {
-        SwitchToVcam(GameEventsManager.Vcam.Menu);
-        Cursor.visible = true;
-        menuLight.enabled = true;
-        cameraCenter.enabled = false;
+        //SwitchToVcam(GameEventsManager.Vcam.Menu);
+        //menuLight.enabled = true;
+        if (inStart)
+        {
+            StartToGame();
+            settingsCanvas.enabled = false;
+            return;
+        }
+        Cursor.visible = !Cursor.visible;
+        cameraCenter.enabled = !cameraCenter.enabled;
+        inSettings = !inSettings;
+        settingsCanvas.enabled = !settingsCanvas.enabled;
     }
 
-    public void ToggleMenuSettings()
+    public void ToggleStartSettings()
     {
         audioManager.Play("click");
-        volumeSliderCanvas.enabled = !volumeSliderCanvas.enabled;
+        settingsCanvas.enabled = !settingsCanvas.enabled;
         inSettings = !inSettings;
     }
 
@@ -254,7 +262,7 @@ public class GameEventsManager : MonoBehaviour
     {
         if (!isRecipeCollected())
         {
-            subtitleManager.startMamaEstherDialog();
+            StartCoroutine(subtitleManager.startMamaEstherDialog());
             mama.GetComponent<AudioSource>().Play();
         }
         else

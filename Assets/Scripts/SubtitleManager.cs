@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class SubtitleManager : MonoBehaviour
 {
-    string[] mamaEstherDialogStrings = { "MAMA: Esther dear, come help me with breakfast. Did you wash your hands?\nESTHER: Sure, Mama!\nMAMA: Great job, my little bunny! Would you go and get me the gefilte fish recipe from the basement?\nESTHER: OK!\nMAMA: Be careful when you go down!" };
-    string[] mamaMiraDialogStrings = { "Want to come help us, Mira?\nNo, I don’t want your gross gefilte"};
-    string[] afterRecipyDialog = { "Thank you honey. And now we can put the onions on the frying pan and stir until are they become golden" };
-    string[] answeringMachine = { "Don't call me until you agree to give me the recipe. This has been going for far too long" };
+    string[] mamaEstherDialogStrings = { "MAMA: Esther dear, come help me with breakfast. Did you wash your hands?\nESTHER: Sure, Mama!", "MAMA: Great job, my little bunny! Would you go and get me the gefilte fish recipe from the basement?\nESTHER: OK!", "MAMA: Be careful when you go down!" };
+    string[] mamaMiraDialogStrings = { "MAMA: Want to come help us, Mira?\nMIRA: No, I don’t want your gross gefilte" };
+    string[] afterRecipyDialog = { "MAMA: Thank you honey. And now we can put the onions on the frying pan and stir until are they become golden" };
+    string[] answeringMachine = { "MIRA: Don't call me until you agree to give me the recipe. This has been going for far too long" };
     string[] myStrings;
 
     int curStringIdx = 0;
@@ -23,12 +23,12 @@ public class SubtitleManager : MonoBehaviour
         curStringIdx = stringIdx;
 
         displaying = true;
-        Debug.Log("Started Coroutine at timestamp : " + Time.time);
+        //Debug.Log("Started Coroutine at timestamp : " + Time.time);
 
         yield return new WaitForSeconds((myStrings[curStringIdx].Length / 20) + 5);
 
         displaying = false;
-        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
+        //Debug.Log("Finished Coroutine at timestamp : " + Time.time);
     }
 
     private void getCharacterArray(string arrayName)
@@ -51,9 +51,25 @@ public class SubtitleManager : MonoBehaviour
         }
     }
 
-    public void startMamaEstherDialog()
+    public IEnumerator startMamaEstherDialog()
     {
-        StartCoroutine(ShowMe(0, "mama"));
+        //StartCoroutine(ShowMe(0, "mama"));
+        myStrings = mamaEstherDialogStrings;
+        displaying = true;
+        curStringIdx = 0;
+        yield return new WaitForSeconds((mamaEstherDialogStrings[curStringIdx].Length / 20) + 2);
+
+        displaying = false;
+        displaying = true;
+        curStringIdx = 1;
+        yield return new WaitForSeconds((myStrings[curStringIdx].Length / 20) + 2);
+
+        displaying = false;
+        displaying = true;
+        curStringIdx = 2;
+        yield return new WaitForSeconds((myStrings[curStringIdx].Length / 20) + 2);
+
+        displaying = false;
     }
 
     public void startMamaMiraDialog()
