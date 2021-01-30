@@ -11,6 +11,7 @@ public class GameEventsManager : MonoBehaviour
 {
     [SerializeField] private UnityEvent revealCorridor;
     [SerializeField] private UnityEvent revealCorridor2;
+    [SerializeField] private UnityEvent restoreCorridor;
 
     // ============ Trigger objects ============ //
     [SerializeField] private GameObject hazeret;
@@ -23,6 +24,7 @@ public class GameEventsManager : MonoBehaviour
     [SerializeField] private GameObject radio1;
     [SerializeField] private GameObject[] HouseModels;
     [SerializeField] private GameObject player;
+    [SerializeField] private GameObject mainMenu;
 
     [SerializeField] private GameObject openBasement;
     [SerializeField] private GameObject wallsOpenBasement;
@@ -190,7 +192,8 @@ public class GameEventsManager : MonoBehaviour
         //return first scene basment
         openBasement.SetActive(true);
         wallsOpenBasement.SetActive(true);
-
+        restoreCorridor.Invoke();
+        mainMenu.SetActive(false);
     }
 
     public void SwitchToVcam(GameEventsManager.Vcam vcam)
@@ -226,8 +229,6 @@ public class GameEventsManager : MonoBehaviour
 
     public void ToggleGameSettings()
     {
-        //SwitchToVcam(GameEventsManager.Vcam.Menu);
-        //menuLight.enabled = true;
         if (inStart)
         {
             StartToGame();
