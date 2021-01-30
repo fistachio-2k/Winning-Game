@@ -6576,6 +6576,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7189223067845973771}
     m_Modifications:
+    - target: {fileID: 667130233098180874, guid: c01bf047776965c4faa086cb01ed9930, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2882876181491130814, guid: c01bf047776965c4faa086cb01ed9930, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -22715,7 +22719,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1763448310
 Transform:
   m_ObjectHideFlags: 0
@@ -25526,6 +25530,11 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!64 &1982648101 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 667130233098180874, guid: c01bf047776965c4faa086cb01ed9930, type: 3}
+  m_PrefabInstance: {fileID: 537674832}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1985204876
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34108,6 +34117,10 @@ PrefabInstance:
       propertyPath: positionToMove
       value: 
       objectReference: {fileID: 247260054}
+    - target: {fileID: 1990486705458325357, guid: 80f792a912a1ada4cb1d3d4f5c1dbc61, type: 3}
+      propertyPath: hazeretCollider
+      value: 
+      objectReference: {fileID: 1982648101}
     - target: {fileID: 6582519711624502941, guid: 80f792a912a1ada4cb1d3d4f5c1dbc61, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -38243,7 +38256,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &2298961868203199694
 BoxCollider:
   m_ObjectHideFlags: 0

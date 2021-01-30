@@ -34,9 +34,7 @@ public class Corridor : MonoBehaviour
         }
         transform.DOScaleZ(1f, 15f);
         audioManager.Play("CorridorStrech");
-        yield return new WaitForSeconds(14f);
-        //audioManager.Stop("CorridorStrech"); TODO: stop only this sound when scale is finnished.
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(15f);
         corridorLight.enabled = true;
         backWall.SetActive(false);
     }
