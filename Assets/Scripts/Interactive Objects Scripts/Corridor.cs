@@ -38,6 +38,7 @@ public class Corridor : MonoBehaviour
         //audioManager.Stop("CorridorStrech"); TODO: stop only this sound when scale is finnished.
         yield return new WaitForSeconds(1f);
         corridorLight.enabled = true;
+        backWall.GetComponent<BoxCollider>().enabled = false;
         backWall.SetActive(false);
     }
 }

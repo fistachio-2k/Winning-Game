@@ -35,6 +35,7 @@ public class GameEventsManager : MonoBehaviour
     [SerializeField] private AudioManager audioManager;
     [SerializeField] private SubtitleManager subtitleManager;
 
+    [SerializeField] private PlayerController playerController;
     [SerializeField] private CinemachineVirtualCamera[] vcams;
 
 
@@ -258,7 +259,7 @@ public class GameEventsManager : MonoBehaviour
         mira.GetComponent<AudioSource>().Play();
     }
 
-    public void PlayMamaEstherScene()
+    public void PlayMamaEstherScene(GameObject mamaTrigger)
     {
         if (!isRecipeCollected())
         {
@@ -268,7 +269,7 @@ public class GameEventsManager : MonoBehaviour
         else
         {
             subtitleManager.startAfterRecipyDialog();
-            audioManager.Play("AfterRecipe");
+            mamaTrigger.GetComponent<AudioSource>().Play();
             spatula.GetComponent<Spatula>().timeToFry = true;
         }
     }
@@ -277,5 +278,15 @@ public class GameEventsManager : MonoBehaviour
     {
         subtitleManager.startAnsweringMachine();
         AnsweringMachine.GetComponent<AudioSource>().Play();
+    }
+
+    public void EnableMovement()
+    {
+        playerController.movementAllowed = true;
+    }
+
+    public void DisableMovement()
+    {
+        playerController.movementAllowed = false;
     }
 }
