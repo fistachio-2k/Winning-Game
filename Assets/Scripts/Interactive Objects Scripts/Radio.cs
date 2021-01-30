@@ -10,7 +10,6 @@ public class Radio : MonoBehaviour, IInteractable
     public void Interact()
     {
         AudioManager audioManager = FindObjectOfType<AudioManager>();
-        audioManager.Play("Radio");
         AudioSource s = gameObject.GetComponent<AudioSource>();
         if (s.isPlaying)
         {
@@ -18,6 +17,7 @@ public class Radio : MonoBehaviour, IInteractable
         }
         else
         {
+            audioManager.Play("Radio");
             s.Play();
         }
         if (text != null)
