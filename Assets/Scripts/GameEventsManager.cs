@@ -171,7 +171,7 @@ public class GameEventsManager : MonoBehaviour
     IEnumerator reavelCorridor2()
     {
         corridorRevealed2 = true;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         SwitchToVcam(Vcam.Corridor2);
         yield return new WaitForSeconds(2f);
         revealCorridor2.Invoke();
