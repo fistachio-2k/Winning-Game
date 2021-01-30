@@ -60,14 +60,14 @@ MonoBehaviour:
   m_VerticalAxis:
     Value: 40.02085
     m_SpeedMode: 1
-    m_MaxSpeed: 0.3
+    m_MaxSpeed: 0.1
     m_AccelTime: 0.1
     m_DecelTime: 0.1
     m_InputAxisName: Mouse Y
     m_InputAxisValue: 0
     m_InvertInput: 1
-    m_MinValue: 40
-    m_MaxValue: 55
+    m_MinValue: -30
+    m_MaxValue: 70
     m_Wrap: 0
     m_Recentering:
       m_enabled: 0

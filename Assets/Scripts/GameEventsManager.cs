@@ -106,15 +106,15 @@ public class GameEventsManager : MonoBehaviour
         // Esc clicked
         if (_inputManager.GetEscButton())
         {
-            audioManager.Play("click");
-            // TODO: Change to a specific menu according to location.
             if (currVcam !=  Vcam.Menu)
             {
                 ToggleGameSettings();
+                audioManager.Play("click");
             }
             else if (inSettings)
             {
                 ToggleStartSettings();
+                audioManager.Play("click");
             }
         }
         // Sitting scenario
