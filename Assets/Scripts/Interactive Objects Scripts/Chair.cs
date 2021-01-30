@@ -9,6 +9,7 @@ public class Chair : MonoBehaviour, IInteractable
     [SerializeField] private Transform positionToMove;
     [SerializeField] private float duration = 2f;
     [SerializeField] private TextReveal text;
+    [SerializeField] private Collider hazeretCollider;
 
     IEnumerator SitDown()
     {
@@ -20,6 +21,7 @@ public class Chair : MonoBehaviour, IInteractable
         StartCoroutine(text.RevealText());
         transform.DOMove(basePos, duration);
         GetComponent<MeshCollider>().enabled = false;
+        hazeretCollider.enabled = true;
     }
 
     IEnumerator StandUp()
