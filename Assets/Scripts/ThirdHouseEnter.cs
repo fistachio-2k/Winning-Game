@@ -11,7 +11,7 @@ public class ThirdHouseEnter : MonoBehaviour
     [SerializeField] private GameObject pointOfView;
     [SerializeField] private GameObject player;
     [SerializeField] float cameraAnimationDuration = 1f;
-    [SerializeField] float up = 0.8f;
+    [SerializeField] float up = 0.5f;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -28,7 +28,7 @@ public class ThirdHouseEnter : MonoBehaviour
         door.GetComponent<Door>()._isLocked = true;
 
         //Lower the camera and faster the character steps
-        pointOfView.transform.DOLocalMoveY(pointOfView.transform.position.y + up, cameraAnimationDuration);
+        pointOfView.transform.DOLocalMoveY(pointOfView.transform.localPosition.y + up, cameraAnimationDuration);
         PlayerController playerController = player.GetComponent<PlayerController>();
         playerController.playerSpeed -= 1.0f;
         playerController.gravityValue -= 1.0f;

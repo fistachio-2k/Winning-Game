@@ -7766,6 +7766,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 711484555}
     m_Modifications:
+    - target: {fileID: 1359579496646962733, guid: ca645835722e50e4fbac3b67f62b5769, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3750470435749873838, guid: ca645835722e50e4fbac3b67f62b5769, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -7814,7 +7818,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: kitchenette
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1359579496646962733, guid: ca645835722e50e4fbac3b67f62b5769, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ca645835722e50e4fbac3b67f62b5769, type: 3}
 --- !u!4 &582378985 stripped
 Transform:
@@ -24248,7 +24253,7 @@ MonoBehaviour:
   pointOfView: {fileID: 1845531586}
   player: {fileID: 443288090}
   cameraAnimationDuration: 1
-  up: 0.9
+  up: 0.5
 --- !u!65 &1883144833
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29801,7 +29806,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2063499011}
   m_LocalRotation: {x: -0.0019308536, y: -0.70010555, z: -0.00038914385, w: 0.7140367}
-  m_LocalPosition: {x: -36.7, y: -0.8, z: -36.6}
+  m_LocalPosition: {x: -36.7, y: -0.8, z: -36.61}
   m_LocalScale: {x: 21.903822, y: 15, z: 23.052946}
   m_Children: []
   m_Father: {fileID: 0}
