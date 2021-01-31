@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1477670063639771607}
   - component: {fileID: 4489588589817888291}
   - component: {fileID: 4489588589817888290}
-  - component: {fileID: 8079058772801653357}
   - component: {fileID: 8117860698884555440}
   m_Layer: 0
   m_Name: Player
@@ -72,20 +71,6 @@ CharacterController:
   m_StepOffset: 0.4
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &8079058772801653357
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4489588589817888289}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1
-  m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!222 &8117860698884555440
 CanvasRenderer:
