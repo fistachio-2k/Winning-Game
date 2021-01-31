@@ -9,6 +9,8 @@ public class Corridor : MonoBehaviour
     [SerializeField]
     private GameObject[] toBeApear;
     [SerializeField]
+    private GameObject[] toBeAttached;
+    [SerializeField]
     private GameObject backWall;
     [SerializeField]
     private Light corridorLight;
@@ -22,6 +24,10 @@ public class Corridor : MonoBehaviour
 
     IEnumerator CorridorCoRoutine()
     {
+        foreach (GameObject obj in toBeAttached)
+        {
+            obj.transform.parent = backWall.transform;
+        }
         yield return new WaitForSeconds(1f);
         foreach (GameObject obj in toDisapear)
         {

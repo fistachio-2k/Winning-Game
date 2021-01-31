@@ -11,6 +11,7 @@ public class GameEventsManager : MonoBehaviour
 {
     [SerializeField] private UnityEvent revealCorridor;
     [SerializeField] private UnityEvent revealCorridor2;
+    [SerializeField] private UnityEvent revealCorridor3;
     [SerializeField] private UnityEvent restoreCorridor;
 
     // ============ Trigger objects ============ //
@@ -52,6 +53,7 @@ public class GameEventsManager : MonoBehaviour
     private HashSet<int> _collectedItems;
     private bool corridorRevealed1 = false;
     private bool corridorRevealed2 = false;
+    private bool corridorRevealed3 = false;
     private bool backToFirstScene = false;
     private bool inSettings = false;
     private bool inStart = true;
@@ -138,11 +140,17 @@ public class GameEventsManager : MonoBehaviour
             StartCoroutine(reavelCorridor2());
         }
 
-        // Back to first scene
-        if (!backToFirstScene &&_collectedItems.Contains(_keyHash))
+        // Corridor2 Reavel Logic
+        if (!corridorRevealed3 && _collectedItems.Contains(_keyHash))
         {
-            StartCoroutine(BackToEndScene());
+            StartCoroutine(reavelCorridor3());
         }
+
+        // Back to first scene
+        //if (!backToFirstScene &&_collectedItems.Contains(_keyHash))
+        //{
+        //    StartCoroutine(BackToEndScene());
+        //}
     }
 
     public void AddCollectedItem(int itemHashCode)
@@ -182,11 +190,25 @@ public class GameEventsManager : MonoBehaviour
         SwitchToVcam(Vcam.Player);
     }
 
+    IEnumerator reavelCorridor3()
+    {
+        corridorRevealed3 = true;
+        yield return new WaitForSeconds(1f);
+        //SwitchToVcam(Vcam.Corridor2);
+        //yield return new WaitForSeconds(2f);
+        revealCorridor3.Invoke();
+        //StartCoroutine(corridor2Text.RevealText());
+        yield return new WaitForSeconds(1f);
+        audioManager.Play("Drag");
+        yield return new WaitForSeconds(3f);
+        //SwitchToVcam(Vcam.Player);
+    }
+
     IEnumerator BackToEndScene()
     {
         backToFirstScene = true;
         yield return new WaitForSeconds(1f);
-        player.transform.DOMove((Vector3.right * -0.416f) + (Vector3.up * 1.9f) + (Vector3.forward * 3.363f), 3f);
+        //player.transform.DOMove((Vector3.right * -0.416f) + (Vector3.up * 1.9f) + (Vector3.forward * 3.363f), 3f);
         yield return new WaitForSeconds(2f);
 
         //return first scene basment

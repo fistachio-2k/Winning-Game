@@ -32,5 +32,6 @@ public class ThirdHouseEnter : MonoBehaviour
         PlayerController playerController = player.GetComponent<PlayerController>();
         playerController.playerSpeed -= 1.0f;
         playerController.gravityValue -= 1.0f;
+        gameObject.GetComponent<Collider>().enabled = false;
     }
 }
