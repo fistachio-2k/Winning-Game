@@ -110,7 +110,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 11c092ed58ba5b640821dda253b4eb73, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: a07cf454a7a1ac949ac3572d375dddb0, type: 2}
+      objectReference: {fileID: 2100000, guid: f83fa00a478315f4691315e0c04f16c6, type: 2}
     - target: {fileID: 919132149155446097, guid: 11c092ed58ba5b640821dda253b4eb73, type: 3}
       propertyPath: m_Name
       value: book (1)
@@ -579,6 +579,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90.257
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 11c092ed58ba5b640821dda253b4eb73, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3b4e723d8eb8eb84a82c15242e587c16, type: 2}
     - target: {fileID: 919132149155446097, guid: 11c092ed58ba5b640821dda253b4eb73, type: 3}
       propertyPath: m_Name
       value: book (5)
@@ -651,7 +655,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 11c092ed58ba5b640821dda253b4eb73, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: a07cf454a7a1ac949ac3572d375dddb0, type: 2}
+      objectReference: {fileID: 2100000, guid: b7d48567ea9aabc499c92545b49d33cf, type: 2}
     - target: {fileID: 919132149155446097, guid: 11c092ed58ba5b640821dda253b4eb73, type: 3}
       propertyPath: m_Name
       value: book (2)
@@ -724,7 +728,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 11c092ed58ba5b640821dda253b4eb73, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: a07cf454a7a1ac949ac3572d375dddb0, type: 2}
+      objectReference: {fileID: 2100000, guid: e79fb966a4df7ef499dc8794d3107aaf, type: 2}
     - target: {fileID: 919132149155446097, guid: 11c092ed58ba5b640821dda253b4eb73, type: 3}
       propertyPath: m_Name
       value: book (3)
@@ -870,7 +874,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 11c092ed58ba5b640821dda253b4eb73, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: a07cf454a7a1ac949ac3572d375dddb0, type: 2}
+      objectReference: {fileID: 2100000, guid: e79fb966a4df7ef499dc8794d3107aaf, type: 2}
     - target: {fileID: 919132149155446097, guid: 11c092ed58ba5b640821dda253b4eb73, type: 3}
       propertyPath: m_Name
       value: book (4)

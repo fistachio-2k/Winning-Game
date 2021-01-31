@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 771788988725305426, guid: 15e891a4b567cf34aa53e5d58648e6bc, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: -1294284738371021749, guid: 8c9b323479ff4594ebef1e239a26dc28, type: 3}
+      objectReference: {fileID: 2100000, guid: b69c908addd2d3b49a7004ec2372ea03, type: 2}
     - target: {fileID: 6147471811744348567, guid: 15e891a4b567cf34aa53e5d58648e6bc, type: 3}
       propertyPath: m_Name
       value: bowl (1) Variant
@@ -74,6 +74,6 @@ PrefabInstance:
     - target: {fileID: 7649059792567519644, guid: 15e891a4b567cf34aa53e5d58648e6bc, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: -1294284738371021749, guid: 4b34358e7a42e684b901a486fe83a760, type: 3}
+      objectReference: {fileID: 2100000, guid: b69c908addd2d3b49a7004ec2372ea03, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15e891a4b567cf34aa53e5d58648e6bc, type: 3}
