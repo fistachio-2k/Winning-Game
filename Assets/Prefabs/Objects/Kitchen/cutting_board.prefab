@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: 6bbcfb251f2115e4ca27c9cfcd374519, type: 3}
+  - {fileID: 2100000, guid: a07cf454a7a1ac949ac3572d375dddb0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -140,7 +140,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: 6bbcfb251f2115e4ca27c9cfcd374519, type: 3}
+  - {fileID: 2100000, guid: a07cf454a7a1ac949ac3572d375dddb0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -206,6 +206,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2708059921698831284}
     m_Modifications:
+    - target: {fileID: 1759871401670054, guid: 2f46e20d13b1c0640ba4e01c9d67c37a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a07cf454a7a1ac949ac3572d375dddb0, type: 2}
     - target: {fileID: 3042283324635405058, guid: 2f46e20d13b1c0640ba4e01c9d67c37a, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -272,6 +276,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cutting_board_2
       objectReference: {fileID: 0}
+    - target: {fileID: 7863493556820840631, guid: 70ae0f71f5eb8a640b97d48d9c9439a8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a07cf454a7a1ac949ac3572d375dddb0, type: 2}
     - target: {fileID: 8352158202552906595, guid: 70ae0f71f5eb8a640b97d48d9c9439a8, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -378,6 +386,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: onion
       objectReference: {fileID: 0}
+    - target: {fileID: 6266465341158365304, guid: 4b64fb2d363e7b649bbb2911cbe635f5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a07cf454a7a1ac949ac3572d375dddb0, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b64fb2d363e7b649bbb2911cbe635f5, type: 3}
 --- !u!4 &6909084780015170846 stripped
@@ -392,6 +404,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2708059921698831284}
     m_Modifications:
+    - target: {fileID: 2479749856863677953, guid: fb070c63ad63ce942b8f2399d4d3a06d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a07cf454a7a1ac949ac3572d375dddb0, type: 2}
     - target: {fileID: 5856351211575992407, guid: fb070c63ad63ce942b8f2399d4d3a06d, type: 3}
       propertyPath: m_Name
       value: potato
@@ -454,6 +470,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2708059921698831284}
     m_Modifications:
+    - target: {fileID: 2582419357881557895, guid: ff0ece4e8cae3d8428e01eab2bd427ab, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a07cf454a7a1ac949ac3572d375dddb0, type: 2}
     - target: {fileID: 6721673408740010883, guid: ff0ece4e8cae3d8428e01eab2bd427ab, type: 3}
       propertyPath: m_Name
       value: potato2

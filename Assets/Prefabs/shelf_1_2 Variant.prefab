@@ -63,6 +63,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90.257
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 11c092ed58ba5b640821dda253b4eb73, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a07cf454a7a1ac949ac3572d375dddb0, type: 2}
     - target: {fileID: 919132149155446097, guid: 11c092ed58ba5b640821dda253b4eb73, type: 3}
       propertyPath: m_Name
       value: book (1)
@@ -76,6 +80,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8549824400208058769}
     m_Modifications:
+    - target: {fileID: 1691425918297954681, guid: 78fe0b71d8b093a48b9e7c12431681e2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a07cf454a7a1ac949ac3572d375dddb0, type: 2}
     - target: {fileID: 2226651734262535800, guid: 78fe0b71d8b093a48b9e7c12431681e2, type: 3}
       propertyPath: m_Name
       value: Cylinder_6_2
@@ -205,6 +213,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 0f6d3693f7b30074695db86d47adf7d4, type: 2}
+    - target: {fileID: -4683669308469848369, guid: 5d71d2b4a359ead4e800793ec69b32e9, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a07cf454a7a1ac949ac3572d375dddb0, type: 2}
+    - target: {fileID: 744954912224277673, guid: 5d71d2b4a359ead4e800793ec69b32e9, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a07cf454a7a1ac949ac3572d375dddb0, type: 2}
     - target: {fileID: 919132149155446097, guid: 5d71d2b4a359ead4e800793ec69b32e9, type: 3}
       propertyPath: m_Name
       value: photo frames
@@ -218,6 +234,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2067918968841907959, guid: df31cbaf001b52a40978823cecd5fe75, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 08f708e714551f14ebce95a98fbfedac, type: 2}
+    - target: {fileID: 2709393600091704984, guid: df31cbaf001b52a40978823cecd5fe75, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 08f708e714551f14ebce95a98fbfedac, type: 2}
     - target: {fileID: 5232275465099324468, guid: df31cbaf001b52a40978823cecd5fe75, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -266,6 +290,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: shelf_1_2 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 8054516060767721516, guid: df31cbaf001b52a40978823cecd5fe75, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 08f708e714551f14ebce95a98fbfedac, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df31cbaf001b52a40978823cecd5fe75, type: 3}
 --- !u!4 &8549824400208058769 stripped
@@ -405,6 +433,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90.257
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 11c092ed58ba5b640821dda253b4eb73, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a07cf454a7a1ac949ac3572d375dddb0, type: 2}
     - target: {fileID: 919132149155446097, guid: 11c092ed58ba5b640821dda253b4eb73, type: 3}
       propertyPath: m_Name
       value: book (2)
@@ -474,6 +506,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90.257
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 11c092ed58ba5b640821dda253b4eb73, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a07cf454a7a1ac949ac3572d375dddb0, type: 2}
     - target: {fileID: 919132149155446097, guid: 11c092ed58ba5b640821dda253b4eb73, type: 3}
       propertyPath: m_Name
       value: book (3)
@@ -491,6 +527,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cylinder_1_7
       objectReference: {fileID: 0}
+    - target: {fileID: 1362682823084753905, guid: a382fe69876568b41bb6f6460bdc88f8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a07cf454a7a1ac949ac3572d375dddb0, type: 2}
     - target: {fileID: 5847308557108328673, guid: a382fe69876568b41bb6f6460bdc88f8, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -612,6 +652,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90.257
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 11c092ed58ba5b640821dda253b4eb73, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a07cf454a7a1ac949ac3572d375dddb0, type: 2}
     - target: {fileID: 919132149155446097, guid: 11c092ed58ba5b640821dda253b4eb73, type: 3}
       propertyPath: m_Name
       value: book (4)
