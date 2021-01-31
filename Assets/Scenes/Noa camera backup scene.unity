@@ -2711,7 +2711,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1315382216238440389, guid: 893e9140a080a034ba1aea4e9d54cae3, type: 3}
       propertyPath: m_TargetDisplay
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1315382216238440391, guid: 893e9140a080a034ba1aea4e9d54cae3, type: 3}
       propertyPath: m_Name
@@ -16912,7 +16912,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c9c8bcdabaf6474fbaa75c90b634f3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvasForPic: {fileID: 1665240117}
+  _duration: 3
+  _distanceFromCamera: -0.001
 --- !u!4 &1010328086 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7062904038763091231, guid: fb070c63ad63ce942b8f2399d4d3a06d, type: 3}
