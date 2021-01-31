@@ -57,6 +57,5 @@ public class TextReveal : MonoBehaviour
             }
             _isRunning = false;
         }
-        //TODO Dor: add hide text!!!!!! 
     }
 }

@@ -11,6 +11,7 @@ public class GameEventsManager : MonoBehaviour
 {
     [SerializeField] private UnityEvent revealCorridor;
     [SerializeField] private UnityEvent revealCorridor2;
+    [SerializeField] private UnityEvent restoreCorridor;
 
     // ============ Trigger objects ============ //
     [SerializeField] private GameObject hazeret;
@@ -23,6 +24,7 @@ public class GameEventsManager : MonoBehaviour
     [SerializeField] private GameObject radio1;
     [SerializeField] private GameObject[] HouseModels;
     [SerializeField] private GameObject player;
+    [SerializeField] private GameObject mainMenu;
 
     [SerializeField] private GameObject openBasement;
     [SerializeField] private GameObject wallsOpenBasement;
@@ -35,6 +37,7 @@ public class GameEventsManager : MonoBehaviour
     [SerializeField] private AudioManager audioManager;
     [SerializeField] private SubtitleManager subtitleManager;
 
+    [SerializeField] private PlayerController playerController;
     [SerializeField] private CinemachineVirtualCamera[] vcams;
 
 
@@ -103,15 +106,15 @@ public class GameEventsManager : MonoBehaviour
         // Esc clicked
         if (_inputManager.GetEscButton())
         {
-            audioManager.Play("click");
-            // TODO: Change to a specific menu according to location.
             if (currVcam !=  Vcam.Menu)
             {
                 ToggleGameSettings();
+                audioManager.Play("click");
             }
             else if (inSettings)
             {
                 ToggleStartSettings();
+                audioManager.Play("click");
             }
         }
         // Sitting scenario
@@ -168,7 +171,7 @@ public class GameEventsManager : MonoBehaviour
     IEnumerator reavelCorridor2()
     {
         corridorRevealed2 = true;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         SwitchToVcam(Vcam.Corridor2);
         yield return new WaitForSeconds(2f);
         revealCorridor2.Invoke();
@@ -189,7 +192,8 @@ public class GameEventsManager : MonoBehaviour
         //return first scene basment
         openBasement.SetActive(true);
         wallsOpenBasement.SetActive(true);
-
+        restoreCorridor.Invoke();
+        mainMenu.SetActive(false);
     }
 
     public void SwitchToVcam(GameEventsManager.Vcam vcam)
@@ -225,8 +229,6 @@ public class GameEventsManager : MonoBehaviour
 
     public void ToggleGameSettings()
     {
-        //SwitchToVcam(GameEventsManager.Vcam.Menu);
-        //menuLight.enabled = true;
         if (inStart)
         {
             StartToGame();
@@ -258,7 +260,7 @@ public class GameEventsManager : MonoBehaviour
         mira.GetComponent<AudioSource>().Play();
     }
 
-    public void PlayMamaEstherScene()
+    public void PlayMamaEstherScene(GameObject mamaTrigger)
     {
         if (!isRecipeCollected())
         {
@@ -268,7 +270,7 @@ public class GameEventsManager : MonoBehaviour
         else
         {
             subtitleManager.startAfterRecipyDialog();
-            audioManager.Play("AfterRecipe");
+            mamaTrigger.GetComponent<AudioSource>().Play();
             spatula.GetComponent<Spatula>().timeToFry = true;
         }
     }
@@ -277,5 +279,15 @@ public class GameEventsManager : MonoBehaviour
     {
         subtitleManager.startAnsweringMachine();
         AnsweringMachine.GetComponent<AudioSource>().Play();
+    }
+
+    public void EnableMovement()
+    {
+        playerController.movementAllowed = true;
+    }
+
+    public void DisableMovement()
+    {
+        playerController.movementAllowed = false;
     }
 }

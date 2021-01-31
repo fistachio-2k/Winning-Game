@@ -6,11 +6,15 @@ using UnityEngine;
 public class Radio : MonoBehaviour, IInteractable
 {
     [SerializeField] private TextReveal text;
+    private AudioManager audioManager;
+    private void Start()
+    {
+        audioManager = FindObjectOfType<AudioManager>();
+    }
 
     public void Interact()
     {
-        AudioManager audioManager = FindObjectOfType<AudioManager>();
-        audioManager.Play("Radio");
+        
         AudioSource s = gameObject.GetComponent<AudioSource>();
         if (s.isPlaying)
         {
@@ -18,6 +22,7 @@ public class Radio : MonoBehaviour, IInteractable
         }
         else
         {
+            audioManager.Play("Radio");
             s.Play();
         }
         if (text != null)
@@ -25,5 +30,12 @@ public class Radio : MonoBehaviour, IInteractable
             StartCoroutine(text.RevealText());
         }
         
+    }
+
+    public void MuteMusic()
+    {
+        gameObject.GetComponent<AudioSource>().Stop();
+        audioManager.Play("Radio");
+        audioManager.Play("WhiteNoise");
     }
 }

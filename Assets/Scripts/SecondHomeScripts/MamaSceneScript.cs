@@ -9,7 +9,7 @@ public class MamaSceneScript : MonoBehaviour
     {
         if(firstPlay || secondPlay)
         {
-            GameEventsManager._instance.PlayMamaEstherScene();
+            GameEventsManager._instance.PlayMamaEstherScene(gameObject);
             if(!firstPlay && secondPlay)
             {
                 secondPlay = false;

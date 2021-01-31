@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     private InputManager inputManager;
     private Transform cameraTransform;
 
+    public bool movementAllowed = true;
+
     private void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -23,7 +25,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (GameEventsManager._instance.currVcam == GameEventsManager.Vcam.Player)
+        if (GameEventsManager._instance.currVcam == GameEventsManager.Vcam.Player && movementAllowed)
         {
             groundedPlayer = controller.isGrounded;
             if (groundedPlayer && playerVelocity.y < 0)
