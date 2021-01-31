@@ -141,7 +141,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: 6bbcfb251f2115e4ca27c9cfcd374519, type: 3}
+  - {fileID: 2100000, guid: a6f29946e1f518a49982b20da4d270c6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -352,6 +352,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2324756567909560691, guid: 2db4d1e9ed12b9a43aecf4dfecbab1b2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 455b1396c028fa84882b0db4e1476bee, type: 2}
     - target: {fileID: 4272708611335850330, guid: 2db4d1e9ed12b9a43aecf4dfecbab1b2, type: 3}
       propertyPath: m_Name
       value: vase
