@@ -4,13 +4,13 @@ using DG.Tweening;
 
 public class Door : MonoBehaviour, IInteractable
 {
-    private bool _isOpen = true;
     private bool _inOpenScene = true;
-    [SerializeField] public bool _isLocked = false;
     private Vector3 _baseRotation;
+    private AudioManager audioManager;
     [SerializeField] float duration = 2f;
     [SerializeField] private TextReveal text = null;
-    private AudioManager audioManager;
+    [SerializeField] public bool _isLocked = false;
+    public bool isOpen = true;
 
     void Start()
     {
@@ -34,9 +34,9 @@ public class Door : MonoBehaviour, IInteractable
     {   
         if (!_isLocked)
         {
-            _isOpen = !_isOpen;
+            isOpen = !isOpen;
             audioManager.Play("OpenDoor");
-            if (_isOpen)
+            if (isOpen)
             {
                 transform.DORotate(_baseRotation, duration);
             }
