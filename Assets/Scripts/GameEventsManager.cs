@@ -147,11 +147,6 @@ public class GameEventsManager : MonoBehaviour
             StartCoroutine(reavelCorridor3());
         }
 
-        // Back to first scene
-        //if (!backToFirstScene &&_collectedItems.Contains(_keyHash))
-        //{
-        //    StartCoroutine(BackToEndScene());
-        //}
     }
 
     public void AddCollectedItem(int itemHashCode)
@@ -236,20 +231,22 @@ public class GameEventsManager : MonoBehaviour
         return _inputManager.GetMouseClick();
     }
 
-    public void StartToGame()
+    public IEnumerator StartToGame()
     {
         if(!radio1.GetComponent<AudioSource>().isPlaying)
         {
             radio1.GetComponent<AudioSource>().Play();
         }
         audioManager.Play("click");
+        mainMenu.transform.DOLocalJump(mainMenu.transform.position - Vector3.up * 0.25f, 0.25f ,1,1.5f);
+        yield return new WaitForSeconds(1.5f);
         _instance.GetMouseClickEvent().AddListener(chair.StandUpWrapper);
         SwitchToVcam(GameEventsManager.Vcam.Sitting);
         Cursor.visible = false;
         menuLight.enabled = false;
         cameraCenter.enabled = true;
         inStart = false;
-        mainMenu.SetActive(false);
+        Destroy(mainMenu, 2f);
         StartCoroutine(chair.text.RevealText());
     }
 
