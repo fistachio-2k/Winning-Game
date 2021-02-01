@@ -12,7 +12,6 @@ public class GameEventsManager : MonoBehaviour
     [SerializeField] private UnityEvent revealCorridor;
     [SerializeField] private UnityEvent revealCorridor2;
     [SerializeField] private UnityEvent revealCorridor3;
-    [SerializeField] private UnityEvent restoreCorridor;
 
     // ============ Trigger objects ============ //
     [SerializeField] private GameObject hazeret;
@@ -34,6 +33,7 @@ public class GameEventsManager : MonoBehaviour
     [SerializeField] private Light menuLight;
     [SerializeField] private Canvas cameraCenter;
     [SerializeField] private Canvas settingsCanvas;
+    [SerializeField] private GameObject settings3D;
     [SerializeField] private TextReveal corridor2Text;
     [SerializeField] private AudioManager audioManager;
     [SerializeField] private SubtitleManager subtitleManager;
@@ -66,7 +66,9 @@ public class GameEventsManager : MonoBehaviour
         Menu,
         Corridor,
         Corridor2,
-        Corridor3
+        Corridor3,
+        Settings,
+        Murder
     }
 
     public enum Scene
@@ -100,7 +102,6 @@ public class GameEventsManager : MonoBehaviour
         _keyHash = key.GetHashCode();
         currVcam = Vcam.Menu;
         cameraCenter.enabled = false;
-        settingsCanvas.enabled = false;
     }
 
     void Update()
@@ -110,12 +111,12 @@ public class GameEventsManager : MonoBehaviour
         {
             if (currVcam !=  Vcam.Menu)
             {
-                ToggleGameSettings();
+                ToggleSettings();
                 audioManager.Play("click");
             }
             else if (inSettings)
             {
-                ToggleStartSettings();
+                ToggleSettings();
                 audioManager.Play("click");
             }
         }
@@ -249,6 +250,23 @@ public class GameEventsManager : MonoBehaviour
         cameraCenter.enabled = !cameraCenter.enabled;
         inSettings = !inSettings;
         settingsCanvas.enabled = !settingsCanvas.enabled;
+    }
+
+    public void ToggleSettings()
+    {
+        Cursor.visible = !Cursor.visible;
+        cameraCenter.enabled = !cameraCenter.enabled;
+        inSettings = !inSettings;
+        Image im = settingsCanvas.GetComponent<Image>();
+        Vcam cam = Vcam.Player;
+        im.DOFade(1f, 2f);
+        settings3D.SetActive(!settings3D.activeSelf);
+        if (currVcam == Vcam.Player)
+        {
+            cam = Vcam.Settings;
+        }
+        SwitchToVcam(cam);
+        im.DOFade(0f, 2f);
     }
 
     public void ToggleStartSettings()
