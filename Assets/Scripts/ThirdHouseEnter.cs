@@ -10,6 +10,7 @@ public class ThirdHouseEnter : MonoBehaviour
     [SerializeField] private GameObject door;
     [SerializeField] private GameObject pointOfView;
     [SerializeField] private GameObject player;
+    [SerializeField] private AudioSource cooking;
     [SerializeField] float cameraAnimationDuration = 1f;
     [SerializeField] float up = 0.5f;
 
@@ -18,12 +19,20 @@ public class ThirdHouseEnter : MonoBehaviour
         //Handle the sounds
         radio2.GetComponent<AudioSource>().Stop();
         radio3.GetComponent<AudioSource>().Play();
-
+        cooking.Stop();
     }
 
     private void OnTriggerExit(Collider other)
     {
         //Close the door after character enter
+        StartCoroutine(HigherPlayerView());
+        GetComponent<Collider>().enabled = false;
+    }
+
+    IEnumerator HigherPlayerView()
+    {
+        GameEventsManager._instance.DisableMovement();
+
         StartCoroutine(door.GetComponent<Door>().OpenClose());
         door.GetComponent<Door>()._isLocked = true;
 
@@ -33,5 +42,7 @@ public class ThirdHouseEnter : MonoBehaviour
         playerController.playerSpeed -= 1.0f;
         playerController.gravityValue -= 1.0f;
         gameObject.GetComponent<Collider>().enabled = false;
+        yield return new WaitForSeconds(cameraAnimationDuration);
+        GameEventsManager._instance.EnableMovement();
     }
 }

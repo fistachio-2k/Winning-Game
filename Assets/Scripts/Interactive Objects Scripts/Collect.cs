@@ -21,6 +21,7 @@ public class Collect : MonoBehaviour, IInteractable
 
     IEnumerator CollectMe()
     {
+        transform.parent = null;
         FindObjectOfType<AudioManager>().Play("Collect");
         gameObject.GetComponent<MeshCollider>().enabled = false;
         _s.Append(transform.DOMove(_camera.transform.position + _camera.transform.forward * _distanceFromCamera, _duration));

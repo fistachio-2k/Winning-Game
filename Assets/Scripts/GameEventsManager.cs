@@ -23,9 +23,9 @@ public class GameEventsManager : MonoBehaviour
     [SerializeField] private GameObject mira;
     [SerializeField] private GameObject spatula;
     [SerializeField] private GameObject radio1;
-    [SerializeField] private GameObject[] HouseModels;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject mainMenu;
+    [SerializeField] private Chair chair;
 
     [SerializeField] private GameObject openBasement;
     [SerializeField] private GameObject wallsOpenBasement;
@@ -54,7 +54,6 @@ public class GameEventsManager : MonoBehaviour
     private bool corridorRevealed1 = false;
     private bool corridorRevealed2 = false;
     private bool corridorRevealed3 = false;
-    private bool backToFirstScene = false;
     private bool inSettings = false;
     private bool inStart = true;
     public bool isFrying = false;
@@ -66,7 +65,8 @@ public class GameEventsManager : MonoBehaviour
         Sitting,
         Menu,
         Corridor,
-        Corridor2
+        Corridor2,
+        Corridor3
     }
 
     public enum Scene
@@ -146,11 +146,6 @@ public class GameEventsManager : MonoBehaviour
             StartCoroutine(reavelCorridor3());
         }
 
-        // Back to first scene
-        //if (!backToFirstScene &&_collectedItems.Contains(_keyHash))
-        //{
-        //    StartCoroutine(BackToEndScene());
-        //}
     }
 
     public void AddCollectedItem(int itemHashCode)
@@ -194,28 +189,14 @@ public class GameEventsManager : MonoBehaviour
     {
         corridorRevealed3 = true;
         yield return new WaitForSeconds(1f);
-        //SwitchToVcam(Vcam.Corridor2);
+        SwitchToVcam(Vcam.Corridor3);
         //yield return new WaitForSeconds(2f);
         revealCorridor3.Invoke();
         //StartCoroutine(corridor2Text.RevealText());
         yield return new WaitForSeconds(1f);
         audioManager.Play("Drag");
         yield return new WaitForSeconds(3f);
-        //SwitchToVcam(Vcam.Player);
-    }
-
-    IEnumerator BackToEndScene()
-    {
-        backToFirstScene = true;
-        yield return new WaitForSeconds(1f);
-        //player.transform.DOMove((Vector3.right * -0.416f) + (Vector3.up * 1.9f) + (Vector3.forward * 3.363f), 3f);
-        yield return new WaitForSeconds(2f);
-
-        //return first scene basment
-        openBasement.SetActive(true);
-        wallsOpenBasement.SetActive(true);
-        restoreCorridor.Invoke();
-        mainMenu.SetActive(false);
+        SwitchToVcam(Vcam.Player);
     }
 
     public void SwitchToVcam(GameEventsManager.Vcam vcam)
@@ -235,18 +216,25 @@ public class GameEventsManager : MonoBehaviour
         return _inputManager.GetMouseClick();
     }
 
-    public void StartToGame()
+    public IEnumerator StartToGame()
     {
         if(!radio1.GetComponent<AudioSource>().isPlaying)
         {
             radio1.GetComponent<AudioSource>().Play();
         }
         audioManager.Play("click");
-        SwitchToVcam(GameEventsManager.Vcam.Player);
+        mainMenu.transform.DOLocalJump(mainMenu.transform.position - Vector3.up * 0.25f, 0.25f ,1,1.5f);
+        yield return new WaitForSeconds(1.5f);
+        _instance.GetMouseClickEvent().AddListener(chair.StandUpWrapper);
+        StartCoroutine(chair.text.RevealText());
+        yield return new WaitForSeconds(3f);
+        SwitchToVcam(GameEventsManager.Vcam.Sitting);
         Cursor.visible = false;
         menuLight.enabled = false;
         cameraCenter.enabled = true;
         inStart = false;
+        Destroy(mainMenu, 2f);
+       
     }
 
     public void ToggleGameSettings()
@@ -312,4 +300,5 @@ public class GameEventsManager : MonoBehaviour
     {
         playerController.movementAllowed = false;
     }
+
 }
