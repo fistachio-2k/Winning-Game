@@ -7,6 +7,6 @@ public class SettingsButton : MonoBehaviour, IPointerClickHandler
 {
     public void OnPointerClick(PointerEventData eventData)
     {
-        GameEventsManager._instance.ToggleStartSettings();
+        StartCoroutine(GameEventsManager._instance.ToggleSettings());
     }
 }

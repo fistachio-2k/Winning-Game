@@ -12,7 +12,6 @@ public class GameEventsManager : MonoBehaviour
     [SerializeField] private UnityEvent revealCorridor;
     [SerializeField] private UnityEvent revealCorridor2;
     [SerializeField] private UnityEvent revealCorridor3;
-    [SerializeField] private UnityEvent restoreCorridor;
 
     // ============ Trigger objects ============ //
     [SerializeField] private GameObject hazeret;
@@ -34,6 +33,7 @@ public class GameEventsManager : MonoBehaviour
     [SerializeField] private Light menuLight;
     [SerializeField] private Canvas cameraCenter;
     [SerializeField] private Canvas settingsCanvas;
+    [SerializeField] private GameObject settings3D;
     [SerializeField] private TextReveal corridor2Text;
     [SerializeField] private AudioManager audioManager;
     [SerializeField] private SubtitleManager subtitleManager;
@@ -45,6 +45,7 @@ public class GameEventsManager : MonoBehaviour
     public static GameEventsManager _instance;
     private InputManager _inputManager;
     public Vcam currVcam;
+    private Vcam _lastVcam = Vcam.Menu;
     private UnityEvent _mouseClickEvent;
     private int _hazertHash;
     private int _recipeHash;
@@ -71,14 +72,6 @@ public class GameEventsManager : MonoBehaviour
         Murder
     }
 
-    public enum Scene
-    {
-        Opening,
-        Breakfast,
-        Lunch,
-        DinnerS
-    }
-
     private void Awake()
     {
         if (_instance != null && _instance != this)
@@ -102,7 +95,6 @@ public class GameEventsManager : MonoBehaviour
         _keyHash = key.GetHashCode();
         currVcam = Vcam.Menu;
         cameraCenter.enabled = false;
-        settingsCanvas.enabled = false;
     }
 
     void Update()
@@ -110,16 +102,8 @@ public class GameEventsManager : MonoBehaviour
         // Esc clicked
         if (_inputManager.GetEscButton())
         {
-            if (currVcam !=  Vcam.Menu)
-            {
-                ToggleGameSettings();
-                audioManager.Play("click");
-            }
-            else if (inSettings)
-            {
-                ToggleStartSettings();
-                audioManager.Play("click");
-            }
+            StartCoroutine(ToggleSettings());
+            audioManager.Play("click");
         }
         // Sitting scenario
         else if (_instance.currVcam == Vcam.Sitting)
@@ -192,9 +176,7 @@ public class GameEventsManager : MonoBehaviour
         corridorRevealed3 = true;
         yield return new WaitForSeconds(1f);
         SwitchToVcam(Vcam.Corridor3);
-        //yield return new WaitForSeconds(2f);
         revealCorridor3.Invoke();
-        //StartCoroutine(corridor2Text.RevealText());
         yield return new WaitForSeconds(1f);
         audioManager.Play("Drag");
         yield return new WaitForSeconds(3f);
@@ -204,6 +186,7 @@ public class GameEventsManager : MonoBehaviour
 
     public void SwitchToVcam(GameEventsManager.Vcam vcam)
     {
+        _lastVcam = currVcam;
         vcams[(int) vcam].Priority = 1;
         vcams[(int) currVcam].Priority = 0;
         currVcam = vcam;
@@ -240,26 +223,35 @@ public class GameEventsManager : MonoBehaviour
        
     }
 
-    public void ToggleGameSettings()
+    public IEnumerator ToggleSettings()
     {
-        if (inStart)
-        {
-            StartToGame();
-            settingsCanvas.enabled = false;
-            return;
-        }
+
         Cursor.visible = !Cursor.visible;
         cameraCenter.enabled = !cameraCenter.enabled;
         inSettings = !inSettings;
-        settingsCanvas.enabled = !settingsCanvas.enabled;
+        Image im = settingsCanvas.GetComponent<Image>();
+        if (!inStart)
+        {
+            im.DOFade(1f, 1f);
+            yield return new WaitForSeconds(1f);
+        }
+        if (currVcam == Vcam.Settings)
+        {
+            SwitchToVcam(_lastVcam);
+        }
+        else
+        {
+            SwitchToVcam(Vcam.Settings);
+        }
+        if (!inStart)
+        {
+            yield return new WaitForSeconds(1f);
+            im.DOFade(0f, 1f);
+        }
+        yield return new WaitForSeconds(1f);
+        settings3D.SetActive(!settings3D.activeSelf);
     }
 
-    public void ToggleStartSettings()
-    {
-        audioManager.Play("click");
-        settingsCanvas.enabled = !settingsCanvas.enabled;
-        inSettings = !inSettings;
-    }
 
     public void QuitGame()
     {

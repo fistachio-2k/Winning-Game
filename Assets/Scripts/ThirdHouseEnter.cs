@@ -32,8 +32,10 @@ public class ThirdHouseEnter : MonoBehaviour
     IEnumerator HigherPlayerView()
     {
         GameEventsManager._instance.DisableMovement();
-
-        StartCoroutine(door.GetComponent<Door>().OpenClose());
+        if (door.GetComponent<Door>().isOpen)
+        {
+            StartCoroutine(door.GetComponent<Door>().OpenClose());
+        }
         door.GetComponent<Door>()._isLocked = true;
 
         //Lower the camera and faster the character steps
