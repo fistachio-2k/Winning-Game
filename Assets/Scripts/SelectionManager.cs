@@ -7,6 +7,7 @@ public class SelectionManager : MonoBehaviour
 {
     private ISelectionResponse _selectionResponse;
     private Transform _selection;
+    [SerializeField] private float _distanceFromObject = 10f;
 
     private void Awake()
     {
@@ -23,14 +24,14 @@ public class SelectionManager : MonoBehaviour
         var ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, Camera.main.nearClipPlane * 20));
         _selection = null;
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, 6f))
+        if (Physics.Raycast(ray, out hit, _distanceFromObject))
         {
             var selection = hit.transform;
             IInteractable interactable = selection.GetComponent<IInteractable>();
             if (interactable != null)
             {
                 _selection = selection;
-                if (InputManager.Instance.GetMouseClick() && hit.distance <= 5f)
+                if (InputManager.Instance.GetMouseClick() && hit.distance <= _distanceFromObject)
                 {
                     interactable.Interact();
                 }
