@@ -10,6 +10,7 @@ public class ThirdHouseEnter : MonoBehaviour
     [SerializeField] private GameObject door;
     [SerializeField] private GameObject pointOfView;
     [SerializeField] private GameObject player;
+    [SerializeField] private AudioSource cooking;
     [SerializeField] float cameraAnimationDuration = 1f;
     [SerializeField] float up = 0.5f;
 
@@ -18,7 +19,7 @@ public class ThirdHouseEnter : MonoBehaviour
         //Handle the sounds
         radio2.GetComponent<AudioSource>().Stop();
         radio3.GetComponent<AudioSource>().Play();
-
+        cooking.Stop();
     }
 
     private void OnTriggerExit(Collider other)
