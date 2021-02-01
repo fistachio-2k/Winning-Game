@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3500626139473217044}
   - component: {fileID: 3500626139473217051}
   - component: {fileID: 2917827840120054554}
+  - component: {fileID: 5645903801840944605}
   m_Layer: 0
   m_Name: GameEventsManager
   m_TagString: Untagged
@@ -71,21 +72,42 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  revealCorridor2:
+    m_PersistentCalls:
+      m_Calls: []
+  revealCorridor3:
+    m_PersistentCalls:
+      m_Calls: []
+  restoreCorridor:
+    m_PersistentCalls:
+      m_Calls: []
   hazeret: {fileID: 0}
+  recipe: {fileID: 0}
+  key: {fileID: 0}
+  mama: {fileID: 0}
+  mira: {fileID: 0}
+  spatula: {fileID: 0}
+  radio1: {fileID: 0}
+  player: {fileID: 0}
+  mainMenu: {fileID: 0}
+  chair: {fileID: 0}
+  openBasement: {fileID: 0}
+  wallsOpenBasement: {fileID: 0}
   pianoRenderrer: {fileID: 0}
+  menuLight: {fileID: 0}
+  cameraCenter: {fileID: 0}
+  settingsCanvas: {fileID: 0}
+  corridor2Text: {fileID: 0}
+  audioManager: {fileID: 0}
+  subtitleManager: {fileID: 0}
+  playerController: {fileID: 0}
   vcams:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  HouseModels:
-  - {fileID: 0}
-  - {fileID: 0}
-  menuLight: {fileID: 0}
-  cameraCenter: {fileID: 0}
-  audioManager: {fileID: 0}
-  volumeSliderCanvas: {fileID: 0}
   currVcam: 2
+  isFrying: 0
 --- !u!114 &2917827840120054554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,3 +187,23 @@ MonoBehaviour:
     m_FixedHeight: 0
     m_StretchWidth: 1
     m_StretchHeight: 0
+--- !u!114 &5645903801840944605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3500626139473217045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d5e6abd1d3569e49865e0796b766db7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerLocationDebug: 0
+  changeLocationDebug: 0
+  locationsForDebug:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  player: {fileID: 0}
