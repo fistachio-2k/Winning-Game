@@ -14,6 +14,7 @@ public class SecondHouseEnter : MonoBehaviour
     [SerializeField] private GameObject door;
     [SerializeField] private GameObject pointOfView;
     [SerializeField] private GameObject player;
+    [SerializeField] private AudioSource cooking;
     [SerializeField] float cameraAnimationDuration = 1f;
     [SerializeField] float down = -0.5f;
     bool basementFlag = true;
@@ -43,6 +44,7 @@ public class SecondHouseEnter : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         //Lower the camera and faster the character steps
+        cooking.Play();
         StartCoroutine(LowerPlayerView());
         
     }
