@@ -45,6 +45,7 @@ public class GameEventsManager : MonoBehaviour
     public static GameEventsManager _instance;
     private InputManager _inputManager;
     public Vcam currVcam;
+    private Vcam _lastVcam = Vcam.Menu;
     private UnityEvent _mouseClickEvent;
     private int _hazertHash;
     private int _recipeHash;
@@ -69,14 +70,6 @@ public class GameEventsManager : MonoBehaviour
         Corridor3,
         Settings,
         Murder
-    }
-
-    public enum Scene
-    {
-        Opening,
-        Breakfast,
-        Lunch,
-        DinnerS
     }
 
     private void Awake()
@@ -109,16 +102,18 @@ public class GameEventsManager : MonoBehaviour
         // Esc clicked
         if (_inputManager.GetEscButton())
         {
-            if (currVcam !=  Vcam.Menu)
-            {
-                ToggleSettings();
-                audioManager.Play("click");
-            }
-            else if (inSettings)
-            {
-                ToggleSettings();
-                audioManager.Play("click");
-            }
+            //if (currVcam !=  Vcam.Menu)
+            //{
+            //    StartCoroutine(ToggleSettings());
+            //    audioManager.Play("click");
+            //}
+            //else if (inSettings)
+            //{
+            //    StartCoroutine(ToggleSettings());
+            //    audioManager.Play("click");
+            //}
+            StartCoroutine(ToggleSettings());
+            audioManager.Play("click");
         }
         // Sitting scenario
         else if (_instance.currVcam == Vcam.Sitting)
@@ -191,9 +186,7 @@ public class GameEventsManager : MonoBehaviour
         corridorRevealed3 = true;
         yield return new WaitForSeconds(1f);
         SwitchToVcam(Vcam.Corridor3);
-        //yield return new WaitForSeconds(2f);
         revealCorridor3.Invoke();
-        //StartCoroutine(corridor2Text.RevealText());
         yield return new WaitForSeconds(1f);
         audioManager.Play("Drag");
         yield return new WaitForSeconds(3f);
@@ -203,6 +196,7 @@ public class GameEventsManager : MonoBehaviour
 
     public void SwitchToVcam(GameEventsManager.Vcam vcam)
     {
+        _lastVcam = currVcam;
         vcams[(int) vcam].Priority = 1;
         vcams[(int) currVcam].Priority = 0;
         currVcam = vcam;
@@ -253,21 +247,33 @@ public class GameEventsManager : MonoBehaviour
         settingsCanvas.enabled = !settingsCanvas.enabled;
     }
 
-    public void ToggleSettings()
+    public IEnumerator ToggleSettings()
     {
+
         Cursor.visible = !Cursor.visible;
         cameraCenter.enabled = !cameraCenter.enabled;
         inSettings = !inSettings;
         Image im = settingsCanvas.GetComponent<Image>();
-        Vcam cam = Vcam.Player;
-        im.DOFade(1f, 2f);
-        settings3D.SetActive(!settings3D.activeSelf);
-        if (currVcam == Vcam.Player)
+        if (!inStart)
         {
-            cam = Vcam.Settings;
+            im.DOFade(1f, 1f);
+            yield return new WaitForSeconds(1f);
         }
-        SwitchToVcam(cam);
-        im.DOFade(0f, 2f);
+        if (currVcam == Vcam.Settings)
+        {
+            SwitchToVcam(_lastVcam);
+        }
+        else
+        {
+            SwitchToVcam(Vcam.Settings);
+        }
+        if (!inStart)
+        {
+            yield return new WaitForSeconds(1f);
+            im.DOFade(0f, 1f);
+        }
+        yield return new WaitForSeconds(1f);
+        settings3D.SetActive(!settings3D.activeSelf);
     }
 
     public void ToggleStartSettings()
