@@ -26,6 +26,7 @@ public class GameEventsManager : MonoBehaviour
     [SerializeField] private GameObject[] HouseModels;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject mainMenu;
+    [SerializeField] private Chair chair;
 
     [SerializeField] private GameObject openBasement;
     [SerializeField] private GameObject wallsOpenBasement;
@@ -242,11 +243,14 @@ public class GameEventsManager : MonoBehaviour
             radio1.GetComponent<AudioSource>().Play();
         }
         audioManager.Play("click");
-        SwitchToVcam(GameEventsManager.Vcam.Player);
+        _instance.GetMouseClickEvent().AddListener(chair.StandUpWrapper);
+        SwitchToVcam(GameEventsManager.Vcam.Sitting);
         Cursor.visible = false;
         menuLight.enabled = false;
         cameraCenter.enabled = true;
         inStart = false;
+        mainMenu.SetActive(false);
+        StartCoroutine(chair.text.RevealText());
     }
 
     public void ToggleGameSettings()

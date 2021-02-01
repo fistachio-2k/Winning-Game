@@ -43,6 +43,14 @@ public class SecondHouseEnter : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         //Lower the camera and faster the character steps
+        StartCoroutine(LowerPlayerView());
+        
+    }
+
+    IEnumerator LowerPlayerView()
+    {
+        GameEventsManager._instance.DisableMovement();
+
         pointOfView.transform.DOLocalMoveY(pointOfView.transform.localPosition.y + down, cameraAnimationDuration);
         PlayerController playerController = player.GetComponent<PlayerController>();
         playerController.playerSpeed += 1.0f;
@@ -52,5 +60,8 @@ public class SecondHouseEnter : MonoBehaviour
         StartCoroutine(door.GetComponent<Door>().OpenClose());
         door.GetComponent<Door>()._isLocked = true;
         gameObject.GetComponent<Collider>().enabled = false;
+        yield return new WaitForSeconds(cameraAnimationDuration);
+
+        GameEventsManager._instance.EnableMovement();
     }
 }

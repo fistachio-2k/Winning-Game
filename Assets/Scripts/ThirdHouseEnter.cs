@@ -24,6 +24,13 @@ public class ThirdHouseEnter : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         //Close the door after character enter
+        StartCoroutine(HigherPlayerView());
+    }
+
+    IEnumerator HigherPlayerView()
+    {
+        GameEventsManager._instance.DisableMovement();
+
         StartCoroutine(door.GetComponent<Door>().OpenClose());
         door.GetComponent<Door>()._isLocked = true;
 
@@ -33,5 +40,8 @@ public class ThirdHouseEnter : MonoBehaviour
         playerController.playerSpeed -= 1.0f;
         playerController.gravityValue -= 1.0f;
         gameObject.GetComponent<Collider>().enabled = false;
+        yield return new WaitForSeconds(cameraAnimationDuration);
+
+        GameEventsManager._instance.EnableMovement();
     }
 }
