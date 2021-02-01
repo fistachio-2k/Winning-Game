@@ -26,6 +26,7 @@ public class ThirdHouseEnter : MonoBehaviour
     {
         //Close the door after character enter
         StartCoroutine(HigherPlayerView());
+        GetComponent<Collider>().enabled = false;
     }
 
     IEnumerator HigherPlayerView()
@@ -42,7 +43,6 @@ public class ThirdHouseEnter : MonoBehaviour
         playerController.gravityValue -= 1.0f;
         gameObject.GetComponent<Collider>().enabled = false;
         yield return new WaitForSeconds(cameraAnimationDuration);
-
         GameEventsManager._instance.EnableMovement();
     }
 }

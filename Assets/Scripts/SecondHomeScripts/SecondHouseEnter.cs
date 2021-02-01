@@ -46,6 +46,7 @@ public class SecondHouseEnter : MonoBehaviour
         //Lower the camera and faster the character steps
         cooking.Play();
         StartCoroutine(LowerPlayerView());
+        GetComponent<Collider>().enabled = false;
         
     }
 
@@ -59,7 +60,10 @@ public class SecondHouseEnter : MonoBehaviour
         playerController.gravityValue += 1.0f;
 
         //Close the door after character enter
-        StartCoroutine(door.GetComponent<Door>().OpenClose());
+        if (door.GetComponent<Door>().isOpen)
+        {
+            StartCoroutine(door.GetComponent<Door>().OpenClose());
+        }
         door.GetComponent<Door>()._isLocked = true;
         gameObject.GetComponent<Collider>().enabled = false;
         yield return new WaitForSeconds(cameraAnimationDuration);
