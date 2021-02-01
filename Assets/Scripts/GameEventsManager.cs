@@ -23,7 +23,6 @@ public class GameEventsManager : MonoBehaviour
     [SerializeField] private GameObject mira;
     [SerializeField] private GameObject spatula;
     [SerializeField] private GameObject radio1;
-    [SerializeField] private GameObject[] HouseModels;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private Chair chair;
@@ -55,7 +54,6 @@ public class GameEventsManager : MonoBehaviour
     private bool corridorRevealed1 = false;
     private bool corridorRevealed2 = false;
     private bool corridorRevealed3 = false;
-    private bool backToFirstScene = false;
     private bool inSettings = false;
     private bool inStart = true;
     public bool isFrying = false;
@@ -67,7 +65,8 @@ public class GameEventsManager : MonoBehaviour
         Sitting,
         Menu,
         Corridor,
-        Corridor2
+        Corridor2,
+        Corridor3
     }
 
     public enum Scene
@@ -190,7 +189,7 @@ public class GameEventsManager : MonoBehaviour
     {
         corridorRevealed3 = true;
         yield return new WaitForSeconds(1f);
-        //SwitchToVcam(Vcam.Corridor2);
+        SwitchToVcam(Vcam.Corridor3);
         //yield return new WaitForSeconds(2f);
         revealCorridor3.Invoke();
         //StartCoroutine(corridor2Text.RevealText());
@@ -198,20 +197,6 @@ public class GameEventsManager : MonoBehaviour
         audioManager.Play("Drag");
         yield return new WaitForSeconds(3f);
         //SwitchToVcam(Vcam.Player);
-    }
-
-    IEnumerator BackToEndScene()
-    {
-        backToFirstScene = true;
-        yield return new WaitForSeconds(1f);
-        //player.transform.DOMove((Vector3.right * -0.416f) + (Vector3.up * 1.9f) + (Vector3.forward * 3.363f), 3f);
-        yield return new WaitForSeconds(2f);
-
-        //return first scene basment
-        openBasement.SetActive(true);
-        wallsOpenBasement.SetActive(true);
-        restoreCorridor.Invoke();
-        mainMenu.SetActive(false);
     }
 
     public void SwitchToVcam(GameEventsManager.Vcam vcam)
@@ -313,4 +298,5 @@ public class GameEventsManager : MonoBehaviour
     {
         playerController.movementAllowed = false;
     }
+
 }
