@@ -102,16 +102,6 @@ public class GameEventsManager : MonoBehaviour
         // Esc clicked
         if (_inputManager.GetEscButton())
         {
-            //if (currVcam !=  Vcam.Menu)
-            //{
-            //    StartCoroutine(ToggleSettings());
-            //    audioManager.Play("click");
-            //}
-            //else if (inSettings)
-            //{
-            //    StartCoroutine(ToggleSettings());
-            //    audioManager.Play("click");
-            //}
             StartCoroutine(ToggleSettings());
             audioManager.Play("click");
         }
@@ -233,20 +223,6 @@ public class GameEventsManager : MonoBehaviour
        
     }
 
-    public void ToggleGameSettings()
-    {
-        if (inStart)
-        {
-            StartToGame();
-            settingsCanvas.enabled = false;
-            return;
-        }
-        Cursor.visible = !Cursor.visible;
-        cameraCenter.enabled = !cameraCenter.enabled;
-        inSettings = !inSettings;
-        settingsCanvas.enabled = !settingsCanvas.enabled;
-    }
-
     public IEnumerator ToggleSettings()
     {
 
@@ -276,12 +252,6 @@ public class GameEventsManager : MonoBehaviour
         settings3D.SetActive(!settings3D.activeSelf);
     }
 
-    public void ToggleStartSettings()
-    {
-        audioManager.Play("click");
-        settingsCanvas.enabled = !settingsCanvas.enabled;
-        inSettings = !inSettings;
-    }
 
     public void QuitGame()
     {
