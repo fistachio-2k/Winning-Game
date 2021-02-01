@@ -198,6 +198,7 @@ public class GameEventsManager : MonoBehaviour
         audioManager.Play("Drag");
         yield return new WaitForSeconds(3f);
         SwitchToVcam(Vcam.Player);
+        
     }
 
     public void SwitchToVcam(GameEventsManager.Vcam vcam)
@@ -307,6 +308,14 @@ public class GameEventsManager : MonoBehaviour
     {
         subtitleManager.startAnsweringMachine();
         AnsweringMachine.GetComponent<AudioSource>().Play();
+    }
+
+    public IEnumerator StartLastScene()
+    {
+        yield return new WaitForSeconds(2f);
+        SwitchToVcam(GameEventsManager.Vcam.Murder);
+        Cursor.visible = !Cursor.visible;
+        audioManager.Play("LastDialog");
     }
 
     public void EnableMovement()

@@ -10,6 +10,7 @@ public class Door : MonoBehaviour, IInteractable
     [SerializeField] float duration = 2f;
     [SerializeField] private TextReveal text = null;
     [SerializeField] public bool _isLocked = false;
+    [SerializeField] public bool _isLastScene = false;
     public bool isOpen = true;
 
     void Start()
@@ -32,6 +33,12 @@ public class Door : MonoBehaviour, IInteractable
 
     public IEnumerator OpenClose()
     {   
+        if(_isLastScene)
+        {
+            audioManager.Play("UnlockDoor");
+            _isLocked = false;
+            StartCoroutine(GameEventsManager._instance.StartLastScene());
+        }
         if (!_isLocked)
         {
             isOpen = !isOpen;
@@ -50,5 +57,11 @@ public class Door : MonoBehaviour, IInteractable
             audioManager.Play("LockedDoor");
         }
         yield return null;
+    }
+
+    public void Unlock()
+    {
+        _isLastScene = true;
+        _isLocked = false;
     }
 }
