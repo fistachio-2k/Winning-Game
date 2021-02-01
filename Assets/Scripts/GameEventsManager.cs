@@ -196,7 +196,7 @@ public class GameEventsManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
         audioManager.Play("Drag");
         yield return new WaitForSeconds(3f);
-        //SwitchToVcam(Vcam.Player);
+        SwitchToVcam(Vcam.Player);
     }
 
     public void SwitchToVcam(GameEventsManager.Vcam vcam)
@@ -226,13 +226,15 @@ public class GameEventsManager : MonoBehaviour
         mainMenu.transform.DOLocalJump(mainMenu.transform.position - Vector3.up * 0.25f, 0.25f ,1,1.5f);
         yield return new WaitForSeconds(1.5f);
         _instance.GetMouseClickEvent().AddListener(chair.StandUpWrapper);
+        StartCoroutine(chair.text.RevealText());
+        yield return new WaitForSeconds(3f);
         SwitchToVcam(GameEventsManager.Vcam.Sitting);
         Cursor.visible = false;
         menuLight.enabled = false;
         cameraCenter.enabled = true;
         inStart = false;
         Destroy(mainMenu, 2f);
-        StartCoroutine(chair.text.RevealText());
+       
     }
 
     public void ToggleGameSettings()
