@@ -11,6 +11,7 @@ public class ShowPicture : MonoBehaviour, IInteractable
     [SerializeField] private float _distanceFromCamera = -0.001f;
     [SerializeField] private bool _isANote = false;
     [SerializeField] private bool _isALetter = false;
+    [SerializeField] public bool stopShowing = false;
 
     private Camera _camera;
     private bool _inInteraction = false;
@@ -30,16 +31,19 @@ public class ShowPicture : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        if(!_inInteraction)
+        if(!stopShowing)
         {
-            _inInteraction = true;
-            GameEventsManager._instance.DisableMovement();
-            StartCoroutine(ShowPic());
-        }
-        else
-        {
-            _inInteraction = false;
-            StartCoroutine(PutBackPic());
+            if (!_inInteraction)
+            {
+                _inInteraction = true;
+                GameEventsManager._instance.DisableMovement();
+                StartCoroutine(ShowPic());
+            }
+            else
+            {
+                _inInteraction = false;
+                StartCoroutine(PutBackPic());
+            }
         }
     }
 
@@ -72,5 +76,10 @@ public class ShowPicture : MonoBehaviour, IInteractable
         gameObject.transform.DORotate(_baseRotation, _duration);
         yield return new WaitForSeconds(1f);
         GameEventsManager._instance.EnableMovement();
+    }
+
+    public void StopShow()
+    {
+        stopShowing = true;
     }
 }
