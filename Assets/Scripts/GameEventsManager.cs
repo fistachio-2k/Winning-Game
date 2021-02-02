@@ -313,11 +313,14 @@ public class GameEventsManager : MonoBehaviour
         SwitchToVcam(Vcam.Falling);
         yield return new WaitForSeconds(1f);
         fallingAnim.enabled = true;
+        audioManager.Play("endSound");
         yield return new WaitForSeconds(3f);
         im.DOFade(1f, 0.2f);
         Cursor.visible = false;
         endCanvas.enabled = true;
         cameraCenter.enabled = false;
+        audioManager.Play("endMusic");
+        
     }
 
     public void EnableMovement()
