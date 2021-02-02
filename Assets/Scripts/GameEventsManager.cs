@@ -18,7 +18,6 @@ public class GameEventsManager : MonoBehaviour
     [SerializeField] private GameObject recipe;
     [SerializeField] private GameObject key;
     // ======================================== //
-    [SerializeField] private GameObject mama;
     [SerializeField] private GameObject mira;
     [SerializeField] private GameObject spatula;
     [SerializeField] private GameObject radio1;
@@ -268,18 +267,23 @@ public class GameEventsManager : MonoBehaviour
         mira.GetComponent<AudioSource>().Play();
     }
 
-    public void PlayMamaEstherScene(GameObject mamaTrigger)
+    public void PlayMamaEstherScene(GameObject mamaTrigger1)
     {
         if (!isRecipeCollected())
         {
             StartCoroutine(subtitleManager.startMamaEstherDialog());
-            mama.GetComponent<AudioSource>().Play();
+            mamaTrigger1.GetComponent<AudioSource>().Play();
         }
-        else
+    }
+
+    public void PlayAfterResipy(GameObject mamaTrigger2)
+    {
+        if (isRecipeCollected())
         {
             subtitleManager.startAfterRecipyDialog();
-            mamaTrigger.GetComponent<AudioSource>().Play();
+            mamaTrigger2.GetComponent<AudioSource>().Play();
             spatula.GetComponent<Spatula>().timeToFry = true;
+            mamaTrigger2.GetComponent<Collider>().enabled = false;
         }
     }
 

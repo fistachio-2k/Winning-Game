@@ -53,11 +53,11 @@ public class ShowPicture : MonoBehaviour, IInteractable
         }
         else if(_isANote)
         {
-            _s.Join(gameObject.transform.DORotate(_camera.transform.rotation.eulerAngles + Vector3.right * 110 + Vector3.up * 180f, _duration));
+            _s.Join(gameObject.transform.DORotate(_camera.transform.rotation.eulerAngles + Vector3.right * 70 + Vector3.up * 180f, _duration));
         }
         else
         {
-            _s.Join(gameObject.transform.DORotate(_camera.transform.rotation.eulerAngles + Vector3.right * 90 + Vector3.up * 180f, _duration));
+            _s.Join(gameObject.transform.DORotate(_camera.transform.rotation.eulerAngles + Vector3.right * 70 + Vector3.up * 180f, _duration));
         }
 
         _s.Play();
