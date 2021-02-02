@@ -36,6 +36,7 @@ public class GameEventsManager : MonoBehaviour
     [SerializeField] private AudioManager audioManager;
     [SerializeField] private SubtitleManager subtitleManager;
     [SerializeField] private Light menuLight;
+    [SerializeField] private Animator fallingAnim;
 
     [SerializeField] private PlayerController playerController;
     [SerializeField] private CinemachineVirtualCamera[] vcams;
@@ -306,8 +307,10 @@ public class GameEventsManager : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         im.DOFade(0f, 0.2f);
         SwitchToVcam(Vcam.Murder);
+        yield return new WaitForSeconds(1f);
         SwitchToVcam(Vcam.Falling);
-        vcams[(int) currVcam].GetComponent<Animator>().SetBool("isFalling", true);
+        yield return new WaitForSeconds(1f);
+        fallingAnim.enabled = true;
     }
 
     public void EnableMovement()
