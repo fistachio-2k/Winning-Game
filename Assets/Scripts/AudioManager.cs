@@ -14,7 +14,7 @@ public class AudioManager : MonoBehaviour
     private static readonly string volumePref = "volumePref";
     private int firstPlayInt;
     private float volumeFloat;
-    [SerializeField] private VolumeSlider volumeSlider;
+    [SerializeField] private Slider volumeSlider;
     [SerializeField] private AudioSource[] soundEffects;
 
     void Awake()
