@@ -11,6 +11,10 @@ GameObject:
   - component: {fileID: 3316800568063239374}
   - component: {fileID: 2463046260283943738}
   - component: {fileID: 9066397478835596310}
+  - component: {fileID: 1514164135810160284}
+  - component: {fileID: 3249214771375492329}
+  - component: {fileID: 6903772812628668890}
+  - component: {fileID: 406935852027606499}
   m_Layer: 0
   m_Name: close
   m_TagString: Untagged
@@ -81,6 +85,68 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1514164135810160284
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850019467534538900}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5831384866983911301, guid: 78768421367968c4abf368a675d94859, type: 3}
+--- !u!114 &3249214771375492329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850019467534538900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!114 &6903772812628668890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850019467534538900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99212f2781681db4b94d37468fbb5ad7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boxLib: {fileID: 850019467534538900}
+  boxBody: {fileID: 6033868310387851463}
+  recipe: {fileID: 4341625287641175615}
+  isLocked: 1
+  duration: 2
+--- !u!65 &406935852027606499
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850019467534538900}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.19999999, y: 0.15, z: 0.29999998}
+  m_Center: {x: -0.10046366, y: 0.03, z: 0}
 --- !u!1 &1753919778678198392
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,6 +482,9 @@ GameObject:
   - component: {fileID: 2357155109685098469}
   - component: {fileID: 4640854094371031911}
   - component: {fileID: 2919462327163200054}
+  - component: {fileID: 4266309540097622408}
+  - component: {fileID: 1729782200639004443}
+  - component: {fileID: 7866589336101472400}
   m_Layer: 0
   m_Name: gefilte_recipe
   m_TagString: Untagged
@@ -486,6 +555,51 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4266309540097622408
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4341625287641175615}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.15, y: 0.15826383, z: 0.25}
+  m_Center: {x: 0, y: -0.03, z: -0.03}
+--- !u!64 &1729782200639004443
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4341625287641175615}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5971831526236791854, guid: e1b87c4ee7cc8c14a831f86638abfacd, type: 3}
+--- !u!114 &7866589336101472400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4341625287641175615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &4527580957590434234
 GameObject:
   m_ObjectHideFlags: 0
