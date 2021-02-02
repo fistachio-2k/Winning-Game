@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class SubtitleManager : MonoBehaviour
 {
-    string[] mamaEstherDialogStrings = { "MAMA: Esther dear, come help me with breakfast. Did you wash your hands?\nESTHER: Sure, Mama!", "MAMA: Great job, my little bunny! Would you go and get me the gefilte fish recipe from the basement?\nESTHER: OK!", "MAMA: Be careful when you go down!" };
-    string[] mamaMiraDialogStrings = { "MAMA: Want to come help us, Mira?\nMIRA: No, I don’t want your gross gefilte" };
-    string[] afterRecipyDialog = { "MAMA: Thank you honey. And now we can put the onions on the frying pan and stir until are they become golden" };
-    string[] answeringMachine = { "MIRA: Don't call me until you agree to give me the recipe. This has been going for far too long" };
-    string[] myStrings;
+    [SerializeField] private string[] mamaEstherDialogStrings = { "MAMA: Esther dear, come help me with breakfast. Did you wash your hands?\nESTHER: Sure, Mama!", "MAMA: Great job, my little bunny! Would you go and get me the gefilte fish recipe from the basement?\nESTHER: OK!", "MAMA: Be careful when you go down!" };
+    [SerializeField] private string[] mamaMiraDialogStrings = { "MAMA: Want to come help us, Mira?\nMIRA: No, I don’t want your gross gefilte" };
+    [SerializeField] private string[] afterRecipyDialog = { "MAMA: Thank you honey. And now we can put the onions on the frying pan and stir until are they become golden" };
+    [SerializeField] private string[] answeringMachine = { "MIRA: Don't call me until you agree to give me the recipe. This has been going for far too long" };
+    [SerializeField] private string[] lastDialog = { "ESTHER: Mira, please! I just want us to get along again. Mama would never want this." , "MIRA: Then let me have the recipe. You don’t even need it!", "ESTHER: She gave it to me, and you know it!", "MIRA: And YOU just can’t stand sharing any shred of whatever is left of her!  I miss her too, so much. \nBut  I could never compete with you, not in her eyes.", "SIGH, ESTHER:  It’s not worth it… time to let go..." };
+    private string[] myStrings;
 
     int curStringIdx = 0;
 
@@ -53,11 +54,10 @@ public class SubtitleManager : MonoBehaviour
 
     public IEnumerator startMamaEstherDialog()
     {
-        //StartCoroutine(ShowMe(0, "mama"));
         myStrings = mamaEstherDialogStrings;
         displaying = true;
         curStringIdx = 0;
-        yield return new WaitForSeconds((mamaEstherDialogStrings[curStringIdx].Length / 20) + 2);
+        yield return new WaitForSeconds((myStrings[curStringIdx].Length / 20) + 2);
 
         displaying = false;
         displaying = true;
@@ -85,6 +85,36 @@ public class SubtitleManager : MonoBehaviour
     public void startAnsweringMachine()
     {
         StartCoroutine(ShowMe(0, "answeringMachine"));
+    }
+
+    public IEnumerator StartLastDialog()
+    {
+        myStrings = lastDialog;
+        displaying = true;
+        curStringIdx = 0;
+        yield return new WaitForSeconds((myStrings[curStringIdx].Length / 20) + 2);
+
+        displaying = false;
+        displaying = true;
+        curStringIdx = 1;
+        yield return new WaitForSeconds((myStrings[curStringIdx].Length / 20) + 2);
+
+        displaying = false;
+        displaying = true;
+        curStringIdx = 2;
+        yield return new WaitForSeconds((myStrings[curStringIdx].Length / 20) + 2);
+
+        displaying = false;
+        displaying = true;
+        curStringIdx = 3;
+        yield return new WaitForSeconds((myStrings[curStringIdx].Length / 20) + 2);
+
+        displaying = false;
+        displaying = true;
+        curStringIdx = 3;
+        yield return new WaitForSeconds((myStrings[curStringIdx].Length / 20) + 2);
+
+        displaying = false;
     }
 
     void OnGUI()

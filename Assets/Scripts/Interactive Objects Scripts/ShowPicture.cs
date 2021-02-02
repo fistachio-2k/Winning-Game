@@ -9,6 +9,9 @@ public class ShowPicture : MonoBehaviour, IInteractable
 {
     [SerializeField] private float _duration = 3f;
     [SerializeField] private float _distanceFromCamera = -0.001f;
+    [SerializeField] private bool _isANote = false;
+    [SerializeField] private bool _isALetter = false;
+
     private Camera _camera;
     private bool _inInteraction = false;
     private Vector3 _baseRotation;
@@ -44,7 +47,19 @@ public class ShowPicture : MonoBehaviour, IInteractable
     {
         FindObjectOfType<AudioManager>().Play("paper1");
         _s.Append(gameObject.transform.DOMove(_camera.transform.position + _camera.transform.forward * _distanceFromCamera, _duration));
-        _s.Join(gameObject.transform.DORotate(_camera.transform.rotation.eulerAngles + Vector3.up * -90f, _duration));
+        if (!_isANote && !_isALetter)
+        {
+            _s.Join(gameObject.transform.DORotate(_camera.transform.rotation.eulerAngles + Vector3.up * -90f, _duration));
+        }
+        else if(_isANote)
+        {
+            _s.Join(gameObject.transform.DORotate(_camera.transform.rotation.eulerAngles + Vector3.right * 110 + Vector3.up * 180f, _duration));
+        }
+        else
+        {
+            _s.Join(gameObject.transform.DORotate(_camera.transform.rotation.eulerAngles + Vector3.right * 90 + Vector3.up * 180f, _duration));
+        }
+
         _s.Play();
         yield return new WaitForSeconds(1f);
         _inInteraction = true;

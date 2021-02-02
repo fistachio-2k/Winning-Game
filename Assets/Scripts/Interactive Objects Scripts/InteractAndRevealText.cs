@@ -8,6 +8,9 @@ public class InteractAndRevealText : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        StartCoroutine(text.RevealText());
+        if(text != null)
+        {
+            StartCoroutine(text.RevealText());
+        }
     }
 }

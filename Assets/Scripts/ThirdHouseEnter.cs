@@ -41,7 +41,7 @@ public class ThirdHouseEnter : MonoBehaviour
         //Lower the camera and faster the character steps
         pointOfView.transform.DOLocalMoveY(pointOfView.transform.localPosition.y + up, cameraAnimationDuration);
         PlayerController playerController = player.GetComponent<PlayerController>();
-        playerController.playerSpeed -= 1.0f;
+        playerController.playerSpeed -= 1.5f;
         playerController.gravityValue -= 1.0f;
         gameObject.GetComponent<Collider>().enabled = false;
         yield return new WaitForSeconds(cameraAnimationDuration);

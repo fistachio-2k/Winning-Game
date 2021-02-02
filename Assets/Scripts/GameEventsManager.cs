@@ -30,7 +30,6 @@ public class GameEventsManager : MonoBehaviour
     [SerializeField] private GameObject wallsOpenBasement;
     [SerializeField] private Renderer pianoRenderrer;
 
-    [SerializeField] private Light menuLight;
     [SerializeField] private Canvas cameraCenter;
     [SerializeField] private Canvas settingsCanvas;
     [SerializeField] private GameObject settings3D;
@@ -146,6 +145,7 @@ public class GameEventsManager : MonoBehaviour
 
     IEnumerator reavelCorridor1()
     {
+        DisableMovement();
         corridorRevealed1 = true;
         yield return new WaitForSeconds(1f);
         SwitchToVcam(Vcam.Corridor);
@@ -155,10 +155,12 @@ public class GameEventsManager : MonoBehaviour
         audioManager.Play("Drag");
         yield return new WaitForSeconds(3f);
         SwitchToVcam(Vcam.Player);
+        EnableMovement();
     }
 
     IEnumerator reavelCorridor2()
     {
+        DisableMovement();
         corridorRevealed2 = true;
         yield return new WaitForSeconds(2f);
         SwitchToVcam(Vcam.Corridor2);
@@ -169,19 +171,21 @@ public class GameEventsManager : MonoBehaviour
         audioManager.Play("Drag");
         yield return new WaitForSeconds(3f);
         SwitchToVcam(Vcam.Player);
+        EnableMovement();
     }
 
     IEnumerator reavelCorridor3()
     {
+        DisableMovement();
         corridorRevealed3 = true;
         yield return new WaitForSeconds(1f);
         SwitchToVcam(Vcam.Corridor3);
         revealCorridor3.Invoke();
         yield return new WaitForSeconds(1f);
         audioManager.Play("Drag");
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         SwitchToVcam(Vcam.Player);
-        
+        EnableMovement();
     }
 
     public void SwitchToVcam(GameEventsManager.Vcam vcam)
@@ -209,14 +213,13 @@ public class GameEventsManager : MonoBehaviour
             radio1.GetComponent<AudioSource>().Play();
         }
         audioManager.Play("click");
-        mainMenu.transform.DOLocalJump(mainMenu.transform.position - Vector3.up * 0.25f, 0.25f ,1,1.5f);
+        mainMenu.transform.DOLocalJump(mainMenu.transform.position - Vector3.up * 0.25f, 0.25f ,1 ,1.5f);
         yield return new WaitForSeconds(1.5f);
         _instance.GetMouseClickEvent().AddListener(chair.StandUpWrapper);
         StartCoroutine(chair.text.RevealText());
         yield return new WaitForSeconds(3f);
         SwitchToVcam(GameEventsManager.Vcam.Sitting);
         Cursor.visible = false;
-        menuLight.enabled = false;
         cameraCenter.enabled = true;
         inStart = false;
         Destroy(mainMenu, 2f);
@@ -288,10 +291,16 @@ public class GameEventsManager : MonoBehaviour
 
     public IEnumerator StartLastScene()
     {
-        yield return new WaitForSeconds(2f);
-        SwitchToVcam(GameEventsManager.Vcam.Murder);
-        Cursor.visible = !Cursor.visible;
+        Cursor.visible = false;
+        Image im = settingsCanvas.GetComponent<Image>();
+        im.DOFade(1f, 0.2f);
+        yield return new WaitForSeconds(0.2f);
         audioManager.Play("LastDialog");
+        StartCoroutine(subtitleManager.StartLastDialog());
+        yield return new WaitForSeconds(18.6f);
+        yield return new WaitForSeconds(0.2f);
+        im.DOFade(0f, 0.2f);
+        SwitchToVcam(GameEventsManager.Vcam.Murder);
     }
 
     public void EnableMovement()

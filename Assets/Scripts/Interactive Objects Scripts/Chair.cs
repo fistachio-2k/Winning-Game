@@ -9,9 +9,16 @@ public class Chair : MonoBehaviour, IInteractable
     [SerializeField] private Transform positionToMove;
     [SerializeField] private float duration = 2f;
     [SerializeField] public TextReveal text;
+    private AudioManager audioManager;
+
+    void Start()
+    {
+        audioManager = FindObjectOfType<AudioManager>();
+    }
 
     IEnumerator SitDown()
     {
+        audioManager.Play("ChairDown");
         Vector3 basePos = transform.position;
         transform.DOMove(positionToMove.position, duration);
         yield return new WaitForSeconds(duration);
@@ -24,7 +31,7 @@ public class Chair : MonoBehaviour, IInteractable
 
     IEnumerator StandUp()
     {
-        //TODO Mira: add sound!
+        audioManager.Play("ChairUp");
         GetComponent<MeshCollider>().enabled = true;
         Vector3 basePos = transform.position;
         transform.DOMove(positionToMove.position, duration);
