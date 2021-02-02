@@ -68,7 +68,8 @@ public class GameEventsManager : MonoBehaviour
         Corridor2,
         Corridor3,
         Settings,
-        Murder
+        Murder,
+        Falling
     }
 
     private void Awake()
@@ -303,7 +304,9 @@ public class GameEventsManager : MonoBehaviour
         yield return new WaitForSeconds(18.6f);
         yield return new WaitForSeconds(0.2f);
         im.DOFade(0f, 0.2f);
-        SwitchToVcam(GameEventsManager.Vcam.Murder);
+        SwitchToVcam(Vcam.Murder);
+        SwitchToVcam(Vcam.Falling);
+        vcams[(int) currVcam].GetComponent<Animator>().SetBool("isFalling", true);
     }
 
     public void EnableMovement()
