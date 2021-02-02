@@ -3341,7 +3341,7 @@ MonoBehaviour:
   m_text: 'Created by:
 
 
-    Dinara Abdulina
+    Dinara Abdullina
 
     Noa Reim Givon
 
@@ -14764,12 +14764,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 443288090}
     - target: {fileID: 5645903801840944605, guid: 38453da68fdecf144b2b3b0f9d98cfdf, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5645903801840944605, guid: 38453da68fdecf144b2b3b0f9d98cfdf, type: 3}
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 296339524}
     - target: {fileID: 5645903801840944605, guid: 38453da68fdecf144b2b3b0f9d98cfdf, type: 3}
       propertyPath: changeLocation
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5645903801840944605, guid: 38453da68fdecf144b2b3b0f9d98cfdf, type: 3}
       propertyPath: playerLocation
