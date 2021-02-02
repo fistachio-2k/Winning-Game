@@ -11,7 +11,7 @@ public class Door : MonoBehaviour, IInteractable
     [SerializeField] private TextReveal text = null;
     [SerializeField] public bool _isLocked = false;
     [SerializeField] public bool _isLastScene = false;
-    public bool isOpen = true;
+    public bool isOpen = false;
 
     void Start()
     {
@@ -41,15 +41,18 @@ public class Door : MonoBehaviour, IInteractable
         }
         if (!_isLocked)
         {
-            isOpen = !isOpen;
             audioManager.Play("OpenDoor");
             if (isOpen)
             {
+                //close the door
                 transform.DORotate(_baseRotation, duration);
+                isOpen = false;
             }
             else
             {
+                //open the door
                 transform.DORotate(_baseRotation + (Vector3.up * 90f) + (Vector3.forward * 3f) + (Vector3.right * -3f), duration);
+                isOpen = true;
             }
         }
         else
