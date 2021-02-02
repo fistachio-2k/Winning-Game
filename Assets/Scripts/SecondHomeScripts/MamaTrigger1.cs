@@ -11,7 +11,6 @@ public class MamaTrigger1 : MonoBehaviour
     {
         recipeBox.isLocked = false;
         GameEventsManager._instance.PlayMamaEstherScene(gameObject);
-        GetComponent<Collider>().enabled = false;
         secondTriggerCollider.enabled = true;
     }
 }
