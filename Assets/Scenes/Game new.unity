@@ -3345,7 +3345,7 @@ MonoBehaviour:
 
     Noa Reim Givon
 
-    Dor Gidgony
+    Dor Gidony
 
     Mira
     Finkelstein'
@@ -14769,7 +14769,7 @@ PrefabInstance:
       objectReference: {fileID: 296339524}
     - target: {fileID: 5645903801840944605, guid: 38453da68fdecf144b2b3b0f9d98cfdf, type: 3}
       propertyPath: changeLocation
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5645903801840944605, guid: 38453da68fdecf144b2b3b0f9d98cfdf, type: 3}
       propertyPath: playerLocation
