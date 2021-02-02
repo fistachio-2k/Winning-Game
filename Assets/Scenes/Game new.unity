@@ -7235,6 +7235,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3521988773676711468, guid: 9b3dc88eaf120194c83d0207f8e345cf, type: 3}
+      propertyPath: recipeBox
+      value: 
+      objectReference: {fileID: 1645302939}
     - target: {fileID: 3521988773676711471, guid: 9b3dc88eaf120194c83d0207f8e345cf, type: 3}
       propertyPath: m_Name
       value: MamaTrigger1
@@ -7719,7 +7723,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5641525645394727912, guid: c177909d80775cf46af1bd9f99856f51, type: 3}
       propertyPath: m_Name
-      value: MamaTrigger2 (1)
+      value: MamaTrigger2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c177909d80775cf46af1bd9f99856f51, type: 3}
@@ -10211,6 +10215,17 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1645302939 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3114006919151447973, guid: 4fb50db937f060b4494299918e5c8553, type: 3}
+  m_PrefabInstance: {fileID: 8428499899512238890}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99212f2781681db4b94d37468fbb5ad7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1652291880
 PrefabInstance:
   m_ObjectHideFlags: 0
