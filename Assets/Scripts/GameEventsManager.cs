@@ -30,6 +30,7 @@ public class GameEventsManager : MonoBehaviour
     [SerializeField] private Renderer pianoRenderrer;
 
     [SerializeField] private Canvas cameraCenter;
+    [SerializeField] private Canvas endCanvas;
     [SerializeField] private Canvas settingsCanvas;
     [SerializeField] private GameObject settings3D;
     [SerializeField] private TextReveal corridor2Text;
@@ -97,6 +98,7 @@ public class GameEventsManager : MonoBehaviour
         currVcam = Vcam.Menu;
         settings3D.SetActive(false);
         cameraCenter.enabled = false;
+        endCanvas.enabled = false;
     }
 
     void Update()
@@ -314,6 +316,9 @@ public class GameEventsManager : MonoBehaviour
         yield return new WaitForSeconds(3f);
         im.DOFade(1f, 0.2f);
         StartCoroutine(subtitleManager.TheEnd());
+        Cursor.visible = false;
+        endCanvas.enabled = true;
+        cameraCenter.enabled = false;
     }
 
     public void EnableMovement()
