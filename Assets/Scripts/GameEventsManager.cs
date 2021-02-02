@@ -315,7 +315,6 @@ public class GameEventsManager : MonoBehaviour
         fallingAnim.enabled = true;
         yield return new WaitForSeconds(3f);
         im.DOFade(1f, 0.2f);
-        StartCoroutine(subtitleManager.TheEnd());
         Cursor.visible = false;
         endCanvas.enabled = true;
         cameraCenter.enabled = false;
