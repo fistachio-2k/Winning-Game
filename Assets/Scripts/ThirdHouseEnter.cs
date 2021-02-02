@@ -19,6 +19,7 @@ public class ThirdHouseEnter : MonoBehaviour
         //Handle the sounds
         radio2.GetComponent<AudioSource>().Stop();
         radio3.GetComponent<AudioSource>().Play();
+        StartCoroutine(FindObjectOfType<SubtitleManager>().ShowMe(7, "other"));
         cooking.Stop();
     }
 
