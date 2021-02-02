@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3500626139473217044}
   - component: {fileID: 3500626139473217051}
-  - component: {fileID: 2917827840120054554}
   - component: {fileID: 5645903801840944605}
   m_Layer: 0
   m_Name: GameEventsManager
@@ -78,9 +77,6 @@ MonoBehaviour:
   revealCorridor3:
     m_PersistentCalls:
       m_Calls: []
-  restoreCorridor:
-    m_PersistentCalls:
-      m_Calls: []
   hazeret: {fileID: 0}
   recipe: {fileID: 0}
   key: {fileID: 0}
@@ -94,9 +90,9 @@ MonoBehaviour:
   openBasement: {fileID: 0}
   wallsOpenBasement: {fileID: 0}
   pianoRenderrer: {fileID: 0}
-  menuLight: {fileID: 0}
   cameraCenter: {fileID: 0}
   settingsCanvas: {fileID: 0}
+  settings3D: {fileID: 0}
   corridor2Text: {fileID: 0}
   audioManager: {fileID: 0}
   subtitleManager: {fileID: 0}
@@ -108,85 +104,6 @@ MonoBehaviour:
   - {fileID: 0}
   currVcam: 2
   isFrying: 0
---- !u!114 &2917827840120054554
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3500626139473217045}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e60e615fb6e3bf44aaa1f3bee3b793fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mamaStyle:
-    m_Name: 
-    m_Normal:
-      m_Background: {fileID: 0}
-      m_ScaledBackgrounds: []
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_Hover:
-      m_Background: {fileID: 0}
-      m_ScaledBackgrounds: []
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_Active:
-      m_Background: {fileID: 0}
-      m_ScaledBackgrounds: []
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_Focused:
-      m_Background: {fileID: 0}
-      m_ScaledBackgrounds: []
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_OnNormal:
-      m_Background: {fileID: 0}
-      m_ScaledBackgrounds: []
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_OnHover:
-      m_Background: {fileID: 0}
-      m_ScaledBackgrounds: []
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_OnActive:
-      m_Background: {fileID: 0}
-      m_ScaledBackgrounds: []
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_OnFocused:
-      m_Background: {fileID: 0}
-      m_ScaledBackgrounds: []
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_Border:
-      m_Left: 0
-      m_Right: 0
-      m_Top: 0
-      m_Bottom: 0
-    m_Margin:
-      m_Left: 0
-      m_Right: 0
-      m_Top: 0
-      m_Bottom: 0
-    m_Padding:
-      m_Left: 0
-      m_Right: 0
-      m_Top: 0
-      m_Bottom: 0
-    m_Overflow:
-      m_Left: 0
-      m_Right: 0
-      m_Top: 0
-      m_Bottom: 0
-    m_Font: {fileID: 0}
-    m_FontSize: 0
-    m_FontStyle: 0
-    m_Alignment: 0
-    m_WordWrap: 0
-    m_RichText: 1
-    m_TextClipping: 0
-    m_ImagePosition: 0
-    m_ContentOffset: {x: 0, y: 0}
-    m_FixedWidth: 0
-    m_FixedHeight: 0
-    m_StretchWidth: 1
-    m_StretchHeight: 0
 --- !u!114 &5645903801840944605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,11 +116,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d5e6abd1d3569e49865e0796b766db7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerLocationDebug: 0
-  changeLocationDebug: 0
-  locationsForDebug:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  playerLocation: 0
+  changeLocation: 0
+  locations: []
   player: {fileID: 0}
+  playerCamera: {fileID: 0}
