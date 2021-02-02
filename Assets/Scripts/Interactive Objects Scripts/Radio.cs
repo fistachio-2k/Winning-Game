@@ -8,7 +8,7 @@ public class Radio : MonoBehaviour, IInteractable
     [SerializeField] private TextReveal text;
     [SerializeField] private Sound[] radioSongs;
     [SerializeField] private bool first = false; // temp! TODO - to delete
-    private int songIdx = -1;
+    //private int songIdx = -1;
     private AudioManager audioManager;
     private void Awake()
     {
