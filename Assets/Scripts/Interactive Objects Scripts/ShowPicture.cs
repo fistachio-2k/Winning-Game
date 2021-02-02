@@ -12,6 +12,7 @@ public class ShowPicture : MonoBehaviour, IInteractable
     [SerializeField] private bool _isANote = false;
     [SerializeField] private bool _isALetter = false;
     [SerializeField] public bool stopShowing = false;
+    [SerializeField] public int idx = -1;
 
     private Camera _camera;
     private bool _inInteraction = false;
@@ -31,9 +32,9 @@ public class ShowPicture : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        if(gameObject.GetComponent<PictureSubtitles>() == null)
+        if(gameObject.GetComponent<PictureSubtitles>() == null && idx != -1)
         {
-            StartCoroutine(FindObjectOfType<SubtitleManager>().ShowMe(6, "other"));
+            StartCoroutine(FindObjectOfType<SubtitleManager>().ShowMe(idx, "other"));
         }
         if(!stopShowing)
         {
