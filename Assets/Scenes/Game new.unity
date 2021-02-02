@@ -13414,7 +13414,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2113980038060894194, guid: b3ceabf61cd0f6848a9cbc3b7890a7e8, type: 3}
       propertyPath: lastDialog.Array.data[1]
-      value: "MIRA: Then let me have the recipe. \\nYou don\u2019t even need it!"
+      value: "MIRA: Then let me have the recipe. You don\u2019t even need it!"
       objectReference: {fileID: 0}
     - target: {fileID: 2113980038060894194, guid: b3ceabf61cd0f6848a9cbc3b7890a7e8, type: 3}
       propertyPath: otherSubtitles.Array.size
@@ -15509,6 +15509,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a8e1387021537094880cd0c534520348, type: 2}
+    - target: {fileID: 9001665407645838355, guid: ebd7caf319b48314d86183a6df9068e6, type: 3}
+      propertyPath: idx
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 9001665408088681820, guid: ebd7caf319b48314d86183a6df9068e6, type: 3}
       propertyPath: m_Enabled
       value: 0

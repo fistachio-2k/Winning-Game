@@ -311,6 +311,9 @@ public class GameEventsManager : MonoBehaviour
         SwitchToVcam(Vcam.Falling);
         yield return new WaitForSeconds(1f);
         fallingAnim.enabled = true;
+        yield return new WaitForSeconds(3f);
+        im.DOFade(1f, 0.2f);
+        StartCoroutine(subtitleManager.TheEnd());
     }
 
     public void EnableMovement()
