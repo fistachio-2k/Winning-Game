@@ -272,6 +272,7 @@ public class GameEventsManager : MonoBehaviour
         {
             StartCoroutine(subtitleManager.startMamaEstherDialog());
             mamaTrigger1.GetComponent<AudioSource>().Play();
+            mamaTrigger1.GetComponent<Collider>().enabled = false;
         }
     }
 
