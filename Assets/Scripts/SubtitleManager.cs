@@ -66,6 +66,7 @@ public class SubtitleManager : MonoBehaviour
 
     public IEnumerator startMamaEstherDialog()
     {
+        style = mamaStyle;
         myStrings = mamaEstherDialogStrings;
         displaying = true;
         curStringIdx = 0;
@@ -101,6 +102,7 @@ public class SubtitleManager : MonoBehaviour
 
     public IEnumerator StartLastDialog()
     {
+        style = mamaStyle;
         myStrings = lastDialog;
         displaying = true;
         curStringIdx = 0;
