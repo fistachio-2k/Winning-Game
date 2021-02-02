@@ -92,27 +92,27 @@ public class SubtitleManager : MonoBehaviour
         myStrings = lastDialog;
         displaying = true;
         curStringIdx = 0;
-        yield return new WaitForSeconds((myStrings[curStringIdx].Length / 20) + 2);
+        yield return new WaitForSeconds((myStrings[curStringIdx].Length / 20));
 
         displaying = false;
         displaying = true;
         curStringIdx = 1;
-        yield return new WaitForSeconds((myStrings[curStringIdx].Length / 20) + 2);
+        yield return new WaitForSeconds((myStrings[curStringIdx].Length / 20));
 
         displaying = false;
         displaying = true;
         curStringIdx = 2;
-        yield return new WaitForSeconds((myStrings[curStringIdx].Length / 20) + 2);
+        yield return new WaitForSeconds((myStrings[curStringIdx].Length / 20));
 
         displaying = false;
         displaying = true;
         curStringIdx = 3;
-        yield return new WaitForSeconds((myStrings[curStringIdx].Length / 20) + 2);
+        yield return new WaitForSeconds((myStrings[curStringIdx].Length / 20));
 
         displaying = false;
         displaying = true;
         curStringIdx = 3;
-        yield return new WaitForSeconds((myStrings[curStringIdx].Length / 20) + 2);
+        yield return new WaitForSeconds((myStrings[curStringIdx].Length / 20));
 
         displaying = false;
     }

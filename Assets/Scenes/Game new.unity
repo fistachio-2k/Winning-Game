@@ -4174,7 +4174,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5919254515534744444, guid: 23bdbf806d86f5c4b893c82cbf82e039, type: 3}
       propertyPath: m_text
-      value: "<size=150%>I can\u2019t remember where I left the key to the basement..."
+      value: "<size=150%>This my basement! I can\u2019t remember where I left the
+        key to the basement..."
       objectReference: {fileID: 0}
     - target: {fileID: 5919254515534744444, guid: 23bdbf806d86f5c4b893c82cbf82e039, type: 3}
       propertyPath: m_fontSize
@@ -13911,6 +13912,10 @@ PrefabInstance:
     - target: {fileID: 2113980038060894194, guid: b3ceabf61cd0f6848a9cbc3b7890a7e8, type: 3}
       propertyPath: mamaStyle.m_FontStyle
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2113980038060894194, guid: b3ceabf61cd0f6848a9cbc3b7890a7e8, type: 3}
+      propertyPath: lastDialog.Array.data[1]
+      value: "MIRA: Then let me have the recipe. \\nYou don\u2019t even need it!"
       objectReference: {fileID: 0}
     - target: {fileID: 2113980038060894194, guid: b3ceabf61cd0f6848a9cbc3b7890a7e8, type: 3}
       propertyPath: mamaStyle.m_Normal.m_TextColor.b
