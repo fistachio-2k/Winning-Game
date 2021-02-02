@@ -10,6 +10,7 @@ public class SubtitleManager : MonoBehaviour
     [SerializeField] private string[] answeringMachine = { "MIRA: Don't call me until you agree to give me the recipe. This has been going for far too long" };
     [SerializeField] private string[] lastDialog = { "ESTHER: Mira, please! I just want us to get along again. Mama would never want this." , "MIRA: Then let me have the recipe. You don’t even need it!", "ESTHER: She gave it to me, and you know it!", "MIRA: And YOU just can’t stand sharing any shred of whatever is left of her!  I miss her too, so much. \nBut  I could never compete with you, not in her eyes.", "SIGH, ESTHER:  It’s not worth it… time to let go..." };
     [SerializeField] private string[] other;
+    [SerializeField] private string[] last = { "THE END" };
     private string[] myStrings;
 
     int curStringIdx = 0;
@@ -18,6 +19,7 @@ public class SubtitleManager : MonoBehaviour
 
     public GUIStyle mamaStyle;
     public GUIStyle dinaraStyle;
+    private GUIStyle style;
 
     public IEnumerator ShowMe(int stringIdx, string arrayName)
     {
@@ -39,23 +41,38 @@ public class SubtitleManager : MonoBehaviour
         if (arrayName == "mama")
         {
             myStrings = mamaEstherDialogStrings;
+            style = mamaStyle;
         }
         else if (arrayName == "mira")
         {
             myStrings = mamaMiraDialogStrings;
+            style = mamaStyle;
         }
         else if(arrayName == "after")
         {
             myStrings = afterRecipyDialog;
+            style = mamaStyle;
         }
         else if(arrayName == "answeringMachine")
         {
             myStrings = answeringMachine;
+            style = mamaStyle;
+        }
+        else if(arrayName == "other")
+        {
+            myStrings = other;
+            style = dinaraStyle;
+        }
+        else if (arrayName == "last")
+        {
+            myStrings = last;
+            style = mamaStyle;
         }
     }
 
     public IEnumerator startMamaEstherDialog()
     {
+        style = mamaStyle;
         myStrings = mamaEstherDialogStrings;
         displaying = true;
         curStringIdx = 0;
@@ -91,6 +108,7 @@ public class SubtitleManager : MonoBehaviour
 
     public IEnumerator StartLastDialog()
     {
+        style = mamaStyle;
         myStrings = lastDialog;
         displaying = true;
         curStringIdx = 0;
@@ -119,11 +137,22 @@ public class SubtitleManager : MonoBehaviour
         displaying = false;
     }
 
+    public IEnumerator TheEnd()
+    {
+        style = mamaStyle;
+        myStrings = last;
+        displaying = true;
+        curStringIdx = 0;
+        yield return new WaitForSeconds((myStrings[curStringIdx].Length / 20) + 10);
+
+        displaying = false;
+    }
+
     void OnGUI()
     {
         if (displaying)
         {
-            GUI.Label(new Rect(20, Screen.height - 80, Screen.width - 40, 60), myStrings[curStringIdx], mamaStyle);
+            GUI.Label(new Rect(20, Screen.height - 80, Screen.width - 40, 60), myStrings[curStringIdx], style);
         }
     }
 }
