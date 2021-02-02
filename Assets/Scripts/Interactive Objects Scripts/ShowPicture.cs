@@ -31,6 +31,10 @@ public class ShowPicture : MonoBehaviour, IInteractable
 
     public void Interact()
     {
+        if(gameObject.GetComponent<PictureSubtitles>() == null)
+        {
+            StartCoroutine(FindObjectOfType<SubtitleManager>().ShowMe(6, "other"));
+        }
         if(!stopShowing)
         {
             if (!_inInteraction)

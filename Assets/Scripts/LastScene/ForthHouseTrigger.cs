@@ -13,6 +13,7 @@ public class ForthHouseTrigger : MonoBehaviour
         //Handle the sounds
         radio3.GetComponent<AudioSource>().Stop();
         radio4.GetComponent<AudioSource>().Play();
+        StartCoroutine(FindObjectOfType<SubtitleManager>().ShowMe(3, "other"));
     }
 
     private void OnTriggerExit(Collider other)

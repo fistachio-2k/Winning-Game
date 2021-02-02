@@ -18,6 +18,7 @@ public class SubtitleManager : MonoBehaviour
 
     public GUIStyle mamaStyle;
     public GUIStyle dinaraStyle;
+    private GUIStyle style;
 
     public IEnumerator ShowMe(int stringIdx, string arrayName)
     {
@@ -39,18 +40,27 @@ public class SubtitleManager : MonoBehaviour
         if (arrayName == "mama")
         {
             myStrings = mamaEstherDialogStrings;
+            style = mamaStyle;
         }
         else if (arrayName == "mira")
         {
             myStrings = mamaMiraDialogStrings;
+            style = mamaStyle;
         }
         else if(arrayName == "after")
         {
             myStrings = afterRecipyDialog;
+            style = mamaStyle;
         }
         else if(arrayName == "answeringMachine")
         {
             myStrings = answeringMachine;
+            style = mamaStyle;
+        }
+        else if(arrayName == "other")
+        {
+            myStrings = other;
+            style = dinaraStyle;
         }
     }
 
@@ -123,7 +133,7 @@ public class SubtitleManager : MonoBehaviour
     {
         if (displaying)
         {
-            GUI.Label(new Rect(20, Screen.height - 80, Screen.width - 40, 60), myStrings[curStringIdx], mamaStyle);
+            GUI.Label(new Rect(20, Screen.height - 80, Screen.width - 40, 60), myStrings[curStringIdx], style);
         }
     }
 }
