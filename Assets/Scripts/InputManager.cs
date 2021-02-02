@@ -1,4 +1,5 @@
-﻿using UnityEngine.InputSystem;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class InputManager : MonoBehaviour
@@ -55,10 +56,5 @@ public class InputManager : MonoBehaviour
     public bool GetMouseClick()
     {
         return playerControls.Player.Interact.triggered;
-    }
-
-    public Vector3 GetMousePosition()
-    {
-        return Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
     }
 }

@@ -108,8 +108,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cee36a9d6d23ace4fa151219396b052c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startColor: {r: 0, g: 0, b: 0, a: 0}
-  mouseOverColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &2536045701672418037
 GameObject:
   m_ObjectHideFlags: 0
@@ -121,8 +119,6 @@ GameObject:
   - component: {fileID: 2910939878912878185}
   - component: {fileID: 1355325868381404839}
   - component: {fileID: 833691857559276970}
-  - component: {fileID: 5550065751399489988}
-  - component: {fileID: 38033211817362279}
   m_Layer: 0
   m_Name: settings
   m_TagString: Untagged
@@ -193,31 +189,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5550065751399489988
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2536045701672418037}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.073866844, y: 0.01999998, z: 0.2126174}
-  m_Center: {x: 9.607967, y: 3.3620129, z: 4.8301272}
---- !u!114 &38033211817362279
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2536045701672418037}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55abedd6d12b45244bd7d5dfac3ddc33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4359279670689931214
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,7 +280,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7700484996716219240}
   m_Layer: 0
-  m_Name: Buttons UI
+  m_Name: START BUTTONS UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
