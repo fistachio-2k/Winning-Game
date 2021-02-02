@@ -4929,7 +4929,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 778967852}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.97, y: -6.54, z: -15.97}
+  m_LocalPosition: {x: -5.39, y: -6.54, z: -13.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2042264227}
@@ -4948,7 +4948,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.9346024, g: 0.92232114, b: 0.9622642, a: 1}
   m_Intensity: 4.8
-  m_Range: 19
+  m_Range: 20
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -11330,7 +11330,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 89f736ef01f6ac942ae4c459344af092, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: ee221bc0c1c0e464788d2a714fdfd1c6, type: 2}
+      objectReference: {fileID: 2100000, guid: cc6864ab5ec7d124bbb7efe37e41103c, type: 2}
     - target: {fileID: 919132149155446097, guid: 89f736ef01f6ac942ae4c459344af092, type: 3}
       propertyPath: m_Name
       value: blood
