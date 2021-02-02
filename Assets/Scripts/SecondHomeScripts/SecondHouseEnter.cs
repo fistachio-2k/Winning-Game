@@ -32,6 +32,8 @@ public class SecondHouseEnter : MonoBehaviour
         radio1.GetComponent<AudioSource>().Stop();
         radio2.GetComponent<AudioSource>().Play();
 
+        StartCoroutine(FindObjectOfType<SubtitleManager>().ShowMe(6, "other"));
+
         //Handle the basment
         basementFlag = !basementFlag;
         openBasement.SetActive(basementFlag);

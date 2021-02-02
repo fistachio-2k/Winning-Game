@@ -13872,11 +13872,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2113980038060894194, guid: b3ceabf61cd0f6848a9cbc3b7890a7e8, type: 3}
       propertyPath: other.Array.data[6]
-      value: 
+      value: I think my mom is here! am I back in time?
       objectReference: {fileID: 0}
     - target: {fileID: 2113980038060894194, guid: b3ceabf61cd0f6848a9cbc3b7890a7e8, type: 3}
       propertyPath: other.Array.data[7]
-      value: 
+      value: Ho, this is a bad memory, my sister and I in a big fight...
       objectReference: {fileID: 0}
     - target: {fileID: 2113980038060894194, guid: b3ceabf61cd0f6848a9cbc3b7890a7e8, type: 3}
       propertyPath: other.Array.data[8]
@@ -13901,6 +13901,10 @@ PrefabInstance:
     - target: {fileID: 2113980038060894194, guid: b3ceabf61cd0f6848a9cbc3b7890a7e8, type: 3}
       propertyPath: dinaraStyle.m_FontSize
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2113980038060894194, guid: b3ceabf61cd0f6848a9cbc3b7890a7e8, type: 3}
+      propertyPath: dinaraStyle.m_Alignment
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2113980038060894194, guid: b3ceabf61cd0f6848a9cbc3b7890a7e8, type: 3}
       propertyPath: lastDialog.Array.data[1]
