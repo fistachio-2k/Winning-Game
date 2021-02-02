@@ -36,6 +36,7 @@ public class GameEventsManager : MonoBehaviour
     [SerializeField] private TextReveal corridor2Text;
     [SerializeField] private AudioManager audioManager;
     [SerializeField] private SubtitleManager subtitleManager;
+    [SerializeField] private Light menuLight;
 
     [SerializeField] private PlayerController playerController;
     [SerializeField] private CinemachineVirtualCamera[] vcams;
@@ -213,6 +214,7 @@ public class GameEventsManager : MonoBehaviour
             radio1.GetComponent<AudioSource>().Play();
         }
         audioManager.Play("click");
+        menuLight.enabled = false;
         mainMenu.transform.DOLocalJump(mainMenu.transform.position - Vector3.up * 0.25f, 0.25f ,1 ,1.5f);
         yield return new WaitForSeconds(1.5f);
         _instance.GetMouseClickEvent().AddListener(chair.StandUpWrapper);
