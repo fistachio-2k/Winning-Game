@@ -318,6 +318,7 @@ public class GameEventsManager : MonoBehaviour
         Cursor.visible = false;
         endCanvas.enabled = true;
         cameraCenter.enabled = false;
+        audioManager.Play("end");
     }
 
     public void EnableMovement()
