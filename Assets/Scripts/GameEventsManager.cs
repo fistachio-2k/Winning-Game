@@ -93,6 +93,7 @@ public class GameEventsManager : MonoBehaviour
         _recipeHash = recipe.GetHashCode();
         _keyHash = key.GetHashCode();
         currVcam = Vcam.Menu;
+        settings3D.SetActive(false);
         cameraCenter.enabled = false;
     }
 
@@ -107,7 +108,7 @@ public class GameEventsManager : MonoBehaviour
         // Sitting scenario
         else if (_instance.currVcam == Vcam.Sitting)
         {
-            if (_inputManager.GetMouseClick())
+            if (_inputManager.GetMouseClick() && !inSettings)
             {
                 _instance.GetMouseClickEvent().Invoke();
             }
@@ -201,11 +202,6 @@ public class GameEventsManager : MonoBehaviour
         return _mouseClickEvent;
     }
 
-    public bool GetMouseClick()
-    {
-        return _inputManager.GetMouseClick();
-    }
-
     public IEnumerator StartToGame()
     {
         if(!radio1.GetComponent<AudioSource>().isPlaying)
@@ -229,16 +225,16 @@ public class GameEventsManager : MonoBehaviour
 
     public IEnumerator ToggleSettings()
     {
-
-        Cursor.visible = !Cursor.visible;
-        cameraCenter.enabled = !cameraCenter.enabled;
         inSettings = !inSettings;
         Image im = settingsCanvas.GetComponent<Image>();
         if (!inStart)
         {
+            cameraCenter.enabled = !cameraCenter.enabled;
+            Cursor.visible = !Cursor.visible;
             im.DOFade(1f, 1f);
             yield return new WaitForSeconds(1f);
         }
+
         if (currVcam == Vcam.Settings)
         {
             SwitchToVcam(_lastVcam);
@@ -247,6 +243,7 @@ public class GameEventsManager : MonoBehaviour
         {
             SwitchToVcam(Vcam.Settings);
         }
+
         if (!inStart)
         {
             yield return new WaitForSeconds(1f);
