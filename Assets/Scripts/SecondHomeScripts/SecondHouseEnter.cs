@@ -32,6 +32,8 @@ public class SecondHouseEnter : MonoBehaviour
         radio1.GetComponent<AudioSource>().Stop();
         radio2.GetComponent<AudioSource>().Play();
 
+        StartCoroutine(FindObjectOfType<SubtitleManager>().ShowMe(6, "other"));
+
         //Handle the basment
         basementFlag = !basementFlag;
         openBasement.SetActive(basementFlag);
@@ -54,7 +56,7 @@ public class SecondHouseEnter : MonoBehaviour
     {
         GameEventsManager._instance.DisableMovement();
 
-        pointOfView.transform.DOLocalMoveY(pointOfView.transform.localPosition.y + down, cameraAnimationDuration);
+        //pointOfView.transform.DOLocalMoveY(pointOfView.transform.localPosition.y + down, cameraAnimationDuration);
         PlayerController playerController = player.GetComponent<PlayerController>();
         playerController.playerSpeed += 1.5f;
         playerController.gravityValue += 1.0f;
