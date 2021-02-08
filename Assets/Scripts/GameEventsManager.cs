@@ -218,7 +218,7 @@ public class GameEventsManager : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         _instance.GetMouseClickEvent().AddListener(chair.StandUpWrapper);
         StartCoroutine(chair.text.RevealText());
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         SwitchToVcam(GameEventsManager.Vcam.Sitting);
         Cursor.visible = false;
         cameraCenter.enabled = true;
