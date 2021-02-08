@@ -56,7 +56,7 @@ public class SecondHouseEnter : MonoBehaviour
     {
         GameEventsManager._instance.DisableMovement();
 
-        pointOfView.transform.DOLocalMoveY(pointOfView.transform.localPosition.y + down, cameraAnimationDuration);
+        //pointOfView.transform.DOLocalMoveY(pointOfView.transform.localPosition.y + down, cameraAnimationDuration);
         PlayerController playerController = player.GetComponent<PlayerController>();
         playerController.playerSpeed += 1.5f;
         playerController.gravityValue += 1.0f;
