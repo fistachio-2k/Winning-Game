@@ -483,10 +483,10 @@ MonoBehaviour:
   m_AdvancedMode: 0
   postExposure:
     m_OverrideState: 1
-    m_Value: 0.3
+    m_Value: 1
   contrast:
     m_OverrideState: 1
-    m_Value: 62
+    m_Value: 78
     min: -100
     max: 100
   colorFilter:

@@ -76,9 +76,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   components:
   - {fileID: 9054215416209130290}
-  - {fileID: 6930543859091940989}
   - {fileID: -3680798491697846945}
   - {fileID: 8539135910300509043}
+  - {fileID: 6930543859091940989}
 --- !u!114 &6930543859091940989
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -95,7 +95,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   postExposure:
     m_OverrideState: 1
-    m_Value: 1.5
+    m_Value: 1.3
   contrast:
     m_OverrideState: 1
     m_Value: 4
@@ -114,7 +114,7 @@ MonoBehaviour:
     max: 180
   saturation:
     m_OverrideState: 1
-    m_Value: -25
+    m_Value: -29
     min: -100
     max: 100
 --- !u!114 &8539135910300509043
