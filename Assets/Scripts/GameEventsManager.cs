@@ -106,7 +106,6 @@ public class GameEventsManager : MonoBehaviour
         // Esc clicked
         if (_inputManager.GetEscButton())
         {
-            endCanvas.enabled = false;
             StartCoroutine(ToggleSettings());
             audioManager.Play("click");
         }
@@ -306,7 +305,7 @@ public class GameEventsManager : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         audioManager.Play("LastDialog");
         StartCoroutine(subtitleManager.StartLastDialog());
-        yield return new WaitForSeconds(20f);
+        yield return new WaitForSeconds(18.6f);
         yield return new WaitForSeconds(0.2f);
         im.DOFade(0f, 0.2f);
         SwitchToVcam(Vcam.Murder);
