@@ -130,7 +130,7 @@ public class GameEventsManager : MonoBehaviour
             StartCoroutine(reavelCorridor2());
         }
 
-        // Corridor2 Reavel Logic
+        // Corridor3 Reavel Logic
         if (!corridorRevealed3 && _collectedItems.Contains(_keyHash))
         {
             StartCoroutine(reavelCorridor3());
