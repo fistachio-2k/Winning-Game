@@ -36326,19 +36326,30 @@ PrefabInstance:
       value: 0.8773585
       objectReference: {fileID: 0}
     - target: {fileID: 2113980038060894194, guid: b3ceabf61cd0f6848a9cbc3b7890a7e8, type: 3}
+      propertyPath: mamaEstherDialogStrings.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2113980038060894194, guid: b3ceabf61cd0f6848a9cbc3b7890a7e8, type: 3}
       propertyPath: mamaMiraDialogStrings.Array.data[0]
       value: "MAMA: Mira, do you want to come and help us, Mira? \\n MIRA: No, I
         don\u2019t want your gross gefilte"
       objectReference: {fileID: 0}
     - target: {fileID: 2113980038060894194, guid: b3ceabf61cd0f6848a9cbc3b7890a7e8, type: 3}
       propertyPath: mamaEstherDialogStrings.Array.data[0]
-      value: 'MAMA: Esther dear, come help me with breakfast. Did you wash your hands?\nESTHER:
-        Sure, Mama!'
+      value: 'MAMA: Esther dear, come help me with breakfast. Did you wash your hands?'
       objectReference: {fileID: 0}
     - target: {fileID: 2113980038060894194, guid: b3ceabf61cd0f6848a9cbc3b7890a7e8, type: 3}
       propertyPath: mamaEstherDialogStrings.Array.data[1]
+      value: 'ESTHER: Sure, Mama!'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2113980038060894194, guid: b3ceabf61cd0f6848a9cbc3b7890a7e8, type: 3}
+      propertyPath: mamaEstherDialogStrings.Array.data[2]
       value: 'MAMA: Great job, my little bunny! I need the recipe for the Gefilte
         Fish, would you go to the basement and bring it to me?'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2113980038060894194, guid: b3ceabf61cd0f6848a9cbc3b7890a7e8, type: 3}
+      propertyPath: mamaEstherDialogStrings.Array.data[3]
+      value: 'MAMA: Be careful when you go down!'
       objectReference: {fileID: 0}
     - target: {fileID: 4294952853303717378, guid: b3ceabf61cd0f6848a9cbc3b7890a7e8, type: 3}
       propertyPath: m_Name
