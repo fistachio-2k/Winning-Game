@@ -17,6 +17,10 @@ public class GameEventsManager : MonoBehaviour
     [SerializeField] private GameObject hazeret;
     [SerializeField] private GameObject recipe;
     [SerializeField] private GameObject key;
+    [SerializeField] private GameObject gezer;
+    [SerializeField] private GameObject egg1;
+    [SerializeField] private GameObject egg2;
+    [SerializeField] private GameObject fish;
     // ======================================== //
     [SerializeField] private GameObject mira;
     [SerializeField] private GameObject spatula;
@@ -24,10 +28,6 @@ public class GameEventsManager : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private Chair chair;
-
-    [SerializeField] private GameObject openBasement;
-    [SerializeField] private GameObject wallsOpenBasement;
-    [SerializeField] private Renderer pianoRenderrer;
 
     [SerializeField] private Canvas cameraCenter;
     [SerializeField] private Canvas endCanvas;
@@ -51,6 +51,10 @@ public class GameEventsManager : MonoBehaviour
     private int _hazertHash;
     private int _recipeHash;
     private int _keyHash;
+    private int _gezerHash;
+    private int _fishHash;
+    private int _egg1Hash;
+    private int _egg2Hash;
     private Camera _camera;
     private HashSet<int> _collectedItems;
     private bool corridorRevealed1 = false;
@@ -95,6 +99,10 @@ public class GameEventsManager : MonoBehaviour
         _hazertHash = hazeret.GetHashCode();
         _recipeHash = recipe.GetHashCode();
         _keyHash = key.GetHashCode();
+        _gezerHash = gezer.GetHashCode();
+        _fishHash = fish.GetHashCode();
+        _egg1Hash = egg1.GetHashCode();
+        _egg2Hash = egg2.GetHashCode();
         currVcam = Vcam.Menu;
         settings3D.SetActive(false);
         cameraCenter.enabled = false;
@@ -125,16 +133,11 @@ public class GameEventsManager : MonoBehaviour
         }
 
         // Corridor2 Reavel Logic
-        if (!corridorRevealed2 && isFrying)
+        if (!corridorRevealed2 && _collectedItems.Contains(_gezerHash) && _collectedItems.Contains(_fishHash) 
+            && _collectedItems.Contains(_egg1Hash) && _collectedItems.Contains(_egg2Hash))
         {
             StartCoroutine(reavelCorridor2());
         }
-
-        //// Corridor2 Reavel Logic
-        //if (!corridorRevealed2 && _collectedItems.Contains(_gezerHash) && _collectedItems.Contains(_fishHash) && _collectedItems.Contains(_eggHash))
-        //{
-        //    StartCoroutine(reavelCorridor2());
-        //}
 
         // Corridor3 Reavel Logic
         if (!corridorRevealed3 && _collectedItems.Contains(_keyHash))
