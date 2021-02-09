@@ -34,6 +34,13 @@ public class GameEventsManager : MonoBehaviour
     [SerializeField] private Canvas settingsCanvas;
     [SerializeField] private GameObject settings3D;
     [SerializeField] private TextReveal corridor2Text;
+    [SerializeField] private TextReveal corridor31Text;
+    [SerializeField] private TextReveal corridor32Text;
+    [SerializeField] private TextReveal corridor33Text;
+    [SerializeField] private TextReveal corridor34Text;
+    [SerializeField] private TextReveal corridor35Text;
+    [SerializeField] private TextReveal corridor36Text;
+    [SerializeField] private TextReveal corridor37Text;
     [SerializeField] private AudioManager audioManager;
     [SerializeField] private SubtitleManager subtitleManager;
     [SerializeField] private Light menuLight;
@@ -195,6 +202,13 @@ public class GameEventsManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
         SwitchToVcam(Vcam.Corridor3);
         revealCorridor3.Invoke();
+        StartCoroutine(corridor31Text.RevealText());
+        StartCoroutine(corridor32Text.RevealText());
+        StartCoroutine(corridor33Text.RevealText());
+        StartCoroutine(corridor34Text.RevealText());
+        StartCoroutine(corridor35Text.RevealText());
+        StartCoroutine(corridor36Text.RevealText());
+        StartCoroutine(corridor37Text.RevealText());
         yield return new WaitForSeconds(1f);
         audioManager.Play("Drag");
         yield return new WaitForSeconds(5f);
