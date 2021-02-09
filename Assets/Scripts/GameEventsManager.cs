@@ -24,7 +24,6 @@ public class GameEventsManager : MonoBehaviour
     [SerializeField] private GameObject fish;
     // ======================================== //
     [SerializeField] private GameObject mira;
-    [SerializeField] private GameObject spatula;
     [SerializeField] private GameObject radio1;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject mainMenu;
@@ -301,7 +300,6 @@ public class GameEventsManager : MonoBehaviour
             egg2.GetComponent<Collider>().enabled = true;
             gezer.GetComponent<Collider>().enabled = true;
             fish.GetComponent<Collider>().enabled = true;
-            spatula.GetComponent<Spatula>().timeToFry = true;
             mamaTrigger2.GetComponent<Collider>().enabled = false;
         }
     }
