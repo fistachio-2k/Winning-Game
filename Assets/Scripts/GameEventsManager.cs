@@ -16,6 +16,7 @@ public class GameEventsManager : MonoBehaviour
     // ============ Trigger objects ============ //
     [SerializeField] private GameObject hazeret;
     [SerializeField] private GameObject recipe;
+    [SerializeField] private GameObject recipeBig;
     [SerializeField] private GameObject key;
     [SerializeField] private GameObject gezer;
     [SerializeField] private GameObject egg1;
@@ -295,6 +296,11 @@ public class GameEventsManager : MonoBehaviour
         {
             subtitleManager.startAfterRecipyDialog();
             mamaTrigger2.GetComponent<AudioSource>().Play();
+            recipeBig.SetActive(true);
+            egg1.GetComponent<Collider>().enabled = true;
+            egg2.GetComponent<Collider>().enabled = true;
+            gezer.GetComponent<Collider>().enabled = true;
+            fish.GetComponent<Collider>().enabled = true;
             spatula.GetComponent<Spatula>().timeToFry = true;
             mamaTrigger2.GetComponent<Collider>().enabled = false;
         }
