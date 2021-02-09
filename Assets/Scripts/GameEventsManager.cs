@@ -130,6 +130,12 @@ public class GameEventsManager : MonoBehaviour
             StartCoroutine(reavelCorridor2());
         }
 
+        //// Corridor2 Reavel Logic
+        //if (!corridorRevealed2 && _collectedItems.Contains(_gezerHash) && _collectedItems.Contains(_fishHash) && _collectedItems.Contains(_eggHash))
+        //{
+        //    StartCoroutine(reavelCorridor2());
+        //}
+
         // Corridor3 Reavel Logic
         if (!corridorRevealed3 && _collectedItems.Contains(_keyHash))
         {
@@ -218,7 +224,7 @@ public class GameEventsManager : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         _instance.GetMouseClickEvent().AddListener(chair.StandUpWrapper);
         StartCoroutine(chair.text.RevealText());
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         SwitchToVcam(GameEventsManager.Vcam.Sitting);
         Cursor.visible = false;
         cameraCenter.enabled = true;
@@ -305,8 +311,7 @@ public class GameEventsManager : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         audioManager.Play("LastDialog");
         StartCoroutine(subtitleManager.StartLastDialog());
-        yield return new WaitForSeconds(18.6f);
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(20f);
         im.DOFade(0f, 0.2f);
         SwitchToVcam(Vcam.Murder);
         yield return new WaitForSeconds(1f);

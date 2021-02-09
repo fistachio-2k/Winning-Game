@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2707034257187290221}
   - component: {fileID: 177230389145159847}
   m_Layer: 0
-  m_Name: carrot01 (1)
+  m_Name: carrot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 09eea30fece09c1459caca97a763f8d9, type: 2}
+  - {fileID: 2100000, guid: e3944f01baaaac4429495aedd93737af, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
