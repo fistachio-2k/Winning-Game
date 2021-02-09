@@ -310,8 +310,9 @@ public class GameEventsManager : MonoBehaviour
         im.DOFade(1f, 0.2f);
         yield return new WaitForSeconds(0.2f);
         audioManager.Play("LastDialog");
+        yield return new WaitForSeconds(0.2f);
         StartCoroutine(subtitleManager.StartLastDialog());
-        yield return new WaitForSeconds(20f);
+        yield return new WaitForSeconds(22f);
         im.DOFade(0f, 0.2f);
         SwitchToVcam(Vcam.Murder);
         yield return new WaitForSeconds(1f);

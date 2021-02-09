@@ -7,7 +7,6 @@ public class SecondHouseEnter : MonoBehaviour
 {
     [SerializeField] private GameObject radio1;
     [SerializeField] private GameObject radio2;
-    [SerializeField] private GameObject openBasement;
     [SerializeField] private GameObject wallsOpenBasement;
     [SerializeField] private GameObject breakfastBasment;
     [SerializeField] private GameObject wallsBreakfastBasment;
@@ -22,7 +21,6 @@ public class SecondHouseEnter : MonoBehaviour
 
     private void Start()
     {
-        openBasement.SetActive(true);
         breakfastBasment.SetActive(false);
     }
 
@@ -34,7 +32,6 @@ public class SecondHouseEnter : MonoBehaviour
 
         //Handle the basment
         basementFlag = !basementFlag;
-        openBasement.SetActive(basementFlag);
         wallsOpenBasement.SetActive(basementFlag);
         breakfastBasment.SetActive(!basementFlag);
         wallsBreakfastBasment.SetActive(!basementFlag);
