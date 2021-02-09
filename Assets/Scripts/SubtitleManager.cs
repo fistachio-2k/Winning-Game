@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class SubtitleManager : MonoBehaviour
 {
-    [SerializeField] private string[] mamaEstherDialogStrings = { "MAMA: Esther dear, come help me with breakfast. Did you wash your hands?\nESTHER: Sure, Mama!", "MAMA: Great job, my little bunny! I need the recipe for the Gefilte Fish, would you go to the basement and bring it to me?", "MAMA: Be careful when you go down!" };
-    [SerializeField] private string[] mamaMiraDialogStrings = { "MAMA: Mira, do you want to come and help us, Mira?\nMIRA: No, I don’t want your gross gefilte" };
+    [SerializeField] private string[] mamaEstherDialogStrings = { "MAMA: Esther dear, come help me with breakfast. Did you wash your hands?", "ESTHER: Sure, Mama!", "MAMA: Great job, my little bunny! I need the recipe for the Gefilte Fish, would you go to the basement and bring it to me?", "MAMA: Be careful when you go down!" };
+    [SerializeField] private string[] mamaMiraDialogStrings = { "MAMA: Mira, do you want to come and help us, Mira? \n MIRA: No, I don’t want your gross gefilte" };
     [SerializeField] private string[] afterRecipyDialog = { "MAMA: Thank you my dear. I see that I need dome fish, carrots and aggs. Would you be a doll and get me some?" };
     [SerializeField] private string[] answeringMachine = { "MIRA: Don't call me until you agree to give me the recipe. This has been going for far too long" };
     [SerializeField] private string[] lastDialog = { "ESTHER: Mira, please! I just want us to get along again. Mama would never want this." , "MIRA: Then let me have the recipe. You don’t even need it!", "ESTHER: She gave it to me, and you know it!", "MIRA: And YOU just can’t stand sharing any shred of whatever is left of her!  I miss her too, so much. \nBut  I could never compete with you, not in her eyes.", "SIGH, ESTHER:  It’s not worth it… time to let go..." };
@@ -86,6 +86,11 @@ public class SubtitleManager : MonoBehaviour
         displaying = false;
         displaying = true;
         curStringIdx = 2;
+        yield return new WaitForSeconds((myStrings[curStringIdx].Length / 20) + 2);
+
+        displaying = false;
+        displaying = true;
+        curStringIdx = 3;
         yield return new WaitForSeconds((myStrings[curStringIdx].Length / 20) + 2);
 
         displaying = false;
