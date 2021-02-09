@@ -11,6 +11,7 @@ public class ShowPicture : MonoBehaviour, IInteractable
     [SerializeField] private float _distanceFromCamera = -0.001f;
     [SerializeField] private bool _isANote = false;
     [SerializeField] private bool _isALetter = false;
+    [SerializeField] private bool _isGefilteRecipe = false;
     [SerializeField] public bool stopShowing = false;
     [SerializeField] public int idx = -1;
 
@@ -64,9 +65,13 @@ public class ShowPicture : MonoBehaviour, IInteractable
         {
             _s.Join(gameObject.transform.DORotate(_camera.transform.rotation.eulerAngles + Vector3.right * 50 + Vector3.up * 180f, _duration));
         }
+        else if (_isGefilteRecipe)
+        {
+            _s.Join(gameObject.transform.DORotate(_camera.transform.rotation.eulerAngles + Vector3.right * 4 + Vector3.up * 180f, _duration));
+        }
         else
         {
-            _s.Join(gameObject.transform.DORotate(_camera.transform.rotation.eulerAngles + Vector3.right * 50 + Vector3.up * 180f, _duration));
+            _s.Join(gameObject.transform.DORotate(_camera.transform.rotation.eulerAngles + Vector3.up * 180f, _duration));
         }
 
         _s.Play();

@@ -1353,6 +1353,7 @@ MonoBehaviour:
   _distanceFromCamera: 0.5
   _isANote: 0
   _isALetter: 1
+  _isGefilteRecipe: 0
   stopShowing: 0
   idx: -1
 --- !u!114 &70249941
@@ -1413,6 +1414,7 @@ MonoBehaviour:
   _distanceFromCamera: 1
   _isANote: 0
   _isALetter: 0
+  _isGefilteRecipe: 0
   stopShowing: 0
   idx: -1
 --- !u!114 &77156534
@@ -1463,6 +1465,7 @@ MonoBehaviour:
   _distanceFromCamera: 1
   _isANote: 0
   _isALetter: 0
+  _isGefilteRecipe: 0
   stopShowing: 0
   idx: -1
 --- !u!114 &81791550
@@ -4344,6 +4347,7 @@ MonoBehaviour:
   _distanceFromCamera: 0.5
   _isANote: 1
   _isALetter: 0
+  _isGefilteRecipe: 0
   stopShowing: 0
   idx: -1
 --- !u!114 &259590833
@@ -4705,7 +4709,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 271246975}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c9c8bcdabaf6474fbaa75c90b634f3f, type: 3}
   m_Name: 
@@ -4713,7 +4717,8 @@ MonoBehaviour:
   _duration: 3
   _distanceFromCamera: 0.5
   _isANote: 0
-  _isALetter: 0
+  _isALetter: 1
+  _isGefilteRecipe: 0
   stopShowing: 0
   idx: -1
 --- !u!4 &271793050 stripped
@@ -5675,6 +5680,7 @@ MonoBehaviour:
   _distanceFromCamera: 0.5
   _isANote: 0
   _isALetter: 0
+  _isGefilteRecipe: 0
   stopShowing: 0
   idx: -1
 --- !u!114 &320014717
@@ -11452,6 +11458,7 @@ MonoBehaviour:
   _distanceFromCamera: 0.5
   _isANote: 0
   _isALetter: 0
+  _isGefilteRecipe: 0
   stopShowing: 0
   idx: -1
 --- !u!114 &718757037
@@ -11502,6 +11509,7 @@ MonoBehaviour:
   _distanceFromCamera: 0.5
   _isANote: 0
   _isALetter: 0
+  _isGefilteRecipe: 0
   stopShowing: 0
   idx: -1
 --- !u!114 &720766045
@@ -15610,6 +15618,7 @@ MonoBehaviour:
   _distanceFromCamera: 1
   _isANote: 0
   _isALetter: 0
+  _isGefilteRecipe: 0
   stopShowing: 0
   idx: -1
 --- !u!1 &1010483304
@@ -16550,6 +16559,7 @@ MonoBehaviour:
   _distanceFromCamera: 0.5
   _isANote: 0
   _isALetter: 0
+  _isGefilteRecipe: 0
   stopShowing: 0
   idx: -1
 --- !u!4 &1111307181 stripped
@@ -21781,6 +21791,7 @@ MonoBehaviour:
   _distanceFromCamera: 0.5
   _isANote: 0
   _isALetter: 0
+  _isGefilteRecipe: 0
   stopShowing: 0
   idx: -1
 --- !u!114 &1528278437
@@ -27904,6 +27915,7 @@ MonoBehaviour:
   _distanceFromCamera: 0.5
   _isANote: 0
   _isALetter: 0
+  _isGefilteRecipe: 0
   stopShowing: 0
   idx: 6
 --- !u!114 &1892294722
@@ -29012,6 +29024,7 @@ MonoBehaviour:
   _distanceFromCamera: 0.5
   _isANote: 0
   _isALetter: 0
+  _isGefilteRecipe: 0
   stopShowing: 0
   idx: -1
 --- !u!114 &1963460255
@@ -29216,6 +29229,7 @@ MonoBehaviour:
   _distanceFromCamera: 0.5
   _isANote: 0
   _isALetter: 0
+  _isGefilteRecipe: 0
   stopShowing: 0
   idx: -1
 --- !u!114 &1993883935
@@ -33922,6 +33936,7 @@ MonoBehaviour:
   _distanceFromCamera: 0.5
   _isANote: 0
   _isALetter: 0
+  _isGefilteRecipe: 0
   stopShowing: 0
   idx: -1
 --- !u!114 &2091275912
@@ -39962,7 +39977,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5645903801840944605, guid: 38453da68fdecf144b2b3b0f9d98cfdf, type: 3}
       propertyPath: playerLocation
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5645903801840944605, guid: 38453da68fdecf144b2b3b0f9d98cfdf, type: 3}
       propertyPath: locations.Array.size
